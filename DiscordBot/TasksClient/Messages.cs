@@ -5,19 +5,20 @@ using Discord;
 using System.Threading.Tasks;
 using Discord.WebSocket;
 using DiscordBot;
+using System.Windows.Forms;
+using System.Linq;
 
 namespace DiscordBot.TasksClient
 {
     public class Messages : ModuleBase<SocketCommandContext>
     {
-        static Form1 btns;
-        private int MsgCount { get; set; }
-        public async Task MsgCouter(SocketMessage msg)
-        {
-            btns = new Form1();
-            MsgCount++;
-            btns.serverMessagesButton.Text = MsgCount.ToString();
-            await Task.Delay(-1);
+        static Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+        public async Task info()
+        {  
+            myForm.ServerButton.Text = Context.Guild.Name;
+            //myForm.MembersButton.Text = Context.Guild.MemberCount.ToString();
+            //myForm.OwnerButton.Text = Context.Guild.Owner.Username;
+         
         }
 
     }
