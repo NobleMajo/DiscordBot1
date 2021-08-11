@@ -465,7 +465,10 @@ namespace DiscordBot
             this.ClientSize = new System.Drawing.Size(374, 330);
             this.Controls.Add(this.MainTabs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Movable = false;
             this.Name = "Form1";
+            this.Resizable = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Style = MetroFramework.MetroColorStyle.Magenta;
             this.Text = "DiscordBot";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
