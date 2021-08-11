@@ -57,11 +57,18 @@ namespace DiscordBot
 
         private async Task RegisterCommandAsync()
         {
-            Messages msg = new Messages();
+            
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += ColorChange;
-            _client.MessageReceived += msg.MsgCouter;
+            _client.MessageReceived += MsgCouter;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
+        }
+        private int msgCount = 0;
+        private async Task MsgCouter(SocketMessage arg)
+        {
+            msgCount++;
+            serverMessagesButton.Text = msgCount.ToString();
+            await Task.Delay(-1);
         }
 
         private Task ColorChange(SocketMessage arg)
