@@ -57,7 +57,17 @@ namespace DiscordBot
         private async Task RegisterCommandAsync()
         {
             _client.MessageReceived += HandleCommandAsync;
+            _client.MessageReceived += ColorChange;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
+        }
+
+        private Task ColorChange(SocketMessage arg)
+        {
+            
+            var m = new Random();
+            int next = m.Next(0, 13);
+            this.Style = (MetroColorStyle)next;
+            return Task.CompletedTask;
         }
 
         private async Task HandleCommandAsync(SocketMessage arg)
@@ -74,9 +84,7 @@ namespace DiscordBot
                     if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
                     if (result.Error.Equals(CommandError.UnmetPrecondition)) await message.Channel.SendMessageAsync(result.ErrorReason);
                 }
-                var m = new Random();
-                int next = m.Next(0, 13);
-                this.Style = (MetroColorStyle)next;
+               
             }
             catch
             {
