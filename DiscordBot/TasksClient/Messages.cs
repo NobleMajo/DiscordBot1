@@ -26,6 +26,7 @@ namespace DiscordBot.TasksClient
             myForm.ServerButton.Text = Context.Guild.Name;
             //myForm.MembersButton.Text = Context.Guild.MemberCount.ToString();
             //myForm.OwnerButton.Text = Context.Guild.Owner.Username;
+            //tt
          
         }
 
