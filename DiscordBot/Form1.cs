@@ -58,17 +58,20 @@ namespace DiscordBot
         {
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += ColorChange;
+            
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
-        private async Task ColorChange(SocketMessage arg)
+        private Task ColorChange(SocketMessage arg)
         {
             
             var m = new Random();
             int next = m.Next(0, 13);
-            this.Style = (MetroColorStyle)next;
-            await Task.Delay(100);
+            Style = (MetroColorStyle)next;
+            return Task.CompletedTask;
+            
         }
+
 
         private async Task HandleCommandAsync(SocketMessage arg)
         {
@@ -102,7 +105,7 @@ namespace DiscordBot
             if (logTextBox.InvokeRequired)
             {
                
-                Action safeWrite = delegate { LogText(text + " " + Environment.NewLine); };
+                Action safeWrite = delegate { LogText(DateTime.Now + " " + text + " " + Environment.NewLine); };
                 logTextBox.Invoke(safeWrite);
             }
             else
