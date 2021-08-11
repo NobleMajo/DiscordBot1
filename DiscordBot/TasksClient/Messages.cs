@@ -11,11 +11,10 @@ namespace DiscordBot.TasksClient
     public class Messages : ModuleBase<SocketCommandContext>
     {
         Form1 btns;
-        public static int MsgCount { get; set; }
+        private int MsgCount { get; set; }
         public async Task MsgCouter(SocketMessage msg)
         {
             btns = new Form1();
-            
             MsgCount++;
             btns.serverMessagesButton.Text = MsgCount.ToString();
             await Task.Delay(-1);
