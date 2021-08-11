@@ -32,14 +32,14 @@ namespace DiscordBot
             this.MainTabs1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.logRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.TokenTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.tokenLabel = new MetroFramework.Controls.MetroLabel();
-            this.ConnectBotToken = new MetroFramework.Controls.MetroButton();
-            this.prefixLabel = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.prefixLabel = new MetroFramework.Controls.MetroLabel();
+            this.ConnectBotToken = new MetroFramework.Controls.MetroButton();
+            this.tokenLabel = new MetroFramework.Controls.MetroLabel();
+            this.TokenTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
@@ -92,86 +92,14 @@ namespace DiscordBot
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // metroTabPage3
+            // metroLabel1
             // 
-            this.metroTabPage3.Controls.Add(this.logRichTextBox);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(326, 208);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Log";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
-            // 
-            // logRichTextBox
-            // 
-            this.logRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logRichTextBox.Location = new System.Drawing.Point(0, 0);
-            this.logRichTextBox.Name = "logRichTextBox";
-            this.logRichTextBox.Size = new System.Drawing.Size(326, 208);
-            this.logRichTextBox.TabIndex = 2;
-            this.logRichTextBox.Text = "";
-            // 
-            // TokenTextBox
-            // 
-            // 
-            // 
-            // 
-            this.TokenTextBox.CustomButton.Image = null;
-            this.TokenTextBox.CustomButton.Location = new System.Drawing.Point(208, 1);
-            this.TokenTextBox.CustomButton.Name = "";
-            this.TokenTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TokenTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TokenTextBox.CustomButton.TabIndex = 1;
-            this.TokenTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TokenTextBox.CustomButton.UseSelectable = true;
-            this.TokenTextBox.CustomButton.Visible = false;
-            this.TokenTextBox.Lines = new string[0];
-            this.TokenTextBox.Location = new System.Drawing.Point(59, 19);
-            this.TokenTextBox.MaxLength = 32767;
-            this.TokenTextBox.Name = "TokenTextBox";
-            this.TokenTextBox.PasswordChar = '\0';
-            this.TokenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TokenTextBox.SelectedText = "";
-            this.TokenTextBox.SelectionLength = 0;
-            this.TokenTextBox.SelectionStart = 0;
-            this.TokenTextBox.ShortcutsEnabled = true;
-            this.TokenTextBox.Size = new System.Drawing.Size(230, 23);
-            this.TokenTextBox.TabIndex = 2;
-            this.TokenTextBox.UseSelectable = true;
-            this.TokenTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TokenTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // tokenLabel
-            // 
-            this.tokenLabel.AutoSize = true;
-            this.tokenLabel.Location = new System.Drawing.Point(12, 20);
-            this.tokenLabel.Name = "tokenLabel";
-            this.tokenLabel.Size = new System.Drawing.Size(45, 19);
-            this.tokenLabel.TabIndex = 3;
-            this.tokenLabel.Text = "Token:";
-            // 
-            // ConnectBotToken
-            // 
-            this.ConnectBotToken.Location = new System.Drawing.Point(-4, 108);
-            this.ConnectBotToken.Name = "ConnectBotToken";
-            this.ConnectBotToken.Size = new System.Drawing.Size(334, 23);
-            this.ConnectBotToken.TabIndex = 4;
-            this.ConnectBotToken.Text = "CONNECT";
-            this.ConnectBotToken.UseSelectable = true;
-            // 
-            // prefixLabel
-            // 
-            this.prefixLabel.AutoSize = true;
-            this.prefixLabel.Location = new System.Drawing.Point(12, 70);
-            this.prefixLabel.Name = "prefixLabel";
-            this.prefixLabel.Size = new System.Drawing.Size(45, 19);
-            this.prefixLabel.TabIndex = 5;
-            this.prefixLabel.Text = "Prefix:";
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(1, 185);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel1.TabIndex = 7;
+            this.metroLabel1.Text = "Bot Status:";
             // 
             // metroTextBox1
             // 
@@ -203,14 +131,87 @@ namespace DiscordBot
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel1
+            // prefixLabel
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(1, 185);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
-            this.metroLabel1.TabIndex = 7;
-            this.metroLabel1.Text = "Token:";
+            this.prefixLabel.AutoSize = true;
+            this.prefixLabel.Location = new System.Drawing.Point(12, 70);
+            this.prefixLabel.Name = "prefixLabel";
+            this.prefixLabel.Size = new System.Drawing.Size(45, 19);
+            this.prefixLabel.TabIndex = 5;
+            this.prefixLabel.Text = "Prefix:";
+            // 
+            // ConnectBotToken
+            // 
+            this.ConnectBotToken.Location = new System.Drawing.Point(-4, 108);
+            this.ConnectBotToken.Name = "ConnectBotToken";
+            this.ConnectBotToken.Size = new System.Drawing.Size(334, 23);
+            this.ConnectBotToken.TabIndex = 4;
+            this.ConnectBotToken.Text = "CONNECT";
+            this.ConnectBotToken.UseSelectable = true;
+            this.ConnectBotToken.Click += new System.EventHandler(this.ConnectBotToken_Click);
+            // 
+            // tokenLabel
+            // 
+            this.tokenLabel.AutoSize = true;
+            this.tokenLabel.Location = new System.Drawing.Point(12, 20);
+            this.tokenLabel.Name = "tokenLabel";
+            this.tokenLabel.Size = new System.Drawing.Size(45, 19);
+            this.tokenLabel.TabIndex = 3;
+            this.tokenLabel.Text = "Token:";
+            // 
+            // TokenTextBox
+            // 
+            // 
+            // 
+            // 
+            this.TokenTextBox.CustomButton.Image = null;
+            this.TokenTextBox.CustomButton.Location = new System.Drawing.Point(208, 1);
+            this.TokenTextBox.CustomButton.Name = "";
+            this.TokenTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TokenTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TokenTextBox.CustomButton.TabIndex = 1;
+            this.TokenTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TokenTextBox.CustomButton.UseSelectable = true;
+            this.TokenTextBox.CustomButton.Visible = false;
+            this.TokenTextBox.Lines = new string[0];
+            this.TokenTextBox.Location = new System.Drawing.Point(59, 19);
+            this.TokenTextBox.MaxLength = 32767;
+            this.TokenTextBox.Name = "TokenTextBox";
+            this.TokenTextBox.PasswordChar = '\0';
+            this.TokenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TokenTextBox.SelectedText = "";
+            this.TokenTextBox.SelectionLength = 0;
+            this.TokenTextBox.SelectionStart = 0;
+            this.TokenTextBox.ShortcutsEnabled = true;
+            this.TokenTextBox.Size = new System.Drawing.Size(230, 23);
+            this.TokenTextBox.TabIndex = 2;
+            this.TokenTextBox.UseSelectable = true;
+            this.TokenTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TokenTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.richTextBox1);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Log";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(326, 208);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
@@ -238,11 +239,11 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroLabel tokenLabel;
         private MetroFramework.Controls.MetroTextBox TokenTextBox;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
-        private System.Windows.Forms.RichTextBox logRichTextBox;
         private MetroFramework.Controls.MetroButton ConnectBotToken;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel prefixLabel;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

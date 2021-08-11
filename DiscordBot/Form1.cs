@@ -16,5 +16,10 @@ namespace DiscordBot
         {
 
         }
+
+        private void ConnectBotToken_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
