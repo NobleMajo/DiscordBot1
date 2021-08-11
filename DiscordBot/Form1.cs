@@ -50,14 +50,31 @@ namespace DiscordBot
 
         }
 
-        private Task RegisterCommandAsync()
+        private async Task RegisterCommandAsync()
         {
-            throw new NotImplementedException();
+            _client.MessageReceived += HandleCommandAsync;
+        }
+
+        private async Task HandleCommandAsync(SocketMessage arg)
+        {
+            try
+            {
+                var message = arg as SocketUserMessage;
+                var context = new SocketCommandContext(_client, message);
+                if (message.Author.IsBot) return;
+                int argpos = 0;
+                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos)) ;
+            }
+            catch
+            {
+            }
         }
 
         private Task _client_Log(LogMessage arg)
         {
-            
+            logTextBox.Text = arg + " " + Environment.NewLine;
+            return Task.CompletedTask;
+
         }
     }
 }
