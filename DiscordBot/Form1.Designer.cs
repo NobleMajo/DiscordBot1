@@ -510,7 +510,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton ServerButton;
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
         private MetroFramework.Controls.MetroPanel metroPanel5;
-        private MetroFramework.Controls.MetroButton serverMessagesButton;
+        public MetroFramework.Controls.MetroButton serverMessagesButton;
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private MetroFramework.Controls.MetroButton metroButton5;
     }
