@@ -10,10 +10,11 @@ namespace DiscordBot.TasksClient
     public class Messages : ModuleBase<SocketCommandContext>
     {
         public static int MsgCount { get; set; } = 0;
-        public async Task MsgCout(SocketMessage msg)
+        public Task MsgCouter(SocketMessage msg)
         {
             if(!msg.Author.IsBot)
             MsgCount++;
+            return Task.CompletedTask;
         }
 
     }
