@@ -67,7 +67,7 @@ namespace DiscordBot
         private async Task MsgCouter(SocketMessage arg)
         {
             msgCount++;
-            serverMessagesButton.Text = msgCount.ToString();
+            safeChange(msgCount.ToString());
             await Task.Delay(-1);
         }
 
