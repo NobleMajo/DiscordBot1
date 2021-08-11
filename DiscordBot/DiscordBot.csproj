@@ -90,6 +90,7 @@
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">

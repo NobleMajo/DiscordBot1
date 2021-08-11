@@ -1,4 +1,5 @@
-﻿
+﻿using System.Drawing;
+
 namespace DiscordBot
 {
     partial class Form1
