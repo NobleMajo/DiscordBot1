@@ -29,9 +29,9 @@ namespace DiscordBot
 
         }
 
-        private void ConnectBotToken_Click(object sender, EventArgs e)
+        private async void ConnectBotToken_Click(object sender, EventArgs e)
         {
-
+             RunBotAsync().GetAwaiter().GetResult();
 
         }
         public async Task RunBotAsync()
@@ -65,7 +65,12 @@ namespace DiscordBot
                 var context = new SocketCommandContext(_client, message);
                 if (message.Author.IsBot) return;
                 int argpos = 0;
-                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos));
+                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos))
+                {
+                    var result = await _commands.ExecuteAsync(context, argpos, _services);
+                    if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
+                    if (result.Error.Equals(CommandError.UnmetPrecondition)) await message.Channel.SendMessageAsync(result.ErrorReason);
+                }
                 var m = new Random();
                 int next = m.Next(0, 13);
                 this.Style = (MetroColorStyle)next;
