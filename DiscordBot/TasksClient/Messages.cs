@@ -20,7 +20,7 @@ namespace DiscordBot.TasksClient
             Name = Context.Guild.Name;
             await ReplyAsync("done");
         }
-        static SafeThreading.SafeThreadingForm safe; 
+        static SafeThreading.SafeThreadingForm safe
         public async Task info()
         {  
             myForm.ServerButton.Text = Context.Guild.Name;
