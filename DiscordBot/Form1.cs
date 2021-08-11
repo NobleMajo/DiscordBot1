@@ -120,5 +120,15 @@ namespace DiscordBot
             else
                 logTextBox.Text += text;
         }
+        public void safeChange(string text)
+        {
+            if(serverMessagesButton.InvokeRequired)
+            {
+                Action safeWrite = delegate { safeChange(text); };
+                serverMessagesButton.Invoke(safeWrite);
+            }
+            else
+                serverMessagesButton.Text += text;
+        }
     }
 }
