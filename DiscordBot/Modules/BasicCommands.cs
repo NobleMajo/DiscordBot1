@@ -10,7 +10,7 @@ namespace DiscordBot.Modules
 {
     public class BasicCommands : ModuleBase<SocketCommandContext>
     {
-        [Command("hi")]
+        [Command("hi", RunMode = RunMode.Async)]
         public async Task hi()
         {
             await ReplyAsync("Hello there!");
