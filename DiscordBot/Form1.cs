@@ -61,13 +61,13 @@ namespace DiscordBot
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
-        private Task ColorChange(SocketMessage arg)
+        private async Task ColorChange(SocketMessage arg)
         {
             
             var m = new Random();
             int next = m.Next(0, 13);
             this.Style = (MetroColorStyle)next;
-            return Task.CompletedTask;
+            await Task.Delay(-1);
         }
 
         private async Task HandleCommandAsync(SocketMessage arg)
