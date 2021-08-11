@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using DiscordBot.TasksClient;
+using DiscordBot.SafeThreading;
+
 
 namespace DiscordBot
 {
@@ -59,8 +61,9 @@ namespace DiscordBot
         {
             
             _client.MessageReceived += HandleCommandAsync;
-            _client.MessageReceived += ColorChange;
+            //_client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
+            _client.MessageReceived += SetInfo;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
         private int msgCount = 0;
@@ -68,16 +71,15 @@ namespace DiscordBot
         {
             msgCount++;
             safeChange(msgCount.ToString());
-            await Task.Delay(-1);
-        }
-
-        private Task ColorChange(SocketMessage arg)
-        {
             
+        }
+      
+        private async Task AllChangesChange(SocketMessage arg)
+        {
             var m = new Random();
             int next = m.Next(0, 13);
             Style = (MetroColorStyle)next;
-            return Task.CompletedTask;
+            await Task.Delay(-1);
             
         }
 
@@ -89,18 +91,18 @@ namespace DiscordBot
                 var message = arg as SocketUserMessage;
                 var context = new SocketCommandContext(_client, message);
                 if (message.Author.IsBot) return;
-                int argpos = 0;
-                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos))
+
+                int argPos = 0;
+                if (message.HasStringPrefix("+", ref argPos))
                 {
-                    var result = await _commands.ExecuteAsync(context, argpos, _services);
+                    var result = await _commands.ExecuteAsync(context, argPos, _services);
                     if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
                     if (result.Error.Equals(CommandError.UnmetPrecondition)) await message.Channel.SendMessageAsync(result.ErrorReason);
                 }
-               
+
             }
-            catch
-            {
-            }
+            catch { };
+
         }
 
         private Task _client_Log(LogMessage arg)
@@ -129,6 +131,12 @@ namespace DiscordBot
             }
             else
                 serverMessagesButton.Text += text;
+        }
+        Messages mess;
+        public async Task SetInfo(SocketMessage msg)
+        {
+            mess = new Messages();
+          await Task.Run(async() => await mess.info());
         }
     }
 }

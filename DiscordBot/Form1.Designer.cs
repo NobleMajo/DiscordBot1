@@ -79,7 +79,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 3;
+            this.MainTabs1.SelectedIndex = 0;
             this.MainTabs1.Size = new System.Drawing.Size(334, 250);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -129,7 +129,7 @@ namespace DiscordBot
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(84, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(84, 208);
+            this.metroPanel3.Size = new System.Drawing.Size(190, 208);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel3.VerticalScrollbarBarColor = true;
@@ -141,7 +141,7 @@ namespace DiscordBot
             this.RolesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.RolesButton.Location = new System.Drawing.Point(0, 69);
             this.RolesButton.Name = "RolesButton";
-            this.RolesButton.Size = new System.Drawing.Size(84, 23);
+            this.RolesButton.Size = new System.Drawing.Size(190, 23);
             this.RolesButton.TabIndex = 5;
             this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RolesButton.UseSelectable = true;
@@ -151,7 +151,7 @@ namespace DiscordBot
             this.OwnerButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.OwnerButton.Location = new System.Drawing.Point(0, 46);
             this.OwnerButton.Name = "OwnerButton";
-            this.OwnerButton.Size = new System.Drawing.Size(84, 23);
+            this.OwnerButton.Size = new System.Drawing.Size(190, 23);
             this.OwnerButton.TabIndex = 4;
             this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OwnerButton.UseSelectable = true;
@@ -161,7 +161,7 @@ namespace DiscordBot
             this.MembersButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MembersButton.Location = new System.Drawing.Point(0, 23);
             this.MembersButton.Name = "MembersButton";
-            this.MembersButton.Size = new System.Drawing.Size(84, 23);
+            this.MembersButton.Size = new System.Drawing.Size(190, 23);
             this.MembersButton.TabIndex = 3;
             this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MembersButton.UseSelectable = true;
@@ -169,9 +169,10 @@ namespace DiscordBot
             // ServerButton
             // 
             this.ServerButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ServerButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ServerButton.Location = new System.Drawing.Point(0, 0);
             this.ServerButton.Name = "ServerButton";
-            this.ServerButton.Size = new System.Drawing.Size(84, 23);
+            this.ServerButton.Size = new System.Drawing.Size(190, 23);
             this.ServerButton.TabIndex = 2;
             this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ServerButton.UseSelectable = true;
@@ -503,16 +504,16 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton RolesButton;
-        private MetroFramework.Controls.MetroButton OwnerButton;
-        private MetroFramework.Controls.MetroButton MembersButton;
-        private MetroFramework.Controls.MetroButton ServerButton;
-        private MetroFramework.Controls.MetroTabPage metroTabPage4;
-        private MetroFramework.Controls.MetroPanel metroPanel5;
+        public MetroFramework.Controls.MetroButton metroButton1;
+        public MetroFramework.Controls.MetroButton RolesButton;
+        public MetroFramework.Controls.MetroButton OwnerButton;
+        public MetroFramework.Controls.MetroButton MembersButton;
+        public MetroFramework.Controls.MetroButton ServerButton;
+        public MetroFramework.Controls.MetroTabPage metroTabPage4;
+        public MetroFramework.Controls.MetroPanel metroPanel5;
         public MetroFramework.Controls.MetroButton serverMessagesButton;
-        private MetroFramework.Controls.MetroPanel metroPanel4;
-        private MetroFramework.Controls.MetroButton metroButton5;
+        public MetroFramework.Controls.MetroPanel metroPanel4;
+        public MetroFramework.Controls.MetroButton metroButton5;
     }
 }
 
