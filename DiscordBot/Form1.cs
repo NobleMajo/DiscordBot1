@@ -58,7 +58,7 @@ namespace DiscordBot
         {
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += ColorChange;
-            
+            _client.MessageReceived += ColorChange;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
