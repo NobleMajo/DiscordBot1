@@ -29,23 +29,29 @@ namespace DiscordBot
 
         }
 
-        private void ConnectBotToken_Click(object sender, EventArgs e) => new Form1().RunBotAsync().GetAwaiter().GetResult();
+        private void ConnectBotToken_Click(object sender, EventArgs e)
+        {
+            RunBotAsync().GetAwaiter().GetResult();
+        }
       
         public async Task RunBotAsync()
         {
-            _client = new DiscordSocketClient();
-            _commands = new CommandService();
-            _services = new ServiceCollection()
-                .AddSingleton(_client)
-                .AddSingleton(_commands)
-                .BuildServiceProvider();
+            await Task.Run(async () =>
+            {
+                _client = new DiscordSocketClient();
+                _commands = new CommandService();
+                _services = new ServiceCollection()
+                    .AddSingleton(_client)
+                    .AddSingleton(_commands)
+                    .BuildServiceProvider();
 
-            _client.Log += _client_Log;
-            await RegisterCommandAsync();
-            await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
-            await _client.StartAsync();
-            await Task.Delay(-1);
 
+                _client.Log += _client_Log;
+                await RegisterCommandAsync();
+                await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
+                await _client.StartAsync();
+                await Task.Delay(-1);
+            });
         }
 
         private async Task RegisterCommandAsync()
