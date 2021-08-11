@@ -46,6 +46,7 @@ namespace DiscordBot
             await RegisterCommandAsync();
             await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
             await _client.StartAsync();
+            await Task.Delay(-1);
 
         }
 
@@ -56,7 +57,7 @@ namespace DiscordBot
 
         private Task _client_Log(LogMessage arg)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
