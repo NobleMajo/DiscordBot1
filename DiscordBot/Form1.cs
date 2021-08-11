@@ -130,13 +130,13 @@ namespace DiscordBot
                 serverMessagesButton.Invoke(safeWrite);
             }
             else
-                serverMessagesButton.Text += text;
+                serverMessagesButton.Text = text;
         }
         Messages mess;
         public async Task SetInfo(SocketMessage msg)
         {
             mess = new Messages();
-          await Task.Run(async() => await mess.info());
+            await Task.Run(async() => await mess.info());
         }
     }
 }

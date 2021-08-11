@@ -13,14 +13,19 @@ namespace DiscordBot.TasksClient
     public class Messages : ModuleBase<SocketCommandContext>
     {
         static Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-        public async Task info()
+        private static string Name {  get; set; }
+        [Command("set")]
+        public async Task Set()
         {
-            try
-            {
-
-            }
-            catch { }
-
+            Name = Context.Guild.Name;
+            await ReplyAsync("done");
+        }
+        static SafeThreading.SafeThreadingForm safe; 
+        public async Task info()
+        {  
+            myForm.ServerButton.Text = Context.Guild.Name;
+            //myForm.MembersButton.Text = Context.Guild.MemberCount.ToString();
+            //myForm.OwnerButton.Text = Context.Guild.Owner.Username;
          
         }
 
