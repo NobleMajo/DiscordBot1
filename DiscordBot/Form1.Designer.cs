@@ -54,10 +54,10 @@ namespace DiscordBot
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.logTextBox = new System.Windows.Forms.RichTextBox();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -66,8 +66,8 @@ namespace DiscordBot
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
-            this.metroPanel4.SuspendLayout();
             this.metroPanel5.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabs1
@@ -404,22 +404,6 @@ namespace DiscordBot
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
-            // metroPanel4
-            // 
-            this.metroPanel4.Controls.Add(this.metroButton5);
-            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(97, 208);
-            this.metroPanel4.TabIndex = 2;
-            this.metroPanel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
             // metroPanel5
             // 
             this.metroPanel5.Controls.Add(this.serverMessagesButton);
@@ -436,6 +420,32 @@ namespace DiscordBot
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
             // 
+            // serverMessagesButton
+            // 
+            this.serverMessagesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.serverMessagesButton.Location = new System.Drawing.Point(0, 0);
+            this.serverMessagesButton.Name = "serverMessagesButton";
+            this.serverMessagesButton.Size = new System.Drawing.Size(102, 23);
+            this.serverMessagesButton.TabIndex = 2;
+            this.serverMessagesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.serverMessagesButton.UseSelectable = true;
+            // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Controls.Add(this.metroButton5);
+            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(97, 208);
+            this.metroPanel4.TabIndex = 2;
+            this.metroPanel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
             // metroButton5
             // 
             this.metroButton5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -447,16 +457,6 @@ namespace DiscordBot
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
             // 
-            // serverMessagesButton
-            // 
-            this.serverMessagesButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.serverMessagesButton.Location = new System.Drawing.Point(0, 0);
-            this.serverMessagesButton.Name = "serverMessagesButton";
-            this.serverMessagesButton.Size = new System.Drawing.Size(102, 23);
-            this.serverMessagesButton.TabIndex = 2;
-            this.serverMessagesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.serverMessagesButton.UseSelectable = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +465,7 @@ namespace DiscordBot
             this.Controls.Add(this.MainTabs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.Style = MetroFramework.MetroColorStyle.Magenta;
             this.Text = "DiscordBot";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -478,8 +478,8 @@ namespace DiscordBot
             this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
-            this.metroPanel4.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);
+            this.metroPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
