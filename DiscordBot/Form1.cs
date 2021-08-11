@@ -29,7 +29,7 @@ namespace DiscordBot
 
         }
 
-        private void ConnectBotToken_Click(object sender, EventArgs e) => RunBotAsync().GetAwaiter().GetResult();
+        private void ConnectBotToken_Click(object sender, EventArgs e) => new Form1().RunBotAsync().GetAwaiter().GetResult();
       
         public async Task RunBotAsync()
         {
