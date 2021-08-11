@@ -67,7 +67,7 @@ namespace DiscordBot
             var m = new Random();
             int next = m.Next(0, 13);
             this.Style = (MetroColorStyle)next;
-            await Task.Delay(-1);
+            await Task.Delay(100);
         }
 
         private async Task HandleCommandAsync(SocketMessage arg)
