@@ -12,13 +12,13 @@ namespace DiscordBot.TasksClient
     {
         Form1 btns;
         public static int MsgCount { get; set; }
-        public Task MsgCouter(SocketMessage msg)
+        public async Task MsgCouter(SocketMessage msg)
         {
             btns = new Form1();
             
             MsgCount++;
             btns.serverMessagesButton.Text = MsgCount.ToString();
-            return Task.CompletedTask;
+            await Task.Delay(-1);
         }
 
     }
