@@ -40,7 +40,7 @@ namespace DiscordBot
             this.tokenLabel = new MetroFramework.Controls.MetroLabel();
             this.TokenTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.logTextBox = new System.Windows.Forms.RichTextBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -69,7 +69,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 0;
+            this.MainTabs1.SelectedIndex = 2;
             this.MainTabs1.Size = new System.Drawing.Size(334, 250);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.UseSelectable = true;
@@ -208,7 +208,7 @@ namespace DiscordBot
             // 
             // metroTabPage3
             // 
-            this.metroTabPage3.Controls.Add(this.richTextBox1);
+            this.metroTabPage3.Controls.Add(this.logTextBox);
             this.metroTabPage3.HorizontalScrollbarBarColor = false;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 0;
@@ -221,14 +221,14 @@ namespace DiscordBot
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 0;
             // 
-            // richTextBox1
+            // logTextBox
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(326, 208);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logTextBox.Location = new System.Drawing.Point(0, 0);
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.Size = new System.Drawing.Size(326, 208);
+            this.logTextBox.TabIndex = 2;
+            this.logTextBox.Text = "";
             // 
             // metroPanel1
             // 
@@ -329,7 +329,6 @@ namespace DiscordBot
             this.ServerButton.Name = "ServerButton";
             this.ServerButton.Size = new System.Drawing.Size(84, 23);
             this.ServerButton.TabIndex = 2;
-            this.ServerButton.Text = "1";
             this.ServerButton.UseSelectable = true;
             // 
             // MembersButton
@@ -339,7 +338,6 @@ namespace DiscordBot
             this.MembersButton.Name = "MembersButton";
             this.MembersButton.Size = new System.Drawing.Size(84, 23);
             this.MembersButton.TabIndex = 3;
-            this.MembersButton.Text = "2";
             this.MembersButton.UseSelectable = true;
             // 
             // OwnerButton
@@ -349,7 +347,6 @@ namespace DiscordBot
             this.OwnerButton.Name = "OwnerButton";
             this.OwnerButton.Size = new System.Drawing.Size(84, 23);
             this.OwnerButton.TabIndex = 4;
-            this.OwnerButton.Text = "3";
             this.OwnerButton.UseSelectable = true;
             // 
             // RolesButton
@@ -359,7 +356,6 @@ namespace DiscordBot
             this.RolesButton.Name = "RolesButton";
             this.RolesButton.Size = new System.Drawing.Size(84, 23);
             this.RolesButton.TabIndex = 5;
-            this.RolesButton.Text = "4";
             this.RolesButton.UseSelectable = true;
             // 
             // Form1
@@ -397,7 +393,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel prefixLabel;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox logTextBox;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
