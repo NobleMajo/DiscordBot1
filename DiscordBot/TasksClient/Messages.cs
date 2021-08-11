@@ -14,10 +14,15 @@ namespace DiscordBot.TasksClient
     {
         static Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
         public async Task info()
-        {  
-            myForm.ServerButton.Text = Context.Guild.Name;
-            //myForm.MembersButton.Text = Context.Guild.MemberCount.ToString();
-            //myForm.OwnerButton.Text = Context.Guild.Owner.Username;
+        {
+            try
+            {
+                myForm.ServerButton.Text = Context.Guild.Name.ToString();
+                myForm.MembersButton.Text = Context.Guild.MemberCount.ToString();
+                myForm.OwnerButton.Text = Context.Guild.Owner.Username;
+            }
+            catch { }
+
          
         }
 
