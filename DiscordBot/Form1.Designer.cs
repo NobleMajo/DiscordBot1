@@ -33,6 +33,17 @@ namespace DiscordBot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MainTabs1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.RolesButton = new MetroFramework.Controls.MetroButton();
+            this.OwnerButton = new MetroFramework.Controls.MetroButton();
+            this.MembersButton = new MetroFramework.Controls.MetroButton();
+            this.ServerButton = new MetroFramework.Controls.MetroButton();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -42,24 +53,21 @@ namespace DiscordBot
             this.TokenTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.logTextBox = new System.Windows.Forms.RichTextBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.ServerButton = new MetroFramework.Controls.MetroButton();
-            this.MembersButton = new MetroFramework.Controls.MetroButton();
-            this.OwnerButton = new MetroFramework.Controls.MetroButton();
-            this.RolesButton = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
-            this.metroPanel3.SuspendLayout();
+            this.metroTabPage4.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
+            this.metroPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabs1
@@ -67,10 +75,11 @@ namespace DiscordBot
             this.MainTabs1.Controls.Add(this.metroTabPage1);
             this.MainTabs1.Controls.Add(this.metroTabPage2);
             this.MainTabs1.Controls.Add(this.metroTabPage3);
+            this.MainTabs1.Controls.Add(this.metroTabPage4);
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 0;
+            this.MainTabs1.SelectedIndex = 3;
             this.MainTabs1.Size = new System.Drawing.Size(334, 250);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -90,6 +99,145 @@ namespace DiscordBot
             this.metroTabPage1.VerticalScrollbarBarColor = false;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 0;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.metroPanel3);
+            this.metroPanel1.Controls.Add(this.metroPanel2);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(326, 208);
+            this.metroPanel1.TabIndex = 2;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Controls.Add(this.RolesButton);
+            this.metroPanel3.Controls.Add(this.OwnerButton);
+            this.metroPanel3.Controls.Add(this.MembersButton);
+            this.metroPanel3.Controls.Add(this.ServerButton);
+            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(84, 0);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(84, 208);
+            this.metroPanel3.TabIndex = 3;
+            this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // RolesButton
+            // 
+            this.RolesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RolesButton.Location = new System.Drawing.Point(0, 69);
+            this.RolesButton.Name = "RolesButton";
+            this.RolesButton.Size = new System.Drawing.Size(84, 23);
+            this.RolesButton.TabIndex = 5;
+            this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RolesButton.UseSelectable = true;
+            // 
+            // OwnerButton
+            // 
+            this.OwnerButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OwnerButton.Location = new System.Drawing.Point(0, 46);
+            this.OwnerButton.Name = "OwnerButton";
+            this.OwnerButton.Size = new System.Drawing.Size(84, 23);
+            this.OwnerButton.TabIndex = 4;
+            this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.OwnerButton.UseSelectable = true;
+            // 
+            // MembersButton
+            // 
+            this.MembersButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MembersButton.Location = new System.Drawing.Point(0, 23);
+            this.MembersButton.Name = "MembersButton";
+            this.MembersButton.Size = new System.Drawing.Size(84, 23);
+            this.MembersButton.TabIndex = 3;
+            this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MembersButton.UseSelectable = true;
+            // 
+            // ServerButton
+            // 
+            this.ServerButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ServerButton.Location = new System.Drawing.Point(0, 0);
+            this.ServerButton.Name = "ServerButton";
+            this.ServerButton.Size = new System.Drawing.Size(84, 23);
+            this.ServerButton.TabIndex = 2;
+            this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ServerButton.UseSelectable = true;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Controls.Add(this.metroButton4);
+            this.metroPanel2.Controls.Add(this.metroButton3);
+            this.metroPanel2.Controls.Add(this.metroButton2);
+            this.metroPanel2.Controls.Add(this.metroButton1);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(84, 208);
+            this.metroPanel2.TabIndex = 2;
+            this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton4.Location = new System.Drawing.Point(0, 69);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(84, 23);
+            this.metroButton4.TabIndex = 5;
+            this.metroButton4.Text = "Roles:";
+            this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton4.UseSelectable = true;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton3.Location = new System.Drawing.Point(0, 46);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(84, 23);
+            this.metroButton3.TabIndex = 4;
+            this.metroButton3.Text = "Owner:";
+            this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton3.UseSelectable = true;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton2.Location = new System.Drawing.Point(0, 23);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(84, 23);
+            this.metroButton2.TabIndex = 3;
+            this.metroButton2.Text = "Members:";
+            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton2.UseSelectable = true;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton1.Location = new System.Drawing.Point(0, 0);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(84, 23);
+            this.metroButton1.TabIndex = 2;
+            this.metroButton1.Text = "Server:";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.UseSelectable = true;
             // 
             // metroTabPage2
             // 
@@ -239,144 +387,75 @@ namespace DiscordBot
             this.logTextBox.TabIndex = 2;
             this.logTextBox.Text = "";
             // 
-            // metroPanel1
+            // metroTabPage4
             // 
-            this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.Controls.Add(this.metroPanel2);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(326, 208);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroTabPage4.Controls.Add(this.metroPanel5);
+            this.metroTabPage4.Controls.Add(this.metroPanel4);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Stats";
+            this.metroTabPage4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
-            // metroPanel2
+            // metroPanel4
             // 
-            this.metroPanel2.Controls.Add(this.metroButton4);
-            this.metroPanel2.Controls.Add(this.metroButton3);
-            this.metroPanel2.Controls.Add(this.metroButton2);
-            this.metroPanel2.Controls.Add(this.metroButton1);
-            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(84, 208);
-            this.metroPanel2.TabIndex = 2;
-            this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
+            this.metroPanel4.Controls.Add(this.metroButton5);
+            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(97, 208);
+            this.metroPanel4.TabIndex = 2;
+            this.metroPanel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
             // 
-            // metroPanel3
+            // metroPanel5
             // 
-            this.metroPanel3.Controls.Add(this.RolesButton);
-            this.metroPanel3.Controls.Add(this.OwnerButton);
-            this.metroPanel3.Controls.Add(this.MembersButton);
-            this.metroPanel3.Controls.Add(this.ServerButton);
-            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(84, 0);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(84, 208);
-            this.metroPanel3.TabIndex = 3;
-            this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
+            this.metroPanel5.Controls.Add(this.serverMessagesButton);
+            this.metroPanel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(97, 0);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(102, 208);
+            this.metroPanel5.TabIndex = 3;
+            this.metroPanel5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
             // 
-            // metroButton1
+            // metroButton5
             // 
-            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton1.Location = new System.Drawing.Point(0, 0);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(84, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Server:";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton1.UseSelectable = true;
+            this.metroButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton5.Location = new System.Drawing.Point(0, 0);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(97, 23);
+            this.metroButton5.TabIndex = 2;
+            this.metroButton5.Text = "Server Messages:";
+            this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton5.UseSelectable = true;
             // 
-            // metroButton2
+            // serverMessagesButton
             // 
-            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton2.Location = new System.Drawing.Point(0, 23);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(84, 23);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Members:";
-            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton2.UseSelectable = true;
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton3.Location = new System.Drawing.Point(0, 46);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(84, 23);
-            this.metroButton3.TabIndex = 4;
-            this.metroButton3.Text = "Owner:";
-            this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton4
-            // 
-            this.metroButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton4.Location = new System.Drawing.Point(0, 69);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(84, 23);
-            this.metroButton4.TabIndex = 5;
-            this.metroButton4.Text = "Roles:";
-            this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton4.UseSelectable = true;
-            // 
-            // ServerButton
-            // 
-            this.ServerButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ServerButton.Location = new System.Drawing.Point(0, 0);
-            this.ServerButton.Name = "ServerButton";
-            this.ServerButton.Size = new System.Drawing.Size(84, 23);
-            this.ServerButton.TabIndex = 2;
-            this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ServerButton.UseSelectable = true;
-            // 
-            // MembersButton
-            // 
-            this.MembersButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MembersButton.Location = new System.Drawing.Point(0, 23);
-            this.MembersButton.Name = "MembersButton";
-            this.MembersButton.Size = new System.Drawing.Size(84, 23);
-            this.MembersButton.TabIndex = 3;
-            this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MembersButton.UseSelectable = true;
-            // 
-            // OwnerButton
-            // 
-            this.OwnerButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OwnerButton.Location = new System.Drawing.Point(0, 46);
-            this.OwnerButton.Name = "OwnerButton";
-            this.OwnerButton.Size = new System.Drawing.Size(84, 23);
-            this.OwnerButton.TabIndex = 4;
-            this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.OwnerButton.UseSelectable = true;
-            // 
-            // RolesButton
-            // 
-            this.RolesButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RolesButton.Location = new System.Drawing.Point(0, 69);
-            this.RolesButton.Name = "RolesButton";
-            this.RolesButton.Size = new System.Drawing.Size(84, 23);
-            this.RolesButton.TabIndex = 5;
-            this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RolesButton.UseSelectable = true;
+            this.serverMessagesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.serverMessagesButton.Location = new System.Drawing.Point(0, 0);
+            this.serverMessagesButton.Name = "serverMessagesButton";
+            this.serverMessagesButton.Size = new System.Drawing.Size(102, 23);
+            this.serverMessagesButton.TabIndex = 2;
+            this.serverMessagesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.serverMessagesButton.UseSelectable = true;
             // 
             // Form1
             // 
@@ -392,12 +471,15 @@ namespace DiscordBot
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainTabs1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel3.ResumeLayout(false);
+            this.metroPanel2.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel3.ResumeLayout(false);
+            this.metroTabPage4.ResumeLayout(false);
+            this.metroPanel4.ResumeLayout(false);
+            this.metroPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -426,6 +508,11 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton OwnerButton;
         private MetroFramework.Controls.MetroButton MembersButton;
         private MetroFramework.Controls.MetroButton ServerButton;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
+        private MetroFramework.Controls.MetroButton serverMessagesButton;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }
 
