@@ -9,6 +9,7 @@ using Discord;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using DiscordBot.TasksClient;
 
 namespace DiscordBot
 {
@@ -56,9 +57,10 @@ namespace DiscordBot
 
         private async Task RegisterCommandAsync()
         {
+            Messages msg = new Messages();
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += ColorChange;
-            _client.MessageReceived += ColorChange;
+            _client.MessageReceived += msg.MsgCouter;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
@@ -96,7 +98,7 @@ namespace DiscordBot
 
         private Task _client_Log(LogMessage arg)
         {
-            LogText(arg.ToString());
+            LogText(arg.ToString().Replace(DateTime.Now.ToString() , " "));
             return Task.CompletedTask;
 
         }
