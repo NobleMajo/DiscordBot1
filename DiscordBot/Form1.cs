@@ -89,9 +89,16 @@ namespace DiscordBot
             return Task.CompletedTask;
 
         }
-        public void LogText(string change)
+        public void LogText(string text)
         {
-            logTextBox.Text = change + " " + Environment.NewLine;
+            if (logTextBox.InvokeRequired)
+            {
+               
+                Action safeWrite = delegate { LogText(text + " " + Environment.NewLine); };
+                logTextBox.Invoke(safeWrite);
+            }
+            else
+                logTextBox.Text += text;
         }
     }
 }
