@@ -69,9 +69,10 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 2;
+            this.MainTabs1.SelectedIndex = 0;
             this.MainTabs1.Size = new System.Drawing.Size(334, 250);
             this.MainTabs1.TabIndex = 0;
+            this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MainTabs1.UseSelectable = true;
             // 
             // metroTabPage1
@@ -105,6 +106,7 @@ namespace DiscordBot
             this.metroTabPage2.Size = new System.Drawing.Size(326, 208);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Settings";
+            this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabPage2.VerticalScrollbarBarColor = false;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 0;
@@ -117,6 +119,7 @@ namespace DiscordBot
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
             this.metroLabel1.TabIndex = 7;
             this.metroLabel1.Text = "Bot Status:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroTextBox1
             // 
@@ -144,6 +147,7 @@ namespace DiscordBot
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(63, 23);
             this.metroTextBox1.TabIndex = 6;
+            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -156,6 +160,7 @@ namespace DiscordBot
             this.prefixLabel.Size = new System.Drawing.Size(45, 19);
             this.prefixLabel.TabIndex = 5;
             this.prefixLabel.Text = "Prefix:";
+            this.prefixLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // ConnectBotToken
             // 
@@ -164,6 +169,7 @@ namespace DiscordBot
             this.ConnectBotToken.Size = new System.Drawing.Size(334, 23);
             this.ConnectBotToken.TabIndex = 4;
             this.ConnectBotToken.Text = "CONNECT";
+            this.ConnectBotToken.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ConnectBotToken.UseSelectable = true;
             this.ConnectBotToken.Click += new System.EventHandler(this.ConnectBotToken_Click);
             // 
@@ -175,6 +181,7 @@ namespace DiscordBot
             this.tokenLabel.Size = new System.Drawing.Size(45, 19);
             this.tokenLabel.TabIndex = 3;
             this.tokenLabel.Text = "Token:";
+            this.tokenLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // TokenTextBox
             // 
@@ -202,6 +209,7 @@ namespace DiscordBot
             this.TokenTextBox.ShortcutsEnabled = true;
             this.TokenTextBox.Size = new System.Drawing.Size(230, 23);
             this.TokenTextBox.TabIndex = 2;
+            this.TokenTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TokenTextBox.UseSelectable = true;
             this.TokenTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TokenTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -242,6 +250,7 @@ namespace DiscordBot
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(326, 208);
             this.metroPanel1.TabIndex = 2;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
@@ -260,6 +269,7 @@ namespace DiscordBot
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(84, 208);
             this.metroPanel2.TabIndex = 2;
+            this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
@@ -278,6 +288,7 @@ namespace DiscordBot
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(84, 208);
             this.metroPanel3.TabIndex = 3;
+            this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
@@ -290,6 +301,7 @@ namespace DiscordBot
             this.metroButton1.Size = new System.Drawing.Size(84, 23);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Server:";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton1.UseSelectable = true;
             // 
             // metroButton2
@@ -300,6 +312,7 @@ namespace DiscordBot
             this.metroButton2.Size = new System.Drawing.Size(84, 23);
             this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "Members:";
+            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton2.UseSelectable = true;
             // 
             // metroButton3
@@ -310,6 +323,7 @@ namespace DiscordBot
             this.metroButton3.Size = new System.Drawing.Size(84, 23);
             this.metroButton3.TabIndex = 4;
             this.metroButton3.Text = "Owner:";
+            this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton3.UseSelectable = true;
             // 
             // metroButton4
@@ -320,6 +334,7 @@ namespace DiscordBot
             this.metroButton4.Size = new System.Drawing.Size(84, 23);
             this.metroButton4.TabIndex = 5;
             this.metroButton4.Text = "Roles:";
+            this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton4.UseSelectable = true;
             // 
             // ServerButton
@@ -329,6 +344,7 @@ namespace DiscordBot
             this.ServerButton.Name = "ServerButton";
             this.ServerButton.Size = new System.Drawing.Size(84, 23);
             this.ServerButton.TabIndex = 2;
+            this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ServerButton.UseSelectable = true;
             // 
             // MembersButton
@@ -338,6 +354,7 @@ namespace DiscordBot
             this.MembersButton.Name = "MembersButton";
             this.MembersButton.Size = new System.Drawing.Size(84, 23);
             this.MembersButton.TabIndex = 3;
+            this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MembersButton.UseSelectable = true;
             // 
             // OwnerButton
@@ -347,6 +364,7 @@ namespace DiscordBot
             this.OwnerButton.Name = "OwnerButton";
             this.OwnerButton.Size = new System.Drawing.Size(84, 23);
             this.OwnerButton.TabIndex = 4;
+            this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OwnerButton.UseSelectable = true;
             // 
             // RolesButton
@@ -356,6 +374,7 @@ namespace DiscordBot
             this.RolesButton.Name = "RolesButton";
             this.RolesButton.Size = new System.Drawing.Size(84, 23);
             this.RolesButton.TabIndex = 5;
+            this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RolesButton.UseSelectable = true;
             // 
             // Form1
@@ -366,8 +385,9 @@ namespace DiscordBot
             this.Controls.Add(this.MainTabs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Style = MetroFramework.MetroColorStyle.Purple;
+            this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "DiscordBot";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainTabs1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);

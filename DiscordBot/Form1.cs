@@ -63,7 +63,8 @@ namespace DiscordBot
                 var context = new SocketCommandContext(_client, message);
                 if (message.Author.IsBot) return;
                 int argpos = 0;
-                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos)) ;
+                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos));
+
             }
             catch
             {
