@@ -10,7 +10,7 @@ namespace DiscordBot.TasksClient
 {
     public class Messages : ModuleBase<SocketCommandContext>
     {
-        Form1 btns;
+        static Form1 btns;
         private int MsgCount { get; set; }
         public async Task MsgCouter(SocketMessage msg)
         {
