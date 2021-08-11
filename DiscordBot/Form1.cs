@@ -8,6 +8,7 @@ using Discord.WebSocket;
 using Discord;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace DiscordBot
 {
@@ -53,6 +54,7 @@ namespace DiscordBot
         private async Task RegisterCommandAsync()
         {
             _client.MessageReceived += HandleCommandAsync;
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
         private async Task HandleCommandAsync(SocketMessage arg)
@@ -63,7 +65,11 @@ namespace DiscordBot
                 var context = new SocketCommandContext(_client, message);
                 if (message.Author.IsBot) return;
                 int argpos = 0;
-                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos)) ;
+                if (message.HasStringPrefix(TokenTextBox.Text, ref argpos))
+                {
+                    var result = await _commands.ExecuteAsync(context, argpos, _services);
+                    if(!result.IsSuccess) 
+                }
             }
             catch
             {
@@ -72,9 +78,13 @@ namespace DiscordBot
 
         private Task _client_Log(LogMessage arg)
         {
-            logTextBox.Text = arg + " " + Environment.NewLine;
+            LogText(arg.ToString());
             return Task.CompletedTask;
 
+        }
+        public void LogText(string change)
+        {
+            logTextBox.Text = change + " " + Environment.NewLine;
         }
     }
 }
