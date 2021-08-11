@@ -14,10 +14,10 @@ namespace DiscordBot.TasksClient
         public static int MsgCount { get; set; } = 0;
         public Task MsgCouter(SocketMessage msg)
         {
-            btns = new Form1();
+            //btns = new Form1();
             if(!msg.Author.IsBot)
             MsgCount++;
-            btns.serverMessagesButton.Text = MsgCount.ToString();
+           // btns.serverMessagesButton.Text = MsgCount.ToString();
             return Task.CompletedTask;
         }
 
