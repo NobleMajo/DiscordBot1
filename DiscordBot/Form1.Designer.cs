@@ -52,7 +52,7 @@ namespace DiscordBot
             this.GuildsComboBox = new System.Windows.Forms.ComboBox();
             this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.StatusLabel = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.prefixLabel = new MetroFramework.Controls.MetroLabel();
             this.ConnectBotToken = new MetroFramework.Controls.MetroButton();
@@ -314,7 +314,7 @@ namespace DiscordBot
             this.metroTabPage2.Controls.Add(this.GuildsComboBox);
             this.metroTabPage2.Controls.Add(this.ServerIdTextBox);
             this.metroTabPage2.Controls.Add(this.label1);
-            this.metroTabPage2.Controls.Add(this.metroLabel1);
+            this.metroTabPage2.Controls.Add(this.StatusLabel);
             this.metroTabPage2.Controls.Add(this.metroTextBox1);
             this.metroTabPage2.Controls.Add(this.prefixLabel);
             this.metroTabPage2.Controls.Add(this.ConnectBotToken);
@@ -383,15 +383,15 @@ namespace DiscordBot
             this.label1.Text = "ServerID:";
             this.label1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel1
+            // StatusLabel
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(12, 239);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel1.TabIndex = 7;
-            this.metroLabel1.Text = "Bot Status:";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(12, 239);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(70, 19);
+            this.StatusLabel.TabIndex = 7;
+            this.StatusLabel.Text = "Bot Status:";
+            this.StatusLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroTextBox1
             // 
@@ -743,7 +743,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton ConnectBotToken;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel prefixLabel;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        public MetroFramework.Controls.MetroLabel StatusLabel;
         private System.Windows.Forms.RichTextBox logTextBox;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel3;

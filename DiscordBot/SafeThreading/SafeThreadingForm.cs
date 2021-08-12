@@ -97,5 +97,17 @@ namespace DiscordBot.SafeThreading
                 myForm.GuildsComboBox.Items.Add(item);
             }
         }
+        public void StatusLAbel(string text)
+        {
+            if (myForm.StatusLabel.InvokeRequired)
+            {
+                Action safeWrite = delegate { StatusLAbel(text); };
+                myForm.StatusLabel.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.StatusLabel.Text = text;
+            }
+        }
     }
 }

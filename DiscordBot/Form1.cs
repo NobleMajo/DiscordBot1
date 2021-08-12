@@ -27,6 +27,8 @@ namespace DiscordBot
         public Form1()
         {
             InitializeComponent();
+            StatusLabel.Text = "Status: Offline";
+            StatusLabel.BackColor = Color.Red;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -67,13 +69,29 @@ namespace DiscordBot
         private async Task RegisterCommandAsync()
         {
             _client.Ready += LoadGuilds;
+            _client.Ready += ReadyStatus;
+            _client.Disconnected += OffStatus;
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
-            _client.MessageReceived += SetInfo;
             _client.MessageReceived += MessLog;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
+
+        private async Task OffStatus(Exception arg)
+        {
+            safe = new SafeThreadingForm();
+            safe.StatusLAbel("Status: Offline");
+            await Task.Delay(1);
+        }
+
+        private async Task ReadyStatus()
+        {
+            safe = new SafeThreadingForm();
+            safe.StatusLAbel("Status: Online");
+            await Task.Delay(1);
+        }
+
         SafeThreading.SafeThreadingForm safe;
         private async Task MessLog(SocketMessage arg)
         {
@@ -151,11 +169,7 @@ namespace DiscordBot
                 serverMessagesButton.Text = text;
         }
         Messages mess;
-        public async Task SetInfo(SocketMessage msg)
-        {
-            mess = new Messages();
-            await Task.Run(async() => await mess.info());
-        }
+  
         Dictionary<string , ulong> Channel;
         Dictionary<string, ulong> Server;
         private async Task LoadGuilds()
