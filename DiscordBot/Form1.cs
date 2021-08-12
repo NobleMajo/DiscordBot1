@@ -238,17 +238,25 @@ namespace DiscordBot
         }
         public void loadInfo()
         {
-            safe = new SafeThreadingForm();
-            var myKey = Server.FirstOrDefault(x => x.Key == GuildsComboBox.Text).Value;
-            ServerIdTextBox.Text = myKey.ToString();
-            safe.ServerNameText(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
-            safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
-            string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
-            Created = Created.Substring(0, Created.LastIndexOf("+"));
-            safe.CreatedAt(Created);
-            safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
-            safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
-            safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
+            try
+            {
+                safe = new SafeThreadingForm();
+                var myKey = Server.FirstOrDefault(x => x.Key == GuildsComboBox.Text).Value;
+                ServerIdTextBox.Text = myKey.ToString();
+                safe.ServerNameText(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
+                safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
+                string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
+                Created = Created.Substring(0, Created.LastIndexOf("+"));
+                safe.CreatedAt(Created);
+                safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
+                safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
+                safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
+
+
+            } catch
+            {
+                
+            }
         }
     }
 }
