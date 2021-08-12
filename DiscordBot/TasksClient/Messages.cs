@@ -27,7 +27,9 @@ namespace DiscordBot.TasksClient
             TotalMembers = Context.Guild.MemberCount.ToString();
             RolesNum = Context.Guild.Roles.Count.ToString();
             TotalChannels = Context.Guild.Channels.Count.ToString();
-            CreatedAt = Context.Guild.CreatedAt.ToString();
+            string Created = Context.Guild.CreatedAt.ToString();
+            Created = Created.Substring(0, Created.LastIndexOf("+"));
+            CreatedAt = Created;
             await ReplyAsync("done");
         }
         static SafeThreading.SafeThreadingForm safe;

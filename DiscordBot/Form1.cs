@@ -61,7 +61,7 @@ namespace DiscordBot
         {
             
             _client.MessageReceived += HandleCommandAsync;
-            //_client.MessageReceived += AllChangesChange;
+            _client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += SetInfo;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
@@ -79,7 +79,7 @@ namespace DiscordBot
             var m = new Random();
             int next = m.Next(0, 13);
             Style = (MetroColorStyle)next;
-            await Task.Delay(-1);
+            
             
         }
 
