@@ -151,7 +151,7 @@ namespace DiscordBot
             await Task.Run(async() => await mess.info());
         }
         Dictionary<string , ulong> Channel;
-
+        Dictionary<string, ulong> Server;
 
         private void ChannelsTExtBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -175,7 +175,11 @@ namespace DiscordBot
         private void LoadBtn_Click_1(object sender, EventArgs e)
         {
             Channel = new Dictionary<string, ulong>();
-
+            Server = new Dictionary<string, ulong>();
+            foreach(var server in _client.Guilds)
+            {
+                //server.Id;
+            }
 
 
             foreach (var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
