@@ -49,6 +49,9 @@ namespace DiscordBot
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.GuildsComboBox = new System.Windows.Forms.ComboBox();
+            this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.prefixLabel = new MetroFramework.Controls.MetroLabel();
@@ -63,6 +66,8 @@ namespace DiscordBot
             this.panel4 = new System.Windows.Forms.Panel();
             this.SendBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChannelsTExtBox = new MetroFramework.Controls.MetroComboBox();
+            this.LoadBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.logTextBox = new System.Windows.Forms.RichTextBox();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
@@ -70,10 +75,6 @@ namespace DiscordBot
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.LoadBtn = new MetroFramework.Controls.MetroButton();
-            this.ChannelsTExtBox = new MetroFramework.Controls.MetroComboBox();
-            this.label1 = new MetroFramework.Controls.MetroLabel();
-            this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -101,7 +102,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 2;
+            this.MainTabs1.SelectedIndex = 1;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -310,6 +311,7 @@ namespace DiscordBot
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.GuildsComboBox);
             this.metroTabPage2.Controls.Add(this.ServerIdTextBox);
             this.metroTabPage2.Controls.Add(this.label1);
             this.metroTabPage2.Controls.Add(this.metroLabel1);
@@ -330,6 +332,56 @@ namespace DiscordBot
             this.metroTabPage2.VerticalScrollbarBarColor = false;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 0;
+            // 
+            // GuildsComboBox
+            // 
+            this.GuildsComboBox.FormattingEnabled = true;
+            this.GuildsComboBox.Location = new System.Drawing.Point(802, 46);
+            this.GuildsComboBox.Name = "GuildsComboBox";
+            this.GuildsComboBox.Size = new System.Drawing.Size(129, 21);
+            this.GuildsComboBox.TabIndex = 11;
+            this.GuildsComboBox.SelectedIndexChanged += new System.EventHandler(this.GuildsComboBox_SelectedIndexChanged);
+            // 
+            // ServerIdTextBox
+            // 
+            // 
+            // 
+            // 
+            this.ServerIdTextBox.CustomButton.Image = null;
+            this.ServerIdTextBox.CustomButton.Location = new System.Drawing.Point(107, 1);
+            this.ServerIdTextBox.CustomButton.Name = "";
+            this.ServerIdTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ServerIdTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ServerIdTextBox.CustomButton.TabIndex = 1;
+            this.ServerIdTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ServerIdTextBox.CustomButton.UseSelectable = true;
+            this.ServerIdTextBox.CustomButton.Visible = false;
+            this.ServerIdTextBox.Lines = new string[0];
+            this.ServerIdTextBox.Location = new System.Drawing.Point(802, 17);
+            this.ServerIdTextBox.MaxLength = 32767;
+            this.ServerIdTextBox.Name = "ServerIdTextBox";
+            this.ServerIdTextBox.PasswordChar = '\0';
+            this.ServerIdTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ServerIdTextBox.SelectedText = "";
+            this.ServerIdTextBox.SelectionLength = 0;
+            this.ServerIdTextBox.SelectionStart = 0;
+            this.ServerIdTextBox.ShortcutsEnabled = true;
+            this.ServerIdTextBox.Size = new System.Drawing.Size(129, 23);
+            this.ServerIdTextBox.TabIndex = 10;
+            this.ServerIdTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ServerIdTextBox.UseSelectable = true;
+            this.ServerIdTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ServerIdTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(734, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ServerID:";
+            this.label1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel1
             // 
@@ -528,6 +580,28 @@ namespace DiscordBot
             this.panel1.Size = new System.Drawing.Size(1063, 50);
             this.panel1.TabIndex = 2;
             // 
+            // ChannelsTExtBox
+            // 
+            this.ChannelsTExtBox.FormattingEnabled = true;
+            this.ChannelsTExtBox.ItemHeight = 23;
+            this.ChannelsTExtBox.Location = new System.Drawing.Point(21, 9);
+            this.ChannelsTExtBox.Name = "ChannelsTExtBox";
+            this.ChannelsTExtBox.Size = new System.Drawing.Size(178, 29);
+            this.ChannelsTExtBox.TabIndex = 2;
+            this.ChannelsTExtBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ChannelsTExtBox.UseSelectable = true;
+            // 
+            // LoadBtn
+            // 
+            this.LoadBtn.Location = new System.Drawing.Point(205, 9);
+            this.LoadBtn.Name = "LoadBtn";
+            this.LoadBtn.Size = new System.Drawing.Size(75, 29);
+            this.LoadBtn.TabIndex = 1;
+            this.LoadBtn.Text = "Load";
+            this.LoadBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.LoadBtn.UseSelectable = true;
+            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click_1);
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.Controls.Add(this.logTextBox);
@@ -622,69 +696,6 @@ namespace DiscordBot
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
             // 
-            // LoadBtn
-            // 
-            this.LoadBtn.Location = new System.Drawing.Point(205, 9);
-            this.LoadBtn.Name = "LoadBtn";
-            this.LoadBtn.Size = new System.Drawing.Size(75, 29);
-            this.LoadBtn.TabIndex = 1;
-            this.LoadBtn.Text = "Load";
-            this.LoadBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.LoadBtn.UseSelectable = true;
-            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click_1);
-            // 
-            // ChannelsTExtBox
-            // 
-            this.ChannelsTExtBox.FormattingEnabled = true;
-            this.ChannelsTExtBox.ItemHeight = 23;
-            this.ChannelsTExtBox.Location = new System.Drawing.Point(21, 9);
-            this.ChannelsTExtBox.Name = "ChannelsTExtBox";
-            this.ChannelsTExtBox.Size = new System.Drawing.Size(178, 29);
-            this.ChannelsTExtBox.TabIndex = 2;
-            this.ChannelsTExtBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ChannelsTExtBox.UseSelectable = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(734, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 19);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ServerID:";
-            this.label1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // ServerIdTextBox
-            // 
-            // 
-            // 
-            // 
-            this.ServerIdTextBox.CustomButton.Image = null;
-            this.ServerIdTextBox.CustomButton.Location = new System.Drawing.Point(107, 1);
-            this.ServerIdTextBox.CustomButton.Name = "";
-            this.ServerIdTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.ServerIdTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ServerIdTextBox.CustomButton.TabIndex = 1;
-            this.ServerIdTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ServerIdTextBox.CustomButton.UseSelectable = true;
-            this.ServerIdTextBox.CustomButton.Visible = false;
-            this.ServerIdTextBox.Lines = new string[0];
-            this.ServerIdTextBox.Location = new System.Drawing.Point(802, 17);
-            this.ServerIdTextBox.MaxLength = 32767;
-            this.ServerIdTextBox.Name = "ServerIdTextBox";
-            this.ServerIdTextBox.PasswordChar = '\0';
-            this.ServerIdTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ServerIdTextBox.SelectedText = "";
-            this.ServerIdTextBox.SelectionLength = 0;
-            this.ServerIdTextBox.SelectionStart = 0;
-            this.ServerIdTextBox.ShortcutsEnabled = true;
-            this.ServerIdTextBox.Size = new System.Drawing.Size(129, 23);
-            this.ServerIdTextBox.TabIndex = 10;
-            this.ServerIdTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.ServerIdTextBox.UseSelectable = true;
-            this.ServerIdTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ServerIdTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +777,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroComboBox ChannelsTExtBox;
         private MetroFramework.Controls.MetroTextBox ServerIdTextBox;
         private MetroFramework.Controls.MetroLabel label1;
+        public System.Windows.Forms.ComboBox GuildsComboBox;
     }
 }
 

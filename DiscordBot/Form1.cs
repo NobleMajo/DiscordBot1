@@ -13,6 +13,7 @@ using DiscordBot.TasksClient;
 using DiscordBot.SafeThreading;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 namespace DiscordBot
 {
@@ -36,7 +37,10 @@ namespace DiscordBot
         private async void ConnectBotToken_Click(object sender, EventArgs e)
         {
             await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
+            
+            
         }
+        
       
         public async Task RunBotAsync()
         {
@@ -51,16 +55,18 @@ namespace DiscordBot
 
 
                 _client.Log += _client_Log;
+                
                 await RegisterCommandAsync();
                 await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
                 await _client.StartAsync();
+               
                 await Task.Delay(-1);
             });
         }
 
         private async Task RegisterCommandAsync()
         {
-            
+            _client.Ready += LoadGuilds;
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
@@ -152,7 +158,19 @@ namespace DiscordBot
         }
         Dictionary<string , ulong> Channel;
         Dictionary<string, ulong> Server;
+        private async Task LoadGuilds()
+        {
+            safe = new SafeThreadingForm();
+            Server = new Dictionary<string, ulong>();
+            foreach (var server in _client.Guilds)
+            {
+                safe.ComboBoxServers(server.Name);
+                Server.Add(server.Name, server.Id);
+                Console.WriteLine(server.Name);
+            }
+            await Task.Delay(1);
 
+        }
         private void ChannelsTExtBox_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -175,11 +193,7 @@ namespace DiscordBot
         private void LoadBtn_Click_1(object sender, EventArgs e)
         {
             Channel = new Dictionary<string, ulong>();
-            Server = new Dictionary<string, ulong>();
-            foreach(var server in _client.Guilds)
-            {
-                //server.Id;
-            }
+            ChannelsTExtBox.Items.Clear();
 
 
             foreach (var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
@@ -194,6 +208,33 @@ namespace DiscordBot
                     ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
                 }
             }
+        }
+
+        private void GuildsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                loadInfo();
+            }
+            catch
+            {
+
+            }
+        }
+        public void loadInfo()
+        {
+            safe = new SafeThreadingForm();
+            var myKey = Server.FirstOrDefault(x => x.Key == GuildsComboBox.Text).Value;
+            ServerIdTextBox.Text = myKey.ToString();
+            safe.ServerNameText(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
+            safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
+            string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
+            Created = Created.Substring(0, Created.LastIndexOf("+"));
+            safe.CreatedAt(Created);
+            safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
+            safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
+            safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
         }
     }
 }

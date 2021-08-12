@@ -85,5 +85,17 @@ namespace DiscordBot.SafeThreading
                 myForm.MessagesRichBo.Text += log;
             }
         }
+        public void ComboBoxServers(string item)
+        {
+            if(myForm.GuildsComboBox.InvokeRequired)
+            {
+                Action safeWrite = delegate { ComboBoxServers(item); };
+                myForm.GuildsComboBox.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.GuildsComboBox.Items.Add(item);
+            }
+        }
     }
 }
