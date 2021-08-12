@@ -53,7 +53,7 @@ namespace DiscordBot
             this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new MetroFramework.Controls.MetroLabel();
             this.StatusLabel = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.PrefixTextBox = new MetroFramework.Controls.MetroTextBox();
             this.prefixLabel = new MetroFramework.Controls.MetroLabel();
             this.ConnectBotToken = new MetroFramework.Controls.MetroButton();
             this.tokenLabel = new MetroFramework.Controls.MetroLabel();
@@ -101,7 +101,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 2;
+            this.MainTabs1.SelectedIndex = 1;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -314,7 +314,7 @@ namespace DiscordBot
             this.metroTabPage2.Controls.Add(this.ServerIdTextBox);
             this.metroTabPage2.Controls.Add(this.label1);
             this.metroTabPage2.Controls.Add(this.StatusLabel);
-            this.metroTabPage2.Controls.Add(this.metroTextBox1);
+            this.metroTabPage2.Controls.Add(this.PrefixTextBox);
             this.metroTabPage2.Controls.Add(this.prefixLabel);
             this.metroTabPage2.Controls.Add(this.ConnectBotToken);
             this.metroTabPage2.Controls.Add(this.tokenLabel);
@@ -392,36 +392,36 @@ namespace DiscordBot
             this.StatusLabel.Text = "Bot Status:";
             this.StatusLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroTextBox1
+            // PrefixTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(41, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(59, 66);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(63, 23);
-            this.metroTextBox1.TabIndex = 6;
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PrefixTextBox.CustomButton.Image = null;
+            this.PrefixTextBox.CustomButton.Location = new System.Drawing.Point(41, 1);
+            this.PrefixTextBox.CustomButton.Name = "";
+            this.PrefixTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrefixTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PrefixTextBox.CustomButton.TabIndex = 1;
+            this.PrefixTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PrefixTextBox.CustomButton.UseSelectable = true;
+            this.PrefixTextBox.CustomButton.Visible = false;
+            this.PrefixTextBox.Lines = new string[0];
+            this.PrefixTextBox.Location = new System.Drawing.Point(59, 66);
+            this.PrefixTextBox.MaxLength = 32767;
+            this.PrefixTextBox.Name = "PrefixTextBox";
+            this.PrefixTextBox.PasswordChar = '\0';
+            this.PrefixTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PrefixTextBox.SelectedText = "";
+            this.PrefixTextBox.SelectionLength = 0;
+            this.PrefixTextBox.SelectionStart = 0;
+            this.PrefixTextBox.ShortcutsEnabled = true;
+            this.PrefixTextBox.Size = new System.Drawing.Size(63, 23);
+            this.PrefixTextBox.TabIndex = 6;
+            this.PrefixTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.PrefixTextBox.UseSelectable = true;
+            this.PrefixTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PrefixTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // prefixLabel
             // 
@@ -728,7 +728,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroTextBox TokenTextBox;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         public MetroFramework.Controls.MetroButton ConnectBotToken;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox PrefixTextBox;
         private MetroFramework.Controls.MetroLabel prefixLabel;
         public MetroFramework.Controls.MetroLabel StatusLabel;
         private System.Windows.Forms.RichTextBox logTextBox;
