@@ -84,7 +84,7 @@ namespace DiscordBot
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
             this.MainTabs1.SelectedIndex = 0;
-            this.MainTabs1.Size = new System.Drawing.Size(334, 250);
+            this.MainTabs1.Size = new System.Drawing.Size(407, 315);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MainTabs1.UseSelectable = true;
@@ -97,7 +97,7 @@ namespace DiscordBot
             this.metroTabPage1.HorizontalScrollbarSize = 0;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage1.Size = new System.Drawing.Size(399, 273);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "General";
             this.metroTabPage1.VerticalScrollbarBarColor = false;
@@ -114,7 +114,7 @@ namespace DiscordBot
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(326, 208);
+            this.metroPanel1.Size = new System.Drawing.Size(399, 273);
             this.metroPanel1.TabIndex = 2;
             this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.VerticalScrollbarBarColor = true;
@@ -135,7 +135,7 @@ namespace DiscordBot
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(136, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(134, 208);
+            this.metroPanel3.Size = new System.Drawing.Size(182, 273);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel3.VerticalScrollbarBarColor = true;
@@ -147,7 +147,7 @@ namespace DiscordBot
             this.RolesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.RolesButton.Location = new System.Drawing.Point(0, 69);
             this.RolesButton.Name = "RolesButton";
-            this.RolesButton.Size = new System.Drawing.Size(134, 23);
+            this.RolesButton.Size = new System.Drawing.Size(182, 23);
             this.RolesButton.TabIndex = 5;
             this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RolesButton.UseSelectable = true;
@@ -157,7 +157,7 @@ namespace DiscordBot
             this.OwnerButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.OwnerButton.Location = new System.Drawing.Point(0, 46);
             this.OwnerButton.Name = "OwnerButton";
-            this.OwnerButton.Size = new System.Drawing.Size(134, 23);
+            this.OwnerButton.Size = new System.Drawing.Size(182, 23);
             this.OwnerButton.TabIndex = 4;
             this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OwnerButton.UseSelectable = true;
@@ -167,7 +167,7 @@ namespace DiscordBot
             this.MembersButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MembersButton.Location = new System.Drawing.Point(0, 23);
             this.MembersButton.Name = "MembersButton";
-            this.MembersButton.Size = new System.Drawing.Size(134, 23);
+            this.MembersButton.Size = new System.Drawing.Size(182, 23);
             this.MembersButton.TabIndex = 3;
             this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MembersButton.UseSelectable = true;
@@ -178,7 +178,7 @@ namespace DiscordBot
             this.ServerButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ServerButton.Location = new System.Drawing.Point(0, 0);
             this.ServerButton.Name = "ServerButton";
-            this.ServerButton.Size = new System.Drawing.Size(134, 23);
+            this.ServerButton.Size = new System.Drawing.Size(182, 23);
             this.ServerButton.TabIndex = 2;
             this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ServerButton.UseSelectable = true;
@@ -197,7 +197,7 @@ namespace DiscordBot
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(136, 208);
+            this.metroPanel2.Size = new System.Drawing.Size(136, 273);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel2.VerticalScrollbarBarColor = true;
@@ -261,7 +261,7 @@ namespace DiscordBot
             this.metroTabPage2.HorizontalScrollbarSize = 0;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage2.Size = new System.Drawing.Size(399, 273);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Settings";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -272,7 +272,7 @@ namespace DiscordBot
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(1, 185);
+            this.metroLabel1.Location = new System.Drawing.Point(12, 239);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
             this.metroLabel1.TabIndex = 7;
@@ -324,7 +324,7 @@ namespace DiscordBot
             // 
             this.ConnectBotToken.Location = new System.Drawing.Point(-4, 108);
             this.ConnectBotToken.Name = "ConnectBotToken";
-            this.ConnectBotToken.Size = new System.Drawing.Size(334, 23);
+            this.ConnectBotToken.Size = new System.Drawing.Size(403, 23);
             this.ConnectBotToken.TabIndex = 4;
             this.ConnectBotToken.Text = "CONNECT";
             this.ConnectBotToken.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -482,7 +482,7 @@ namespace DiscordBot
             this.TotalChannelsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.TotalChannelsButton.Location = new System.Drawing.Point(0, 92);
             this.TotalChannelsButton.Name = "TotalChannelsButton";
-            this.TotalChannelsButton.Size = new System.Drawing.Size(134, 23);
+            this.TotalChannelsButton.Size = new System.Drawing.Size(182, 23);
             this.TotalChannelsButton.TabIndex = 6;
             this.TotalChannelsButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TotalChannelsButton.UseSelectable = true;
@@ -503,7 +503,7 @@ namespace DiscordBot
             this.CreatedAtButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.CreatedAtButton.Location = new System.Drawing.Point(0, 115);
             this.CreatedAtButton.Name = "CreatedAtButton";
-            this.CreatedAtButton.Size = new System.Drawing.Size(134, 23);
+            this.CreatedAtButton.Size = new System.Drawing.Size(182, 23);
             this.CreatedAtButton.TabIndex = 7;
             this.CreatedAtButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.CreatedAtButton.UseSelectable = true;
@@ -512,7 +512,7 @@ namespace DiscordBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 330);
+            this.ClientSize = new System.Drawing.Size(447, 395);
             this.Controls.Add(this.MainTabs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
