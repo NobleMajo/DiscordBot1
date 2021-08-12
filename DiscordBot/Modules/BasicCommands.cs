@@ -68,11 +68,11 @@ namespace DiscordBot.Modules
 
         }
         [Command("kick")]
-        public async Task Kick(SocketGuildUser userAccount, string reason)
+        public async Task Kick(IGuildUser userAccount, string reason = null)
         {
             var user = Context.User as SocketGuildUser;
-            var role = (user as IGuildUser).Guild.Roles.FirstOrDefault(x => x.Name == "Admin");
-            if (!userAccount.Roles.Contains(role))
+
+            if (!userAccount.GuildPermissions.Administrator)
             {
                 if (user.GuildPermissions.KickMembers)
                 {
@@ -86,7 +86,7 @@ namespace DiscordBot.Modules
             }
             else
             {
-                await Context.Channel.SendMessageAsync("This User can't be kicked, because the user has a admin role.");
+                await ReplyAsync("You can't kick Admin");
             }
         }
 

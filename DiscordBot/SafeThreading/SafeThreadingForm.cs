@@ -109,5 +109,41 @@ namespace DiscordBot.SafeThreading
                 myForm.StatusLabel.Text = text;
             }
         }
+        public void ConnectBtn(string text)
+        {
+            if(myForm.ConnectBotToken.InvokeRequired)
+            {
+                Action safeWrite = delegate { ConnectBtn(text); };
+                myForm.ConnectBotToken.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.ConnectBotToken.Text = text;
+            }
+        }
+        public void ClearBoxGuildsBox()
+        {
+            if(myForm.GuildsComboBox.InvokeRequired)
+            {
+                Action safeWrite = delegate { ClearBoxGuildsBox(); };
+                myForm.GuildsComboBox.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.GuildsComboBox.Items.Clear();
+            }
+        }
+        public void DisableBtnConnect()
+        {
+            if (myForm.ConnectBotToken.InvokeRequired)
+            {
+                Action safeWrite = delegate { DisableBtnConnect(); };
+                myForm.ConnectBotToken.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.ConnectBotToken.Enabled = false;
+            }
+        }
     }
 }

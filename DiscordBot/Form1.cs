@@ -38,7 +38,7 @@ namespace DiscordBot
 
         private async void ConnectBotToken_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
+                await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
         }
         
       
@@ -84,6 +84,7 @@ namespace DiscordBot
         private async Task ReadyStatus()
         {
             safe = new SafeThreadingForm();
+            safe.ConnectBtn("DISCONNECT");
             safe.StatusLAbel("Status: Online");
             await Task.Delay(1);
         }
@@ -165,14 +166,16 @@ namespace DiscordBot
         Dictionary<string, ulong> Server;
         private async Task LoadGuilds()
         {
+            
             safe = new SafeThreadingForm();
+            safe.ClearBoxGuildsBox();
             Server = new Dictionary<string, ulong>();
             foreach (var server in _client.Guilds)
             {
                 safe.ComboBoxServers(server.Name);
                 Server.Add(server.Name, server.Id);
-                Console.WriteLine(server.Name);
             }
+            safe.DisableBtnConnect();
             await Task.Delay(1);
         }
         private void SendBtn_Click(object sender, EventArgs e)

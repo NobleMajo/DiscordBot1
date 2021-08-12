@@ -727,7 +727,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroLabel tokenLabel;
         private MetroFramework.Controls.MetroTextBox TokenTextBox;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
-        private MetroFramework.Controls.MetroButton ConnectBotToken;
+        public MetroFramework.Controls.MetroButton ConnectBotToken;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel prefixLabel;
         public MetroFramework.Controls.MetroLabel StatusLabel;
