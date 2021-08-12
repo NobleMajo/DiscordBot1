@@ -151,24 +151,7 @@ namespace DiscordBot
             await Task.Run(async() => await mess.info());
         }
         Dictionary<string , ulong> Channel;
-        private void LoadBtn_Click(object sender, EventArgs e)
-        {
-           Channel = new Dictionary<string, ulong>();
 
-
-           
-           foreach(var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
-           {
-                try
-                {
-                    Channel.Add(channel.ToString(), channel.Id);
-                    ChannelsTExtBox.Items.Add(channel.ToString());
-                }catch (Exception ex)
-                {
-                    ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
-                }
-           }
-        }
 
         private void ChannelsTExtBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -186,6 +169,26 @@ namespace DiscordBot
             }catch
             {
 
+            }
+        }
+
+        private void LoadBtn_Click_1(object sender, EventArgs e)
+        {
+            Channel = new Dictionary<string, ulong>();
+
+
+
+            foreach (var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
+            {
+                try
+                {
+                    Channel.Add(channel.ToString(), channel.Id);
+                    ChannelsTExtBox.Items.Add(channel.ToString());
+                }
+                catch (Exception ex)
+                {
+                    ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
+                }
             }
         }
     }
