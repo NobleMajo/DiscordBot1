@@ -39,8 +39,6 @@ namespace DiscordBot
         private async void ConnectBotToken_Click(object sender, EventArgs e)
         {
             await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
-            
-            
         }
         
       
@@ -55,13 +53,11 @@ namespace DiscordBot
                     .AddSingleton(_commands)
                     .BuildServiceProvider();
 
-
                 _client.Log += _client_Log;
                 
                 await RegisterCommandAsync();
                 await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
                 await _client.StartAsync();
-               
                 await Task.Delay(-1);
             });
         }
@@ -98,7 +94,6 @@ namespace DiscordBot
             safe = new SafeThreading.SafeThreadingForm();
             safe.MessageLog(arg.Channel.Name + " >> " + arg.Author.Username +  " : " + arg.Content + Environment.NewLine);
             await Task.Delay(1);
-            
         }
 
         private int msgCount = 0;
@@ -106,8 +101,7 @@ namespace DiscordBot
         {
             msgCount++;
             safeChange(msgCount.ToString());
-            //if (arg.Author.IsBot) return;
-            //await _client.GetGuild(759424063130304592).GetTextChannel(arg.Channel.Id).SendMessageAsync(arg.Content);
+            await Task.Delay(1);
         }
       
         private async Task AllChangesChange(SocketMessage arg)
@@ -115,8 +109,7 @@ namespace DiscordBot
             var m = new Random();
             int next = m.Next(0, 13);
             Style = (MetroColorStyle)next;
-            
-            
+            await Task.Delay(1);
         }
 
 
@@ -138,14 +131,12 @@ namespace DiscordBot
 
             }
             catch { };
-
         }
 
         private Task _client_Log(LogMessage arg)
         {
             LogText(arg.ToString().Replace(DateTime.Now.ToString() , " "));
             return Task.CompletedTask;
-
         }
         public void LogText(string text)
         {
@@ -183,15 +174,7 @@ namespace DiscordBot
                 Console.WriteLine(server.Name);
             }
             await Task.Delay(1);
-
         }
-        private void ChannelsTExtBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-        
-
         private void SendBtn_Click(object sender, EventArgs e)
         {
             try
@@ -206,10 +189,8 @@ namespace DiscordBot
 
         private void LoadChannels()
         {
-
             Channel = new Dictionary<string, ulong>();
             ChannelsTExtBox.Items.Clear();
-
 
             foreach (var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
             {
@@ -229,7 +210,6 @@ namespace DiscordBot
         {
             try
             {
-                
                 loadInfo();
                 LoadChannels();
             }
@@ -253,11 +233,8 @@ namespace DiscordBot
                 safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
                 safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
                 safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
-
-
             } catch
             {
-                
             }
         }
     }
