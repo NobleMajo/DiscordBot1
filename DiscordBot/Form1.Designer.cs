@@ -58,6 +58,10 @@ namespace DiscordBot
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.TotalChannelsButton = new MetroFramework.Controls.MetroButton();
+            this.metroButton8 = new MetroFramework.Controls.MetroButton();
+            this.CreatedAtButton = new MetroFramework.Controls.MetroButton();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -119,6 +123,8 @@ namespace DiscordBot
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.CreatedAtButton);
+            this.metroPanel3.Controls.Add(this.TotalChannelsButton);
             this.metroPanel3.Controls.Add(this.RolesButton);
             this.metroPanel3.Controls.Add(this.OwnerButton);
             this.metroPanel3.Controls.Add(this.MembersButton);
@@ -127,9 +133,9 @@ namespace DiscordBot
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(84, 0);
+            this.metroPanel3.Location = new System.Drawing.Point(136, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(190, 208);
+            this.metroPanel3.Size = new System.Drawing.Size(134, 208);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel3.VerticalScrollbarBarColor = true;
@@ -141,7 +147,7 @@ namespace DiscordBot
             this.RolesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.RolesButton.Location = new System.Drawing.Point(0, 69);
             this.RolesButton.Name = "RolesButton";
-            this.RolesButton.Size = new System.Drawing.Size(190, 23);
+            this.RolesButton.Size = new System.Drawing.Size(134, 23);
             this.RolesButton.TabIndex = 5;
             this.RolesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.RolesButton.UseSelectable = true;
@@ -151,7 +157,7 @@ namespace DiscordBot
             this.OwnerButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.OwnerButton.Location = new System.Drawing.Point(0, 46);
             this.OwnerButton.Name = "OwnerButton";
-            this.OwnerButton.Size = new System.Drawing.Size(190, 23);
+            this.OwnerButton.Size = new System.Drawing.Size(134, 23);
             this.OwnerButton.TabIndex = 4;
             this.OwnerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.OwnerButton.UseSelectable = true;
@@ -161,7 +167,7 @@ namespace DiscordBot
             this.MembersButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MembersButton.Location = new System.Drawing.Point(0, 23);
             this.MembersButton.Name = "MembersButton";
-            this.MembersButton.Size = new System.Drawing.Size(190, 23);
+            this.MembersButton.Size = new System.Drawing.Size(134, 23);
             this.MembersButton.TabIndex = 3;
             this.MembersButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MembersButton.UseSelectable = true;
@@ -172,13 +178,15 @@ namespace DiscordBot
             this.ServerButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ServerButton.Location = new System.Drawing.Point(0, 0);
             this.ServerButton.Name = "ServerButton";
-            this.ServerButton.Size = new System.Drawing.Size(190, 23);
+            this.ServerButton.Size = new System.Drawing.Size(134, 23);
             this.ServerButton.TabIndex = 2;
             this.ServerButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ServerButton.UseSelectable = true;
             // 
             // metroPanel2
             // 
+            this.metroPanel2.Controls.Add(this.metroButton8);
+            this.metroPanel2.Controls.Add(this.metroButton6);
             this.metroPanel2.Controls.Add(this.metroButton4);
             this.metroPanel2.Controls.Add(this.metroButton3);
             this.metroPanel2.Controls.Add(this.metroButton2);
@@ -189,7 +197,7 @@ namespace DiscordBot
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(84, 208);
+            this.metroPanel2.Size = new System.Drawing.Size(136, 208);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel2.VerticalScrollbarBarColor = true;
@@ -201,7 +209,7 @@ namespace DiscordBot
             this.metroButton4.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroButton4.Location = new System.Drawing.Point(0, 69);
             this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(84, 23);
+            this.metroButton4.Size = new System.Drawing.Size(136, 23);
             this.metroButton4.TabIndex = 5;
             this.metroButton4.Text = "Roles:";
             this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -212,7 +220,7 @@ namespace DiscordBot
             this.metroButton3.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroButton3.Location = new System.Drawing.Point(0, 46);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(84, 23);
+            this.metroButton3.Size = new System.Drawing.Size(136, 23);
             this.metroButton3.TabIndex = 4;
             this.metroButton3.Text = "Owner:";
             this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -223,7 +231,7 @@ namespace DiscordBot
             this.metroButton2.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroButton2.Location = new System.Drawing.Point(0, 23);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(84, 23);
+            this.metroButton2.Size = new System.Drawing.Size(136, 23);
             this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "Members:";
             this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -234,7 +242,7 @@ namespace DiscordBot
             this.metroButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroButton1.Location = new System.Drawing.Point(0, 0);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(84, 23);
+            this.metroButton1.Size = new System.Drawing.Size(136, 23);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Server:";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -458,6 +466,48 @@ namespace DiscordBot
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
             // 
+            // metroButton6
+            // 
+            this.metroButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton6.Location = new System.Drawing.Point(0, 92);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(136, 23);
+            this.metroButton6.TabIndex = 6;
+            this.metroButton6.Text = "Total Channels:";
+            this.metroButton6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton6.UseSelectable = true;
+            // 
+            // TotalChannelsButton
+            // 
+            this.TotalChannelsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TotalChannelsButton.Location = new System.Drawing.Point(0, 92);
+            this.TotalChannelsButton.Name = "TotalChannelsButton";
+            this.TotalChannelsButton.Size = new System.Drawing.Size(134, 23);
+            this.TotalChannelsButton.TabIndex = 6;
+            this.TotalChannelsButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TotalChannelsButton.UseSelectable = true;
+            // 
+            // metroButton8
+            // 
+            this.metroButton8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton8.Location = new System.Drawing.Point(0, 115);
+            this.metroButton8.Name = "metroButton8";
+            this.metroButton8.Size = new System.Drawing.Size(136, 23);
+            this.metroButton8.TabIndex = 7;
+            this.metroButton8.Text = "Created at:";
+            this.metroButton8.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton8.UseSelectable = true;
+            // 
+            // CreatedAtButton
+            // 
+            this.CreatedAtButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CreatedAtButton.Location = new System.Drawing.Point(0, 115);
+            this.CreatedAtButton.Name = "CreatedAtButton";
+            this.CreatedAtButton.Size = new System.Drawing.Size(134, 23);
+            this.CreatedAtButton.TabIndex = 7;
+            this.CreatedAtButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CreatedAtButton.UseSelectable = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,6 +567,10 @@ namespace DiscordBot
         public MetroFramework.Controls.MetroButton serverMessagesButton;
         public MetroFramework.Controls.MetroPanel metroPanel4;
         public MetroFramework.Controls.MetroButton metroButton5;
+        public MetroFramework.Controls.MetroButton CreatedAtButton;
+        public MetroFramework.Controls.MetroButton TotalChannelsButton;
+        private MetroFramework.Controls.MetroButton metroButton8;
+        private MetroFramework.Controls.MetroButton metroButton6;
     }
 }
 
