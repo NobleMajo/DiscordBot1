@@ -624,9 +624,9 @@ namespace DiscordBot
             // 
             // LoadBtn
             // 
-            this.LoadBtn.Location = new System.Drawing.Point(205, 12);
+            this.LoadBtn.Location = new System.Drawing.Point(205, 9);
             this.LoadBtn.Name = "LoadBtn";
-            this.LoadBtn.Size = new System.Drawing.Size(75, 23);
+            this.LoadBtn.Size = new System.Drawing.Size(75, 29);
             this.LoadBtn.TabIndex = 1;
             this.LoadBtn.Text = "Load";
             this.LoadBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
