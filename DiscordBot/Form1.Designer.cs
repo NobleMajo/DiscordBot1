@@ -35,11 +35,15 @@ namespace DiscordBot
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.CreatedAtButton = new MetroFramework.Controls.MetroButton();
+            this.TotalChannelsButton = new MetroFramework.Controls.MetroButton();
             this.RolesButton = new MetroFramework.Controls.MetroButton();
             this.OwnerButton = new MetroFramework.Controls.MetroButton();
             this.MembersButton = new MetroFramework.Controls.MetroButton();
             this.ServerButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton8 = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -58,10 +62,18 @@ namespace DiscordBot
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.metroButton6 = new MetroFramework.Controls.MetroButton();
-            this.TotalChannelsButton = new MetroFramework.Controls.MetroButton();
-            this.metroButton8 = new MetroFramework.Controls.MetroButton();
-            this.CreatedAtButton = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ChannelsTExtBox = new System.Windows.Forms.ComboBox();
+            this.LoadBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.SendBtn = new System.Windows.Forms.Button();
+            this.MessageBox = new System.Windows.Forms.TextBox();
+            this.MessagesRichBo = new System.Windows.Forms.RichTextBox();
+            this.ServerIdTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -72,19 +84,25 @@ namespace DiscordBot
             this.metroTabPage4.SuspendLayout();
             this.metroPanel5.SuspendLayout();
             this.metroPanel4.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabs1
             // 
             this.MainTabs1.Controls.Add(this.metroTabPage1);
             this.MainTabs1.Controls.Add(this.metroTabPage2);
+            this.MainTabs1.Controls.Add(this.metroTabPage5);
             this.MainTabs1.Controls.Add(this.metroTabPage3);
             this.MainTabs1.Controls.Add(this.metroTabPage4);
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 0;
-            this.MainTabs1.Size = new System.Drawing.Size(407, 315);
+            this.MainTabs1.SelectedIndex = 2;
+            this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MainTabs1.UseSelectable = true;
@@ -97,7 +115,7 @@ namespace DiscordBot
             this.metroTabPage1.HorizontalScrollbarSize = 0;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(399, 273);
+            this.metroTabPage1.Size = new System.Drawing.Size(878, 403);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "General";
             this.metroTabPage1.VerticalScrollbarBarColor = false;
@@ -114,7 +132,7 @@ namespace DiscordBot
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(399, 273);
+            this.metroPanel1.Size = new System.Drawing.Size(878, 403);
             this.metroPanel1.TabIndex = 2;
             this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.VerticalScrollbarBarColor = true;
@@ -135,12 +153,32 @@ namespace DiscordBot
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(136, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(182, 273);
+            this.metroPanel3.Size = new System.Drawing.Size(182, 403);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // CreatedAtButton
+            // 
+            this.CreatedAtButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CreatedAtButton.Location = new System.Drawing.Point(0, 115);
+            this.CreatedAtButton.Name = "CreatedAtButton";
+            this.CreatedAtButton.Size = new System.Drawing.Size(182, 23);
+            this.CreatedAtButton.TabIndex = 7;
+            this.CreatedAtButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CreatedAtButton.UseSelectable = true;
+            // 
+            // TotalChannelsButton
+            // 
+            this.TotalChannelsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TotalChannelsButton.Location = new System.Drawing.Point(0, 92);
+            this.TotalChannelsButton.Name = "TotalChannelsButton";
+            this.TotalChannelsButton.Size = new System.Drawing.Size(182, 23);
+            this.TotalChannelsButton.TabIndex = 6;
+            this.TotalChannelsButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TotalChannelsButton.UseSelectable = true;
             // 
             // RolesButton
             // 
@@ -197,12 +235,34 @@ namespace DiscordBot
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(136, 273);
+            this.metroPanel2.Size = new System.Drawing.Size(136, 403);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroButton8
+            // 
+            this.metroButton8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton8.Location = new System.Drawing.Point(0, 115);
+            this.metroButton8.Name = "metroButton8";
+            this.metroButton8.Size = new System.Drawing.Size(136, 23);
+            this.metroButton8.TabIndex = 7;
+            this.metroButton8.Text = "Created at:";
+            this.metroButton8.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton8.UseSelectable = true;
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton6.Location = new System.Drawing.Point(0, 92);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(136, 23);
+            this.metroButton6.TabIndex = 6;
+            this.metroButton6.Text = "Total Channels:";
+            this.metroButton6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton6.UseSelectable = true;
             // 
             // metroButton4
             // 
@@ -250,6 +310,8 @@ namespace DiscordBot
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.label1);
+            this.metroTabPage2.Controls.Add(this.ServerIdTextBox);
             this.metroTabPage2.Controls.Add(this.metroLabel1);
             this.metroTabPage2.Controls.Add(this.metroTextBox1);
             this.metroTabPage2.Controls.Add(this.prefixLabel);
@@ -261,7 +323,7 @@ namespace DiscordBot
             this.metroTabPage2.HorizontalScrollbarSize = 0;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(399, 273);
+            this.metroTabPage2.Size = new System.Drawing.Size(1063, 403);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Settings";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -380,7 +442,7 @@ namespace DiscordBot
             this.metroTabPage3.HorizontalScrollbarSize = 0;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage3.Size = new System.Drawing.Size(878, 403);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Log";
             this.metroTabPage3.VerticalScrollbarBarColor = false;
@@ -392,7 +454,7 @@ namespace DiscordBot
             this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logTextBox.Location = new System.Drawing.Point(0, 0);
             this.logTextBox.Name = "logTextBox";
-            this.logTextBox.Size = new System.Drawing.Size(326, 208);
+            this.logTextBox.Size = new System.Drawing.Size(878, 403);
             this.logTextBox.TabIndex = 2;
             this.logTextBox.Text = "";
             // 
@@ -405,7 +467,7 @@ namespace DiscordBot
             this.metroTabPage4.HorizontalScrollbarSize = 10;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(326, 208);
+            this.metroTabPage4.Size = new System.Drawing.Size(878, 403);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Stats";
             this.metroTabPage4.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -422,7 +484,7 @@ namespace DiscordBot
             this.metroPanel5.HorizontalScrollbarSize = 10;
             this.metroPanel5.Location = new System.Drawing.Point(97, 0);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(102, 208);
+            this.metroPanel5.Size = new System.Drawing.Size(161, 403);
             this.metroPanel5.TabIndex = 3;
             this.metroPanel5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel5.VerticalScrollbarBarColor = true;
@@ -434,7 +496,7 @@ namespace DiscordBot
             this.serverMessagesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.serverMessagesButton.Location = new System.Drawing.Point(0, 0);
             this.serverMessagesButton.Name = "serverMessagesButton";
-            this.serverMessagesButton.Size = new System.Drawing.Size(102, 23);
+            this.serverMessagesButton.Size = new System.Drawing.Size(161, 23);
             this.serverMessagesButton.TabIndex = 2;
             this.serverMessagesButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.serverMessagesButton.UseSelectable = true;
@@ -448,7 +510,7 @@ namespace DiscordBot
             this.metroPanel4.HorizontalScrollbarSize = 10;
             this.metroPanel4.Location = new System.Drawing.Point(0, 0);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(97, 208);
+            this.metroPanel4.Size = new System.Drawing.Size(97, 403);
             this.metroPanel4.TabIndex = 2;
             this.metroPanel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel4.VerticalScrollbarBarColor = true;
@@ -466,56 +528,145 @@ namespace DiscordBot
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
             // 
-            // metroButton6
+            // metroTabPage5
             // 
-            this.metroButton6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton6.Location = new System.Drawing.Point(0, 92);
-            this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(136, 23);
-            this.metroButton6.TabIndex = 6;
-            this.metroButton6.Text = "Total Channels:";
-            this.metroButton6.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton6.UseSelectable = true;
+            this.metroTabPage5.Controls.Add(this.panel2);
+            this.metroTabPage5.Controls.Add(this.panel1);
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.HorizontalScrollbarSize = 10;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(1063, 403);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "Messages";
+            this.metroTabPage5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.VerticalScrollbarSize = 10;
             // 
-            // TotalChannelsButton
+            // panel1
             // 
-            this.TotalChannelsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TotalChannelsButton.Location = new System.Drawing.Point(0, 92);
-            this.TotalChannelsButton.Name = "TotalChannelsButton";
-            this.TotalChannelsButton.Size = new System.Drawing.Size(182, 23);
-            this.TotalChannelsButton.TabIndex = 6;
-            this.TotalChannelsButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TotalChannelsButton.UseSelectable = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.LoadBtn);
+            this.panel1.Controls.Add(this.ChannelsTExtBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1063, 50);
+            this.panel1.TabIndex = 2;
             // 
-            // metroButton8
+            // ChannelsTExtBox
             // 
-            this.metroButton8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton8.Location = new System.Drawing.Point(0, 115);
-            this.metroButton8.Name = "metroButton8";
-            this.metroButton8.Size = new System.Drawing.Size(136, 23);
-            this.metroButton8.TabIndex = 7;
-            this.metroButton8.Text = "Created at:";
-            this.metroButton8.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton8.UseSelectable = true;
+            this.ChannelsTExtBox.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ChannelsTExtBox.ForeColor = System.Drawing.SystemColors.Info;
+            this.ChannelsTExtBox.FormattingEnabled = true;
+            this.ChannelsTExtBox.Location = new System.Drawing.Point(4, 0);
+            this.ChannelsTExtBox.Name = "ChannelsTExtBox";
+            this.ChannelsTExtBox.Size = new System.Drawing.Size(154, 21);
+            this.ChannelsTExtBox.TabIndex = 0;
+            this.ChannelsTExtBox.SelectedIndexChanged += new System.EventHandler(this.ChannelsTExtBox_SelectedIndexChanged);
             // 
-            // CreatedAtButton
+            // LoadBtn
             // 
-            this.CreatedAtButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CreatedAtButton.Location = new System.Drawing.Point(0, 115);
-            this.CreatedAtButton.Name = "CreatedAtButton";
-            this.CreatedAtButton.Size = new System.Drawing.Size(182, 23);
-            this.CreatedAtButton.TabIndex = 7;
-            this.CreatedAtButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.CreatedAtButton.UseSelectable = true;
+            this.LoadBtn.Location = new System.Drawing.Point(164, -2);
+            this.LoadBtn.Name = "LoadBtn";
+            this.LoadBtn.Size = new System.Drawing.Size(75, 23);
+            this.LoadBtn.TabIndex = 1;
+            this.LoadBtn.Text = "Load";
+            this.LoadBtn.UseVisualStyleBackColor = true;
+            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.MessagesRichBo);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1063, 353);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.MessageBox);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 315);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1063, 38);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.SendBtn);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(933, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(130, 38);
+            this.panel4.TabIndex = 0;
+            // 
+            // SendBtn
+            // 
+            this.SendBtn.BackColor = System.Drawing.Color.Black;
+            this.SendBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SendBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SendBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.SendBtn.Location = new System.Drawing.Point(0, 0);
+            this.SendBtn.Name = "SendBtn";
+            this.SendBtn.Size = new System.Drawing.Size(130, 38);
+            this.SendBtn.TabIndex = 0;
+            this.SendBtn.Text = "Send";
+            this.SendBtn.UseVisualStyleBackColor = false;
+            this.SendBtn.Click += new System.EventHandler(this.SendBtn_Click);
+            // 
+            // MessageBox
+            // 
+            this.MessageBox.BackColor = System.Drawing.SystemColors.InfoText;
+            this.MessageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MessageBox.ForeColor = System.Drawing.SystemColors.Info;
+            this.MessageBox.Location = new System.Drawing.Point(0, 0);
+            this.MessageBox.Multiline = true;
+            this.MessageBox.Name = "MessageBox";
+            this.MessageBox.Size = new System.Drawing.Size(933, 38);
+            this.MessageBox.TabIndex = 1;
+            // 
+            // MessagesRichBo
+            // 
+            this.MessagesRichBo.BackColor = System.Drawing.SystemColors.InfoText;
+            this.MessagesRichBo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MessagesRichBo.ForeColor = System.Drawing.SystemColors.Info;
+            this.MessagesRichBo.Location = new System.Drawing.Point(0, 0);
+            this.MessagesRichBo.Name = "MessagesRichBo";
+            this.MessagesRichBo.Size = new System.Drawing.Size(1063, 315);
+            this.MessagesRichBo.TabIndex = 1;
+            this.MessagesRichBo.Text = "";
+            // 
+            // ServerIdTextBox
+            // 
+            this.ServerIdTextBox.Location = new System.Drawing.Point(821, 19);
+            this.ServerIdTextBox.Name = "ServerIdTextBox";
+            this.ServerIdTextBox.Size = new System.Drawing.Size(239, 20);
+            this.ServerIdTextBox.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(768, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ServerId";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 395);
+            this.ClientSize = new System.Drawing.Size(1111, 525);
             this.Controls.Add(this.MainTabs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Movable = false;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -534,6 +685,12 @@ namespace DiscordBot
             this.metroTabPage4.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);
             this.metroPanel4.ResumeLayout(false);
+            this.metroTabPage5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -571,6 +728,18 @@ namespace DiscordBot
         public MetroFramework.Controls.MetroButton TotalChannelsButton;
         private MetroFramework.Controls.MetroButton metroButton8;
         private MetroFramework.Controls.MetroButton metroButton6;
+        private MetroFramework.Controls.MetroTabPage metroTabPage5;
+        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.RichTextBox MessagesRichBo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox MessageBox;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button SendBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button LoadBtn;
+        private System.Windows.Forms.ComboBox ChannelsTExtBox;
+        private System.Windows.Forms.TextBox ServerIdTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

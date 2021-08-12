@@ -73,5 +73,17 @@ namespace DiscordBot.SafeThreading
                 myForm.CreatedAtButton.Text = text;
 
         }
+        public void MessageLog(string log)
+        {
+            if (myForm.MessagesRichBo.InvokeRequired)
+            {
+                Action safeWrite = delegate { MessageLog(log); };
+                myForm.MessagesRichBo.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.MessagesRichBo.Text += log;
+            }
+        }
     }
 }

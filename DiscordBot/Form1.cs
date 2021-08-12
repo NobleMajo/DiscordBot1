@@ -11,7 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using DiscordBot.TasksClient;
 using DiscordBot.SafeThreading;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DiscordBot
 {
@@ -64,14 +65,25 @@ namespace DiscordBot
             _client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += SetInfo;
+            _client.MessageReceived += MessLog;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
+        SafeThreading.SafeThreadingForm safe;
+        private async Task MessLog(SocketMessage arg)
+        {
+            safe = new SafeThreading.SafeThreadingForm();
+            safe.MessageLog(arg.Channel.Name + " >> " + arg.Author.Username +  " : " + arg.Content + Environment.NewLine);
+            await Task.Delay(1);
+            
+        }
+
         private int msgCount = 0;
         private async Task MsgCouter(SocketMessage arg)
         {
             msgCount++;
             safeChange(msgCount.ToString());
-            
+            //if (arg.Author.IsBot) return;
+            //await _client.GetGuild(759424063130304592).GetTextChannel(arg.Channel.Id).SendMessageAsync(arg.Content);
         }
       
         private async Task AllChangesChange(SocketMessage arg)
@@ -137,6 +149,44 @@ namespace DiscordBot
         {
             mess = new Messages();
             await Task.Run(async() => await mess.info());
+        }
+        Dictionary<string , ulong> Channel;
+        private void LoadBtn_Click(object sender, EventArgs e)
+        {
+           Channel = new Dictionary<string, ulong>();
+
+
+           
+           foreach(var channel in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).TextChannels)
+           {
+                try
+                {
+                    Channel.Add(channel.ToString(), channel.Id);
+                    ChannelsTExtBox.Items.Add(channel.ToString());
+                }catch (Exception ex)
+                {
+                    ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
+                }
+           }
+        }
+
+        private void ChannelsTExtBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+        
+
+        private void SendBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+            }catch
+            {
+
+            }
         }
     }
 }
