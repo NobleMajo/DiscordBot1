@@ -232,7 +232,7 @@ namespace DiscordBot
                 safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
                 string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
                 Created = Created.Substring(0, Created.LastIndexOf("+"));
-                safe.CreatedAt(Created);
+                safe.CreatedAt(Created); //sus       
                 safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
                 safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
                 safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
