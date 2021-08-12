@@ -67,7 +67,6 @@ namespace DiscordBot
             this.SendBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ChannelsTExtBox = new MetroFramework.Controls.MetroComboBox();
-            this.LoadBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.logTextBox = new System.Windows.Forms.RichTextBox();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
@@ -102,7 +101,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 1;
+            this.MainTabs1.SelectedIndex = 2;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -573,7 +572,6 @@ namespace DiscordBot
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.ChannelsTExtBox);
-            this.panel1.Controls.Add(this.LoadBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -590,17 +588,6 @@ namespace DiscordBot
             this.ChannelsTExtBox.TabIndex = 2;
             this.ChannelsTExtBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.ChannelsTExtBox.UseSelectable = true;
-            // 
-            // LoadBtn
-            // 
-            this.LoadBtn.Location = new System.Drawing.Point(205, 9);
-            this.LoadBtn.Name = "LoadBtn";
-            this.LoadBtn.Size = new System.Drawing.Size(75, 29);
-            this.LoadBtn.TabIndex = 1;
-            this.LoadBtn.Text = "Load";
-            this.LoadBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.LoadBtn.UseSelectable = true;
-            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click_1);
             // 
             // metroTabPage3
             // 
@@ -773,7 +760,6 @@ namespace DiscordBot
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroButton LoadBtn;
         private MetroFramework.Controls.MetroComboBox ChannelsTExtBox;
         private MetroFramework.Controls.MetroTextBox ServerIdTextBox;
         private MetroFramework.Controls.MetroLabel label1;

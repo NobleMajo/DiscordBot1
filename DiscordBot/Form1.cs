@@ -204,8 +204,9 @@ namespace DiscordBot
             }
         }
 
-        private void LoadBtn_Click_1(object sender, EventArgs e)
+        private void LoadChannels()
         {
+
             Channel = new Dictionary<string, ulong>();
             ChannelsTExtBox.Items.Clear();
 
@@ -230,6 +231,7 @@ namespace DiscordBot
             {
                 
                 loadInfo();
+                LoadChannels();
             }
             catch
             {
