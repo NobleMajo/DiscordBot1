@@ -8,6 +8,7 @@ using Discord.Commands;
 using Discord;
 using System.Windows.Forms;
 using Discord.WebSocket;
+using Newtonsoft.Json.Linq;
 
 namespace DiscordBot.Modules
 {
@@ -30,7 +31,7 @@ namespace DiscordBot.Modules
             await ReplyAsync(sb.ToString());
         }
         [Command("math")]
-        public async Task Add(int numberOne, int numberTwo, char operation)
+        public async Task Add(int numberOne, char operation, int numberTwo)
         {
             switch(operation)
             {
@@ -42,7 +43,7 @@ namespace DiscordBot.Modules
                 case '-':
                     {
                         await ReplyAsync($"{numberOne} - {numberTwo} = {(numberOne-numberTwo).ToString()}");
-                    break;
+                        break;
                     }
                 case '/':
                     {
@@ -59,12 +60,10 @@ namespace DiscordBot.Modules
                         await ReplyAsync($"{numberOne} % {numberTwo} = {(numberOne % numberTwo).ToString()}");
                         break;
                     }
-                default:
-                    {
-                        await ReplyAsync("You must enter the values in this order - +math num1 num2 arithmeticoperator");
-                        break;
-                    }
+
+
             }
+
 
         }
         [Command("kick")]
