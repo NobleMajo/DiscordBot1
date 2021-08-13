@@ -49,6 +49,7 @@ namespace DiscordBot
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.GuildsComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new MetroFramework.Controls.MetroLabel();
             this.StatusLabel = new MetroFramework.Controls.MetroLabel();
@@ -73,7 +74,6 @@ namespace DiscordBot
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.GuildsComboBox = new MetroFramework.Controls.MetroComboBox();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -101,7 +101,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 2;
+            this.MainTabs1.SelectedIndex = 1;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -331,6 +331,18 @@ namespace DiscordBot
             this.metroTabPage2.VerticalScrollbarBarColor = false;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 0;
+            // 
+            // GuildsComboBox
+            // 
+            this.GuildsComboBox.FormattingEnabled = true;
+            this.GuildsComboBox.ItemHeight = 23;
+            this.GuildsComboBox.Location = new System.Drawing.Point(802, 46);
+            this.GuildsComboBox.Name = "GuildsComboBox";
+            this.GuildsComboBox.Size = new System.Drawing.Size(129, 29);
+            this.GuildsComboBox.TabIndex = 12;
+            this.GuildsComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.GuildsComboBox.UseSelectable = true;
+            this.GuildsComboBox.SelectedIndexChanged += new System.EventHandler(this.GuildsComboBox_SelectedIndexChanged);
             // 
             // ServerIdTextBox
             // 
@@ -676,17 +688,6 @@ namespace DiscordBot
             this.metroButton5.Text = "Server Messages:";
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
-            // 
-            // GuildsComboBox
-            // 
-            this.GuildsComboBox.FormattingEnabled = true;
-            this.GuildsComboBox.ItemHeight = 23;
-            this.GuildsComboBox.Location = new System.Drawing.Point(802, 46);
-            this.GuildsComboBox.Name = "GuildsComboBox";
-            this.GuildsComboBox.Size = new System.Drawing.Size(129, 29);
-            this.GuildsComboBox.TabIndex = 12;
-            this.GuildsComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.GuildsComboBox.UseSelectable = true;
             // 
             // Form1
             // 
