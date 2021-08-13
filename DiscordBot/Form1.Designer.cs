@@ -101,7 +101,7 @@ namespace DiscordBot
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 1;
+            this.MainTabs1.SelectedIndex = 2;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -517,6 +517,7 @@ namespace DiscordBot
             // 
             this.MessagesRichBo.BackColor = System.Drawing.SystemColors.InfoText;
             this.MessagesRichBo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MessagesRichBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MessagesRichBo.ForeColor = System.Drawing.SystemColors.Info;
             this.MessagesRichBo.Location = new System.Drawing.Point(0, 0);
             this.MessagesRichBo.Name = "MessagesRichBo";
@@ -538,12 +539,14 @@ namespace DiscordBot
             // 
             this.MessageBox.BackColor = System.Drawing.SystemColors.InfoText;
             this.MessageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MessageBox.ForeColor = System.Drawing.SystemColors.Info;
             this.MessageBox.Location = new System.Drawing.Point(0, 0);
             this.MessageBox.Multiline = true;
             this.MessageBox.Name = "MessageBox";
             this.MessageBox.Size = new System.Drawing.Size(933, 38);
             this.MessageBox.TabIndex = 1;
+            this.MessageBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MessageBox_KeyUp);
             // 
             // panel4
             // 

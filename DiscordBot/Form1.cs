@@ -240,5 +240,22 @@ namespace DiscordBot
             {
             }
         }
+
+        private void MessageBox_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if(e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                try
+                {
+                    var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                    _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                    MessageBox.Text = "";
+                }
+                catch
+                {
+
+                }
+            }
+        }
     }
 }
