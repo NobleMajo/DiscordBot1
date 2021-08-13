@@ -77,7 +77,7 @@ namespace DiscordBot
         private async Task OffStatus(Exception arg)
         {
             safe = new SafeThreadingForm();
-            safe.StatusLAbel("Status: Offline");
+            safe.StatusLAbel("Status: Offline" , Color.Red);
             await Task.Delay(1);
         }
 
@@ -85,7 +85,7 @@ namespace DiscordBot
         {
             safe = new SafeThreadingForm();
             safe.ConnectBtn("DISCONNECT");
-            safe.StatusLAbel("Status: Online");
+            safe.StatusLAbel("Status: Online", Color.Green);
             await Task.Delay(1);
         }
 
@@ -231,14 +231,19 @@ namespace DiscordBot
                 safe = new SafeThreadingForm();
                 var myKey = Server.FirstOrDefault(x => x.Key == GuildsComboBox.Text).Value;
                 ServerIdTextBox.Text = myKey.ToString();
-                safe.ServerNameText(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
-                safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
+                
+                safe.SafeThreadBtns(ServerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
+                //safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
+                safe.SafeThreadBtns(OwnerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
                 string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
                 Created = Created.Substring(0, Created.LastIndexOf("+"));
-                safe.CreatedAt(Created); //sus       
-                safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
-                safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
-                safe.TotalChannels(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
+                //safe.CreatedAt(Created); //sus
+                safe.SafeThreadBtns(CreatedAtButton, Created);
+                //safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
+                safe.SafeThreadBtns(RolesButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
+                //safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
+                safe.SafeThreadBtns(MembersButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
+                safe.SafeThreadBtns(TotalChannelsButton,_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
             } catch
             {
             }

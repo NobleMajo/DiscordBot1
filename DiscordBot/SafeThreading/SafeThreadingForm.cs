@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DiscordBot.SafeThreading
 {
-    class SafeThreadingForm 
+    class SafeThreadingForm
     {
         //all safe thread calls should be there 
         static Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
@@ -54,7 +55,7 @@ namespace DiscordBot.SafeThreading
         }
         public void TotalChannels(string text)
         {
-            if(myForm.TotalChannelsButton.InvokeRequired)
+            if (myForm.TotalChannelsButton.InvokeRequired)
             {
                 Action safeWrite = delegate { TotalChannels(text); };
                 myForm.TotalChannelsButton.Invoke(safeWrite);
@@ -87,7 +88,7 @@ namespace DiscordBot.SafeThreading
         }
         public void ComboBoxServers(string item)
         {
-            if(myForm.GuildsComboBox.InvokeRequired)
+            if (myForm.GuildsComboBox.InvokeRequired)
             {
                 Action safeWrite = delegate { ComboBoxServers(item); };
                 myForm.GuildsComboBox.Invoke(safeWrite);
@@ -97,21 +98,22 @@ namespace DiscordBot.SafeThreading
                 myForm.GuildsComboBox.Items.Add(item);
             }
         }
-        public void StatusLAbel(string text)
+        public void StatusLAbel(string text, Color color)
         {
             if (myForm.StatusLabel.InvokeRequired)
             {
-                Action safeWrite = delegate { StatusLAbel(text); };
+                Action safeWrite = delegate { StatusLAbel(text, color); };
                 myForm.StatusLabel.Invoke(safeWrite);
             }
             else
             {
+                myForm.ForeColor = color;
                 myForm.StatusLabel.Text = text;
             }
         }
         public void ConnectBtn(string text)
         {
-            if(myForm.ConnectBotToken.InvokeRequired)
+            if (myForm.ConnectBotToken.InvokeRequired)
             {
                 Action safeWrite = delegate { ConnectBtn(text); };
                 myForm.ConnectBotToken.Invoke(safeWrite);
@@ -123,7 +125,7 @@ namespace DiscordBot.SafeThreading
         }
         public void ClearBoxGuildsBox()
         {
-            if(myForm.GuildsComboBox.InvokeRequired)
+            if (myForm.GuildsComboBox.InvokeRequired)
             {
                 Action safeWrite = delegate { ClearBoxGuildsBox(); };
                 myForm.GuildsComboBox.Invoke(safeWrite);
@@ -155,6 +157,18 @@ namespace DiscordBot.SafeThreading
             else
             {
                 myForm.GuildsComboBox.SelectedIndex = 0;
+            }
+        }
+        public void SafeThreadBtns(Button btn, string text)
+        {
+            if(btn.InvokeRequired)
+            {
+                Action safeWrite = delegate { SafeThreadBtns(btn,text); };
+                btn.Invoke(safeWrite);
+            }
+            else
+            {
+                btn.Text = text;
             }
         }
     }

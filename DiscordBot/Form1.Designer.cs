@@ -74,6 +74,7 @@ namespace DiscordBot
             this.serverMessagesButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -98,10 +99,11 @@ namespace DiscordBot
             this.MainTabs1.Controls.Add(this.metroTabPage5);
             this.MainTabs1.Controls.Add(this.metroTabPage3);
             this.MainTabs1.Controls.Add(this.metroTabPage4);
+            this.MainTabs1.Controls.Add(this.metroTabPage6);
             this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabs1.Location = new System.Drawing.Point(20, 60);
             this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 1;
+            this.MainTabs1.SelectedIndex = 3;
             this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
             this.MainTabs1.TabIndex = 0;
             this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -612,7 +614,9 @@ namespace DiscordBot
             // 
             // logTextBox
             // 
+            this.logTextBox.BackColor = System.Drawing.SystemColors.InfoText;
             this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logTextBox.ForeColor = System.Drawing.SystemColors.Info;
             this.logTextBox.Location = new System.Drawing.Point(0, 0);
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.Size = new System.Drawing.Size(1063, 403);
@@ -688,6 +692,21 @@ namespace DiscordBot
             this.metroButton5.Text = "Server Messages:";
             this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton5.UseSelectable = true;
+            // 
+            // metroTabPage6
+            // 
+            this.metroTabPage6.HorizontalScrollbarBarColor = true;
+            this.metroTabPage6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.HorizontalScrollbarSize = 10;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(1063, 403);
+            this.metroTabPage6.TabIndex = 5;
+            this.metroTabPage6.Text = "User Info";
+            this.metroTabPage6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage6.VerticalScrollbarBarColor = true;
+            this.metroTabPage6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.VerticalScrollbarSize = 10;
             // 
             // Form1
             // 
@@ -770,6 +789,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroTextBox ServerIdTextBox;
         private MetroFramework.Controls.MetroLabel label1;
         public MetroFramework.Controls.MetroComboBox GuildsComboBox;
+        private MetroFramework.Controls.MetroTabPage metroTabPage6;
     }
 }
 
