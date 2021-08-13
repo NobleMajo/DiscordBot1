@@ -12,37 +12,5 @@ namespace DiscordBot.TasksClient
 {
     public class Messages : ModuleBase<SocketCommandContext>
     {
-        static Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-        private static string Name { get; set; }
-        private static string Owner { get; set; }
-        private static string TotalMembers { get; set; }
-        private static string RolesNum {  get; set; }
-        private static string TotalChannels {  get; set; }
-        private static string CreatedAt { get; set; }
-        [Command("set")]
-        public async Task Set()
-        {
-            Name = Context.Guild.Name;
-            Owner = Context.Guild.Owner.ToString();
-            TotalMembers = Context.Guild.MemberCount.ToString();
-            RolesNum = Context.Guild.Roles.Count.ToString();
-            TotalChannels = Context.Guild.Channels.Count.ToString();
-            string Created = Context.Guild.CreatedAt.ToString();
-            Created = Created.Substring(0, Created.LastIndexOf("+"));
-            CreatedAt = Created;
-            await ReplyAsync("done");
-        }
-        static SafeThreading.SafeThreadingForm safe;
-        public async Task info()
-        {  
-            safe = new SafeThreading.SafeThreadingForm();
-            safe.ServerNameText(Name);
-            safe.ServerOwner(Owner);
-            safe.TotalMembers(TotalMembers);
-            safe.RolesNumber(RolesNum);
-            safe.TotalChannels(TotalChannels);
-            safe.CreatedAt(CreatedAt);
-        }
-
     }
 }
