@@ -768,7 +768,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroComboBox ChannelsTExtBox;
         private MetroFramework.Controls.MetroTextBox ServerIdTextBox;
         private MetroFramework.Controls.MetroLabel label1;
-        private MetroFramework.Controls.MetroComboBox GuildsComboBox;
+        public MetroFramework.Controls.MetroComboBox GuildsComboBox;
     }
 }
 

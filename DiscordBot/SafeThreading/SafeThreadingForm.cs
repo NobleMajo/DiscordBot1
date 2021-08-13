@@ -145,5 +145,17 @@ namespace DiscordBot.SafeThreading
                 myForm.ConnectBotToken.Enabled = false;
             }
         }
+        public void SelectITemGuilds()
+        {
+            if (myForm.GuildsComboBox.InvokeRequired)
+            {
+                Action safeWrite = delegate { SelectITemGuilds(); };
+                myForm.GuildsComboBox.Invoke(safeWrite);
+            }
+            else
+            {
+                myForm.GuildsComboBox.SelectedIndex = 0;
+            }
+        }
     }
 }

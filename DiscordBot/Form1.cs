@@ -175,6 +175,7 @@ namespace DiscordBot
                 safe.ComboBoxServers(server.Name);
                 Server.Add(server.Name, server.Id);
             }
+            safe.SelectITemGuilds();
             safe.DisableBtnConnect();
             await Task.Delay(1);
         }
@@ -201,12 +202,14 @@ namespace DiscordBot
                 {
                     Channel.Add(channel.ToString(), channel.Id);
                     ChannelsTExtBox.Items.Add(channel.ToString());
+
                 }
                 catch (Exception ex)
                 {
                     ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
                 }
             }
+            ChannelsTExtBox.SelectedIndex = 0;
         }
 
         private void GuildsComboBox_SelectedIndexChanged(object sender, EventArgs e)
