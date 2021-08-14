@@ -9,13 +9,14 @@ using Discord;
 using System.Windows.Forms;
 using Discord.WebSocket;
 using Newtonsoft.Json.Linq;
+using System.Collections;
 
 namespace DiscordBot.Modules
 {
     public class BasicCommands : ModuleBase<SocketCommandContext>
     {
         [Command("hi")]
-        public async Task hi()
+        public async Task Hi()
         {
 
             // initialize empty string builder for reply
