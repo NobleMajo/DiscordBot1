@@ -233,15 +233,11 @@ namespace DiscordBot
                 ServerIdTextBox.Text = myKey.ToString();
                 
                 safe.SafeThreadBtns(ServerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
-                //safe.ServerOwner(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
                 safe.SafeThreadBtns(OwnerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
                 string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
                 Created = Created.Substring(0, Created.LastIndexOf("+"));
-                //safe.CreatedAt(Created); //sus
                 safe.SafeThreadBtns(CreatedAtButton, Created);
-                //safe.RolesNumber(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
                 safe.SafeThreadBtns(RolesButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
-                //safe.TotalMembers(_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
                 safe.SafeThreadBtns(MembersButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
                 safe.SafeThreadBtns(TotalChannelsButton,_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
             } catch
