@@ -88,7 +88,20 @@ namespace DiscordBot.Modules
                 await ReplyAsync("You can't kick Admin");
             }
         }
+        [Command("flipcoin")]
+        [Summary("Flips a coin which either it can be heads or tails (50/50)")]
+        public async Task FlipCoin()
+        {
+            Random randomNumber = new Random();
+            int number = randomNumber.Next(1, 3);
 
+            if (number == 1)
+            {
+                await ReplyAsync("Heads!");
+            }
+            else
+                await ReplyAsync("Tails!");
+        }
 
     }
 }
