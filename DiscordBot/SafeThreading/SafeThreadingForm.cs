@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 
 namespace DiscordBot.SafeThreading
 {
@@ -24,6 +25,45 @@ namespace DiscordBot.SafeThreading
                 myForm.MessagesRichBo.Text += log;
             }
         }
+        public void SafeTextBox(MetroTextBox txtB,string text)
+        {
+            if(txtB.InvokeRequired)
+            {
+                Action safeWrite = delegate { SafeTextBox(txtB, text); };
+                txtB.Invoke(safeWrite);
+            }
+            else
+            {
+                txtB.Text = text;
+            }
+        }
+        public void safeComboThreading(MetroComboBox cb, string name)
+        {
+            if (cb.InvokeRequired)
+            {
+                Action safeWrite = delegate { safeComboThreading(cb, name); };
+                cb.Invoke(safeWrite);
+            }
+            else
+            {
+                cb.Items.Add(name);
+            }
+        }
+        public void ClearComboBox(ComboBox cb)
+        {
+            if(cb.InvokeRequired)
+            {
+                Action safeWrite = delegate { ClearComboBox(cb); };
+                cb.Invoke(safeWrite);
+            }
+            else
+            {
+                cb.Items.Clear();
+            }
+        }
+
+
+
         public void ComboBoxServers(string item)
         {
             if (myForm.GuildsComboBox.InvokeRequired)
@@ -71,6 +111,18 @@ namespace DiscordBot.SafeThreading
             else
             {
                 myForm.GuildsComboBox.Items.Clear();
+            }
+        }
+        public void SafeThreadingComboBoxItem(MetroComboBox cb, string text)
+        {
+            if (cb.InvokeRequired)
+            {
+                Action safeWrite = delegate { SafeThreadingComboBoxItem(cb, text); };
+                cb.Invoke(safeWrite);
+            }
+            else
+            {
+                cb.SelectedItem = text;
             }
         }
         public void DisableBtnConnect()

@@ -14,6 +14,7 @@ using DiscordBot.SafeThreading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.IO;
 
 namespace DiscordBot
 {
@@ -33,15 +34,16 @@ namespace DiscordBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            TokenTextBox.Text = Properties.Settings.Default.Token;
+            PrefixTextBox.Text = Properties.Settings.Default.Prefix;
         }
 
         private async void ConnectBotToken_Click(object sender, EventArgs e)
         {
-                await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
+            await Task.Run(() => RunBotAsync().GetAwaiter().GetResult());
         }
-        
-      
+
+
         public async Task RunBotAsync()
         {
             await Task.Run(async () =>
@@ -54,7 +56,7 @@ namespace DiscordBot
                     .BuildServiceProvider();
 
                 _client.Log += _client_Log;
-                
+
                 await RegisterCommandAsync();
                 await _client.LoginAsync(TokenType.Bot, TokenTextBox.Text);
                 await _client.StartAsync();
@@ -77,7 +79,7 @@ namespace DiscordBot
         private async Task OffStatus(Exception arg)
         {
             safe = new SafeThreadingForm();
-            safe.StatusLAbel("Status: Offline" , Color.Red);
+            safe.StatusLAbel("Status: Offline", Color.Red);
             await Task.Delay(1);
         }
 
@@ -93,7 +95,7 @@ namespace DiscordBot
         private async Task MessLog(SocketMessage arg)
         {
             safe = new SafeThreading.SafeThreadingForm();
-            safe.MessageLog(arg.Channel.Name + " >> " + arg.Author.Username +  " : " + arg.Content + Environment.NewLine);
+            safe.MessageLog(arg.Channel.Name + " >> " + arg.Author.Username + " : " + arg.Content + Environment.NewLine);
             await Task.Delay(1);
         }
 
@@ -104,7 +106,7 @@ namespace DiscordBot
             safeChange(msgCount.ToString());
             await Task.Delay(1);
         }
-      
+
         private async Task AllChangesChange(SocketMessage arg)
         {
             var m = new Random();
@@ -136,14 +138,14 @@ namespace DiscordBot
 
         private Task _client_Log(LogMessage arg)
         {
-            LogText(arg.ToString().Replace(DateTime.Now.ToString() , " "));
+            LogText(arg.ToString().Replace(DateTime.Now.ToString(), " "));
             return Task.CompletedTask;
         }
         public void LogText(string text)
         {
             if (logTextBox.InvokeRequired)
             {
-               
+
                 Action safeWrite = delegate { LogText(DateTime.Now + " " + text + " " + Environment.NewLine); };
                 logTextBox.Invoke(safeWrite);
             }
@@ -152,7 +154,7 @@ namespace DiscordBot
         }
         public void safeChange(string text)
         {
-            if(serverMessagesButton.InvokeRequired)
+            if (serverMessagesButton.InvokeRequired)
             {
                 Action safeWrite = delegate { safeChange(text); };
                 serverMessagesButton.Invoke(safeWrite);
@@ -161,12 +163,12 @@ namespace DiscordBot
                 serverMessagesButton.Text = text;
         }
         Messages mess;
-  
-        Dictionary<string , ulong> Channel;
+
+        Dictionary<string, ulong> Channel;
         Dictionary<string, ulong> Server;
         private async Task LoadGuilds()
         {
-            
+
             safe = new SafeThreadingForm();
             safe.ClearBoxGuildsBox();
             Server = new Dictionary<string, ulong>();
@@ -185,7 +187,7 @@ namespace DiscordBot
             {
                 var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
                 _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
-            }catch
+            } catch
             {
 
             }
@@ -218,6 +220,7 @@ namespace DiscordBot
             {
                 loadInfo();
                 LoadChannels();
+                loadMembers();
             }
             catch
             {
@@ -231,7 +234,7 @@ namespace DiscordBot
                 safe = new SafeThreadingForm();
                 var myKey = Server.FirstOrDefault(x => x.Key == GuildsComboBox.Text).Value;
                 ServerIdTextBox.Text = myKey.ToString();
-                
+
                 safe.SafeThreadBtns(ServerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Name);
                 safe.SafeThreadBtns(OwnerButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Owner.Username);
                 string Created = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).CreatedAt.ToString();
@@ -239,7 +242,7 @@ namespace DiscordBot
                 safe.SafeThreadBtns(CreatedAtButton, Created);
                 safe.SafeThreadBtns(RolesButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles.Count.ToString());
                 safe.SafeThreadBtns(MembersButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users.Count.ToString());
-                safe.SafeThreadBtns(TotalChannelsButton,_client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
+                safe.SafeThreadBtns(TotalChannelsButton, _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Channels.Count.ToString());
             } catch
             {
             }
@@ -247,7 +250,7 @@ namespace DiscordBot
 
         private void MessageBox_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if(e.KeyCode == System.Windows.Forms.Keys.Enter)
+            if (e.KeyCode == System.Windows.Forms.Keys.Enter)
             {
                 try
                 {
@@ -260,6 +263,186 @@ namespace DiscordBot
 
                 }
             }
+        }
+        Dictionary<string, ulong> Members;
+        private void usersComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                LoadInfoUSer();
+            } catch
+            {
+
+            }
+
+        }
+        private void LoadInfoUSer()
+        {
+
+            try
+            {
+                safe = new SafeThreadingForm();
+                var myKey = Members.FirstOrDefault(x => x.Key == usersComboBox.Text).Value;
+                var user = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(myKey);
+                safe.SafeThreadBtns(UserNameBox, user.Username);
+                string nickname = user.Nickname;
+
+                if (nickname == null || nickname == String.Empty || nickname == "")
+                {
+                    safe.SafeThreadBtns(NickNameBox, "Unknown");
+                }
+                else
+                {
+                    safe.SafeThreadBtns(UserNameBox, nickname);
+                }
+                safe.SafeThreadBtns(IDBox, user.Id.ToString());
+                safe.SafeThreadBtns(UserStatusBox, user.Status.ToString());
+                string joinedAt = user.JoinedAt.ToString();
+                joinedAt = joinedAt.Substring(0, joinedAt.LastIndexOf("+"));
+                safe.SafeThreadBtns(JoinBtn, joinedAt);
+                safe.SafeThreadBtns(avatarUrlBox, user.GetAvatarUrl());
+                if (user.GuildPermissions.Administrator)
+                {
+                    safe.SafeThreadBtns(PermissionsBox, "Administrator");
+                }
+                else
+                {
+                    safe.SafeThreadBtns(PermissionsBox, "User");
+                }
+                string createdAt = user.CreatedAt.ToString();
+                createdAt = createdAt.Substring(0, createdAt.LastIndexOf("+"));
+                safe.SafeThreadBtns(CreatedAtBtn, createdAt);
+                safe.SafeTextBox(UserIDTextBox, user.Id.ToString());
+                if (user.IsBot)
+                {
+                    safe.SafeThreadBtns(BotBtn, "Yes");
+                }
+                else
+                {
+                    safe.SafeThreadBtns(BotBtn, "No");
+                }
+
+            }
+            catch
+            {
+
+            }
+        }
+        private void LoadUSerByID(ulong id)
+        {
+            safe = new SafeThreadingForm();
+            var myName = Members.FirstOrDefault(x => x.Value == ulong.Parse(UserIDTextBox.Text)).Key;
+            safe.SafeThreadingComboBoxItem(usersComboBox, myName);
+            var user = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(id);
+            safe.SafeThreadBtns(UserNameBox, user.Username);
+            string nickname = user.Nickname;
+
+            if (nickname == null || nickname == String.Empty || nickname == "")
+            {
+                safe.SafeThreadBtns(NickNameBox, "Unknown");
+            }
+            else
+            {
+                safe.SafeThreadBtns(UserNameBox, nickname);
+            }
+            safe.SafeThreadBtns(IDBox, user.Id.ToString());
+            safe.SafeThreadBtns(UserStatusBox, user.Status.ToString());
+            string joinedAt = user.JoinedAt.ToString();
+            joinedAt = joinedAt.Substring(0, joinedAt.LastIndexOf("+"));
+            safe.SafeThreadBtns(JoinBtn, joinedAt);
+            safe.SafeThreadBtns(avatarUrlBox, user.GetAvatarUrl());
+            if (user.GuildPermissions.Administrator)
+            {
+                safe.SafeThreadBtns(PermissionsBox, "Administrator");
+            }
+            else
+            {
+                safe.SafeThreadBtns(PermissionsBox, "User");
+            }
+            string createdAt = user.CreatedAt.ToString();
+            createdAt = createdAt.Substring(0, createdAt.LastIndexOf("+"));
+            safe.SafeThreadBtns(CreatedAtBtn, createdAt);
+            if(user.IsBot)
+            {
+                safe.SafeThreadBtns(BotBtn, "Yes");
+            }
+            else
+            {
+                safe.SafeThreadBtns(BotBtn, "No");
+            }
+        }
+        public void loadMembers()
+        {
+            safe = new SafeThreadingForm();
+            Members = new Dictionary<string, ulong>();
+            try
+            {
+                safe.ClearComboBox(usersComboBox);
+                foreach (var member in _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Users)
+                {
+                    Members.Add(member.Username, member.Id);
+                    safe.safeComboThreading(usersComboBox, member.Username);
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void avatarUrlBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(avatarUrlBox.Text);
+        }
+
+        private void UserIDTextBox_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == System.Windows.Forms.Keys.Enter)
+                {
+                    LoadUSerByID(ulong.Parse(UserIDTextBox.Text));
+                }
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Error", "You need to enter user Id first");
+            }
+            
+        }
+
+        private void Form1_Leave(object sender, EventArgs e)
+        {
+           
+        }
+        
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            string token = TokenTextBox.Text;
+            if(ShowToken.Checked)
+            {
+                TokenTextBox.PasswordChar = '\0';
+                //TokenTextBox.Text = token;
+
+            }
+            else if(!ShowToken.Checked)
+            {
+                TokenTextBox.PasswordChar = '*';
+            }
+            
+        }
+
+        private void Form1_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.Prefix = PrefixTextBox.Text;
+            Properties.Settings.Default.Token = TokenTextBox.Text;
+        }
+
+        private void Form1_FormClosed(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Prefix = PrefixTextBox.Text;
+            Properties.Settings.Default.Token = TokenTextBox.Text;
         }
     }
 }
