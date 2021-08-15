@@ -207,7 +207,7 @@ namespace DiscordBot
                     ChannelsTExtBox.Items.Add(channel.ToString());
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     ChannelsTExtBox.Items.Add("Not Able To Add this Channel");
                 }

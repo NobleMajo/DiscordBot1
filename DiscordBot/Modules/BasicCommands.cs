@@ -66,28 +66,8 @@ namespace DiscordBot.Modules
             }
 
 
-        }
-        [Command("kick")]
-        public async Task Kick(IGuildUser userAccount, string reason = null)
-        {
-            var user = Context.User as SocketGuildUser;
-
-            if (!userAccount.GuildPermissions.Administrator)
-            {
-                if (user.GuildPermissions.KickMembers)
-                {
-                    await userAccount.KickAsync(reason);
-                    await Context.Channel.SendMessageAsync($"The user `{userAccount}` has been kicked, for {reason}");
-                }
-                else
-                {
-                    await Context.Channel.SendMessageAsync("No permissions for kicking a user.");
-                }
-            }
-            else
-            {
-                await ReplyAsync("You can't kick Admin");
-            }
+        
+        
         }
         [Command("flipcoin")]
         [Summary("Flips a coin which either it can be heads or tails (50/50)")]
