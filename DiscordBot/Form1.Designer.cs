@@ -49,7 +49,6 @@ namespace DiscordBot
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.ShowToken = new System.Windows.Forms.CheckBox();
             this.GuildsComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new MetroFramework.Controls.MetroLabel();
@@ -99,6 +98,7 @@ namespace DiscordBot
             this.metroButton11 = new MetroFramework.Controls.MetroButton();
             this.metroButton10 = new MetroFramework.Controls.MetroButton();
             this.metroButton7 = new MetroFramework.Controls.MetroButton();
+            this.ShowToken = new MetroFramework.Controls.MetroCheckBox();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -362,19 +362,6 @@ namespace DiscordBot
             this.metroTabPage2.VerticalScrollbarBarColor = false;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 0;
-            // 
-            // ShowToken
-            // 
-            this.ShowToken.AutoSize = true;
-            this.ShowToken.BackColor = System.Drawing.Color.Transparent;
-            this.ShowToken.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.ShowToken.Location = new System.Drawing.Point(307, 22);
-            this.ShowToken.Name = "ShowToken";
-            this.ShowToken.Size = new System.Drawing.Size(87, 17);
-            this.ShowToken.TabIndex = 13;
-            this.ShowToken.Text = "Show Token";
-            this.ShowToken.UseVisualStyleBackColor = false;
-            this.ShowToken.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // GuildsComboBox
             // 
@@ -1052,6 +1039,17 @@ namespace DiscordBot
             this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton7.UseSelectable = true;
             // 
+            // ShowToken
+            // 
+            this.ShowToken.AutoSize = true;
+            this.ShowToken.Location = new System.Drawing.Point(314, 20);
+            this.ShowToken.Name = "ShowToken";
+            this.ShowToken.Size = new System.Drawing.Size(86, 15);
+            this.ShowToken.TabIndex = 13;
+            this.ShowToken.Text = "Show Token";
+            this.ShowToken.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ShowToken.UseSelectable = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1164,7 +1162,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton metroButton11;
         private MetroFramework.Controls.MetroButton metroButton10;
         private MetroFramework.Controls.MetroButton metroButton7;
-        private System.Windows.Forms.CheckBox ShowToken;
+        private MetroFramework.Controls.MetroCheckBox ShowToken;
     }
 }
 
