@@ -10,10 +10,15 @@ using System.Windows.Forms;
 using Discord.WebSocket;
 using Newtonsoft.Json.Linq;
 using System.Collections;
+using System.Runtime.Remoting.Contexts;
+using System.Threading;
+
 namespace DiscordBot.Modules
 {
-    class AdminCommands : ModuleBase<SocketCommandContext>
+    public class AdminCommands : ModuleBase<SocketCommandContext>
     {
+        private readonly AdminCommands m_Service;
+
         [Command("kick")]
         public async Task Kick(IGuildUser userAccount, string reason = null)
         {
@@ -57,6 +62,48 @@ namespace DiscordBot.Modules
             {
                 await ReplyAsync("You can't ban Admin");
             }
+        }
+        [Command("addrole")]
+        [Remarks("addrole [user]")]
+        [Summary("This allows admins to add specific roles to a user.")]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        [RequireUserPermission(GuildPermission.ManageRoles)]
+        public async Task AddRoleUser(IGuildUser user, [Remainder] string role)
+        {
+            await m_Service.AddRoleUser(user, role);
+        }
+
+        [Command("removerole")]
+        [Alias("removerole", "delrole")]
+        [Remarks("delrole [user]")]
+        [Summary("This allows admins to remove specific roles to a user.")]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        [RequireUserPermission(GuildPermission.ManageRoles)]
+        public async Task RemoveRoleUser(IGuildUser user, [Remainder] string role)
+        {
+            await m_Service.RemoveRoleUser(user, role);
+        }
+
+        [Command("mute")]
+        [Remarks("mute [user]")]
+        [Summary("This allows admins to mute users.")]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        [RequireUserPermission(GuildPermission.MuteMembers)]
+        public async Task MuteUser(IGuildUser user)
+{
+            var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
+            await (user as IGuildUser).AddRoleAsync(role);
+        }
+
+        [Command("unmute")]
+        [Remarks("unmute [user]")]
+        [Summary("This allows admins to unmute users.")]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        [RequireUserPermission(GuildPermission.MuteMembers)]
+        public async Task UnmuteUser(IGuildUser user)
+        {
+            var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
+            await (user as IGuildUser).RemoveRoleAsync(role);
         }
     }
 }
