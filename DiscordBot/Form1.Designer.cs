@@ -49,6 +49,7 @@ namespace DiscordBot
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.ShowToken = new System.Windows.Forms.CheckBox();
             this.GuildsComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ServerIdTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new MetroFramework.Controls.MetroLabel();
@@ -75,30 +76,29 @@ namespace DiscordBot
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
-            this.metroButton7 = new MetroFramework.Controls.MetroButton();
-            this.metroButton10 = new MetroFramework.Controls.MetroButton();
-            this.metroButton11 = new MetroFramework.Controls.MetroButton();
-            this.metroButton12 = new MetroFramework.Controls.MetroButton();
-            this.metroButton13 = new MetroFramework.Controls.MetroButton();
-            this.metroButton14 = new MetroFramework.Controls.MetroButton();
-            this.metroButton15 = new MetroFramework.Controls.MetroButton();
-            this.metroButton16 = new MetroFramework.Controls.MetroButton();
-            this.metroButton17 = new MetroFramework.Controls.MetroButton();
-            this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
-            this.UserNameBox = new MetroFramework.Controls.MetroButton();
-            this.NickNameBox = new MetroFramework.Controls.MetroButton();
-            this.IDBox = new MetroFramework.Controls.MetroButton();
-            this.UserStatusBox = new MetroFramework.Controls.MetroButton();
-            this.JoinBtn = new MetroFramework.Controls.MetroButton();
-            this.avatarUrlBox = new MetroFramework.Controls.MetroButton();
-            this.PermissionsBox = new MetroFramework.Controls.MetroButton();
-            this.CreatedAtBtn = new MetroFramework.Controls.MetroButton();
-            this.BotBtn = new MetroFramework.Controls.MetroButton();
-            this.usersComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.UserIDTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
-            this.ShowToken = new System.Windows.Forms.CheckBox();
+            this.UserIDTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.usersComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.BotBtn = new MetroFramework.Controls.MetroButton();
+            this.CreatedAtBtn = new MetroFramework.Controls.MetroButton();
+            this.PermissionsBox = new MetroFramework.Controls.MetroButton();
+            this.avatarUrlBox = new MetroFramework.Controls.MetroButton();
+            this.JoinBtn = new MetroFramework.Controls.MetroButton();
+            this.UserStatusBox = new MetroFramework.Controls.MetroButton();
+            this.IDBox = new MetroFramework.Controls.MetroButton();
+            this.NickNameBox = new MetroFramework.Controls.MetroButton();
+            this.UserNameBox = new MetroFramework.Controls.MetroButton();
+            this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton17 = new MetroFramework.Controls.MetroButton();
+            this.metroButton16 = new MetroFramework.Controls.MetroButton();
+            this.metroButton15 = new MetroFramework.Controls.MetroButton();
+            this.metroButton14 = new MetroFramework.Controls.MetroButton();
+            this.metroButton13 = new MetroFramework.Controls.MetroButton();
+            this.metroButton12 = new MetroFramework.Controls.MetroButton();
+            this.metroButton11 = new MetroFramework.Controls.MetroButton();
+            this.metroButton10 = new MetroFramework.Controls.MetroButton();
+            this.metroButton7 = new MetroFramework.Controls.MetroButton();
             this.MainTabs1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -115,9 +115,9 @@ namespace DiscordBot
             this.metroPanel5.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
-            this.metroPanel7.SuspendLayout();
-            this.metroPanel8.SuspendLayout();
             this.metroPanel6.SuspendLayout();
+            this.metroPanel8.SuspendLayout();
+            this.metroPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabs1
@@ -363,6 +363,19 @@ namespace DiscordBot
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 0;
             // 
+            // ShowToken
+            // 
+            this.ShowToken.AutoSize = true;
+            this.ShowToken.BackColor = System.Drawing.Color.Transparent;
+            this.ShowToken.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ShowToken.Location = new System.Drawing.Point(307, 22);
+            this.ShowToken.Name = "ShowToken";
+            this.ShowToken.Size = new System.Drawing.Size(87, 17);
+            this.ShowToken.TabIndex = 13;
+            this.ShowToken.Text = "Show Token";
+            this.ShowToken.UseVisualStyleBackColor = false;
+            this.ShowToken.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // GuildsComboBox
             // 
             this.GuildsComboBox.FormattingEnabled = true;
@@ -506,7 +519,7 @@ namespace DiscordBot
             this.TokenTextBox.Location = new System.Drawing.Point(59, 19);
             this.TokenTextBox.MaxLength = 32767;
             this.TokenTextBox.Name = "TokenTextBox";
-            this.TokenTextBox.PasswordChar = '\0';
+            this.TokenTextBox.PasswordChar = '*';
             this.TokenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TokenTextBox.SelectedText = "";
             this.TokenTextBox.SelectionLength = 0;
@@ -738,255 +751,24 @@ namespace DiscordBot
             this.metroTabPage6.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage6.VerticalScrollbarSize = 0;
             // 
-            // metroPanel7
+            // metroPanel6
             // 
-            this.metroPanel7.Controls.Add(this.metroButton17);
-            this.metroPanel7.Controls.Add(this.metroButton16);
-            this.metroPanel7.Controls.Add(this.metroButton15);
-            this.metroPanel7.Controls.Add(this.metroButton14);
-            this.metroPanel7.Controls.Add(this.metroButton13);
-            this.metroPanel7.Controls.Add(this.metroButton12);
-            this.metroPanel7.Controls.Add(this.metroButton11);
-            this.metroPanel7.Controls.Add(this.metroButton10);
-            this.metroPanel7.Controls.Add(this.metroButton7);
-            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel7.HorizontalScrollbarBarColor = true;
-            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(200, 403);
-            this.metroPanel7.TabIndex = 2;
-            this.metroPanel7.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel7.VerticalScrollbarBarColor = true;
-            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel7.VerticalScrollbarSize = 10;
-            // 
-            // metroButton7
-            // 
-            this.metroButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton7.Location = new System.Drawing.Point(0, 0);
-            this.metroButton7.Name = "metroButton7";
-            this.metroButton7.Size = new System.Drawing.Size(200, 23);
-            this.metroButton7.TabIndex = 2;
-            this.metroButton7.Text = "UserName:";
-            this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton7.UseSelectable = true;
-            // 
-            // metroButton10
-            // 
-            this.metroButton10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton10.Location = new System.Drawing.Point(0, 23);
-            this.metroButton10.Name = "metroButton10";
-            this.metroButton10.Size = new System.Drawing.Size(200, 23);
-            this.metroButton10.TabIndex = 3;
-            this.metroButton10.Text = "NickName";
-            this.metroButton10.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton10.UseSelectable = true;
-            // 
-            // metroButton11
-            // 
-            this.metroButton11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton11.Location = new System.Drawing.Point(0, 46);
-            this.metroButton11.Name = "metroButton11";
-            this.metroButton11.Size = new System.Drawing.Size(200, 23);
-            this.metroButton11.TabIndex = 4;
-            this.metroButton11.Text = "ID";
-            this.metroButton11.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton11.UseSelectable = true;
-            // 
-            // metroButton12
-            // 
-            this.metroButton12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton12.Location = new System.Drawing.Point(0, 69);
-            this.metroButton12.Name = "metroButton12";
-            this.metroButton12.Size = new System.Drawing.Size(200, 23);
-            this.metroButton12.TabIndex = 5;
-            this.metroButton12.Text = "Status";
-            this.metroButton12.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton12.UseSelectable = true;
-            // 
-            // metroButton13
-            // 
-            this.metroButton13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton13.Location = new System.Drawing.Point(0, 92);
-            this.metroButton13.Name = "metroButton13";
-            this.metroButton13.Size = new System.Drawing.Size(200, 23);
-            this.metroButton13.TabIndex = 6;
-            this.metroButton13.Text = "Joined At";
-            this.metroButton13.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton13.UseSelectable = true;
-            // 
-            // metroButton14
-            // 
-            this.metroButton14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton14.Location = new System.Drawing.Point(0, 115);
-            this.metroButton14.Name = "metroButton14";
-            this.metroButton14.Size = new System.Drawing.Size(200, 23);
-            this.metroButton14.TabIndex = 7;
-            this.metroButton14.Text = "Avatar";
-            this.metroButton14.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton14.UseSelectable = true;
-            // 
-            // metroButton15
-            // 
-            this.metroButton15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton15.Location = new System.Drawing.Point(0, 138);
-            this.metroButton15.Name = "metroButton15";
-            this.metroButton15.Size = new System.Drawing.Size(200, 23);
-            this.metroButton15.TabIndex = 8;
-            this.metroButton15.Text = "Permissions";
-            this.metroButton15.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton15.UseSelectable = true;
-            // 
-            // metroButton16
-            // 
-            this.metroButton16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton16.Location = new System.Drawing.Point(0, 161);
-            this.metroButton16.Name = "metroButton16";
-            this.metroButton16.Size = new System.Drawing.Size(200, 23);
-            this.metroButton16.TabIndex = 9;
-            this.metroButton16.Text = "CreatedAt";
-            this.metroButton16.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton16.UseSelectable = true;
-            // 
-            // metroButton17
-            // 
-            this.metroButton17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton17.Location = new System.Drawing.Point(0, 184);
-            this.metroButton17.Name = "metroButton17";
-            this.metroButton17.Size = new System.Drawing.Size(200, 23);
-            this.metroButton17.TabIndex = 10;
-            this.metroButton17.Text = "Bot";
-            this.metroButton17.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton17.UseSelectable = true;
-            // 
-            // metroPanel8
-            // 
-            this.metroPanel8.Controls.Add(this.BotBtn);
-            this.metroPanel8.Controls.Add(this.CreatedAtBtn);
-            this.metroPanel8.Controls.Add(this.PermissionsBox);
-            this.metroPanel8.Controls.Add(this.avatarUrlBox);
-            this.metroPanel8.Controls.Add(this.JoinBtn);
-            this.metroPanel8.Controls.Add(this.UserStatusBox);
-            this.metroPanel8.Controls.Add(this.IDBox);
-            this.metroPanel8.Controls.Add(this.NickNameBox);
-            this.metroPanel8.Controls.Add(this.UserNameBox);
-            this.metroPanel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel8.HorizontalScrollbarBarColor = true;
-            this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(200, 0);
-            this.metroPanel8.Name = "metroPanel8";
-            this.metroPanel8.Size = new System.Drawing.Size(200, 403);
-            this.metroPanel8.TabIndex = 3;
-            this.metroPanel8.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel8.VerticalScrollbarBarColor = true;
-            this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel8.VerticalScrollbarSize = 10;
-            // 
-            // UserNameBox
-            // 
-            this.UserNameBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserNameBox.Location = new System.Drawing.Point(0, 0);
-            this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(200, 23);
-            this.UserNameBox.TabIndex = 2;
-            this.UserNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.UserNameBox.UseSelectable = true;
-            // 
-            // NickNameBox
-            // 
-            this.NickNameBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NickNameBox.Location = new System.Drawing.Point(0, 23);
-            this.NickNameBox.Name = "NickNameBox";
-            this.NickNameBox.Size = new System.Drawing.Size(200, 23);
-            this.NickNameBox.TabIndex = 3;
-            this.NickNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.NickNameBox.UseSelectable = true;
-            // 
-            // IDBox
-            // 
-            this.IDBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IDBox.Location = new System.Drawing.Point(0, 46);
-            this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(200, 23);
-            this.IDBox.TabIndex = 4;
-            this.IDBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.IDBox.UseSelectable = true;
-            // 
-            // UserStatusBox
-            // 
-            this.UserStatusBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserStatusBox.Location = new System.Drawing.Point(0, 69);
-            this.UserStatusBox.Name = "UserStatusBox";
-            this.UserStatusBox.Size = new System.Drawing.Size(200, 23);
-            this.UserStatusBox.TabIndex = 5;
-            this.UserStatusBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.UserStatusBox.UseSelectable = true;
-            // 
-            // JoinBtn
-            // 
-            this.JoinBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.JoinBtn.Location = new System.Drawing.Point(0, 92);
-            this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(200, 23);
-            this.JoinBtn.TabIndex = 6;
-            this.JoinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.JoinBtn.UseSelectable = true;
-            // 
-            // avatarUrlBox
-            // 
-            this.avatarUrlBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.avatarUrlBox.Location = new System.Drawing.Point(0, 115);
-            this.avatarUrlBox.Name = "avatarUrlBox";
-            this.avatarUrlBox.Size = new System.Drawing.Size(200, 23);
-            this.avatarUrlBox.TabIndex = 7;
-            this.avatarUrlBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.avatarUrlBox.UseSelectable = true;
-            this.avatarUrlBox.Click += new System.EventHandler(this.avatarUrlBox_Click);
-            // 
-            // PermissionsBox
-            // 
-            this.PermissionsBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PermissionsBox.Location = new System.Drawing.Point(0, 138);
-            this.PermissionsBox.Name = "PermissionsBox";
-            this.PermissionsBox.Size = new System.Drawing.Size(200, 23);
-            this.PermissionsBox.TabIndex = 8;
-            this.PermissionsBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.PermissionsBox.UseSelectable = true;
-            // 
-            // CreatedAtBtn
-            // 
-            this.CreatedAtBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CreatedAtBtn.Location = new System.Drawing.Point(0, 161);
-            this.CreatedAtBtn.Name = "CreatedAtBtn";
-            this.CreatedAtBtn.Size = new System.Drawing.Size(200, 23);
-            this.CreatedAtBtn.TabIndex = 9;
-            this.CreatedAtBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.CreatedAtBtn.UseSelectable = true;
-            // 
-            // BotBtn
-            // 
-            this.BotBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BotBtn.Location = new System.Drawing.Point(0, 184);
-            this.BotBtn.Name = "BotBtn";
-            this.BotBtn.Size = new System.Drawing.Size(200, 23);
-            this.BotBtn.TabIndex = 10;
-            this.BotBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.BotBtn.UseSelectable = true;
-            // 
-            // usersComboBox
-            // 
-            this.usersComboBox.FormattingEnabled = true;
-            this.usersComboBox.ItemHeight = 23;
-            this.usersComboBox.Location = new System.Drawing.Point(692, 86);
-            this.usersComboBox.Name = "usersComboBox";
-            this.usersComboBox.Size = new System.Drawing.Size(178, 29);
-            this.usersComboBox.TabIndex = 4;
-            this.usersComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.usersComboBox.UseSelectable = true;
-            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
+            this.metroPanel6.Controls.Add(this.UserIDTextBox);
+            this.metroPanel6.Controls.Add(this.usersComboBox);
+            this.metroPanel6.Controls.Add(this.metroPanel8);
+            this.metroPanel6.Controls.Add(this.metroPanel7);
+            this.metroPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel6.HorizontalScrollbarBarColor = true;
+            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.HorizontalScrollbarSize = 10;
+            this.metroPanel6.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel6.Name = "metroPanel6";
+            this.metroPanel6.Size = new System.Drawing.Size(1063, 403);
+            this.metroPanel6.TabIndex = 2;
+            this.metroPanel6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel6.VerticalScrollbarBarColor = true;
+            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.VerticalScrollbarSize = 10;
             // 
             // UserIDTextBox
             // 
@@ -1020,37 +802,255 @@ namespace DiscordBot
             this.UserIDTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.UserIDTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UserIDTextBox_KeyUp);
             // 
-            // metroPanel6
+            // usersComboBox
             // 
-            this.metroPanel6.Controls.Add(this.UserIDTextBox);
-            this.metroPanel6.Controls.Add(this.usersComboBox);
-            this.metroPanel6.Controls.Add(this.metroPanel8);
-            this.metroPanel6.Controls.Add(this.metroPanel7);
-            this.metroPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel6.HorizontalScrollbarBarColor = true;
-            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(1063, 403);
-            this.metroPanel6.TabIndex = 2;
-            this.metroPanel6.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroPanel6.VerticalScrollbarBarColor = true;
-            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel6.VerticalScrollbarSize = 10;
+            this.usersComboBox.FormattingEnabled = true;
+            this.usersComboBox.ItemHeight = 23;
+            this.usersComboBox.Location = new System.Drawing.Point(692, 86);
+            this.usersComboBox.Name = "usersComboBox";
+            this.usersComboBox.Size = new System.Drawing.Size(178, 29);
+            this.usersComboBox.TabIndex = 4;
+            this.usersComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.usersComboBox.UseSelectable = true;
+            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
             // 
-            // ShowToken
+            // metroPanel8
             // 
-            this.ShowToken.AutoSize = true;
-            this.ShowToken.BackColor = System.Drawing.Color.Transparent;
-            this.ShowToken.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.ShowToken.Location = new System.Drawing.Point(307, 22);
-            this.ShowToken.Name = "ShowToken";
-            this.ShowToken.Size = new System.Drawing.Size(87, 17);
-            this.ShowToken.TabIndex = 13;
-            this.ShowToken.Text = "Show Token";
-            this.ShowToken.UseVisualStyleBackColor = false;
-            this.ShowToken.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.metroPanel8.Controls.Add(this.BotBtn);
+            this.metroPanel8.Controls.Add(this.CreatedAtBtn);
+            this.metroPanel8.Controls.Add(this.PermissionsBox);
+            this.metroPanel8.Controls.Add(this.avatarUrlBox);
+            this.metroPanel8.Controls.Add(this.JoinBtn);
+            this.metroPanel8.Controls.Add(this.UserStatusBox);
+            this.metroPanel8.Controls.Add(this.IDBox);
+            this.metroPanel8.Controls.Add(this.NickNameBox);
+            this.metroPanel8.Controls.Add(this.UserNameBox);
+            this.metroPanel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel8.HorizontalScrollbarBarColor = true;
+            this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel8.HorizontalScrollbarSize = 10;
+            this.metroPanel8.Location = new System.Drawing.Point(200, 0);
+            this.metroPanel8.Name = "metroPanel8";
+            this.metroPanel8.Size = new System.Drawing.Size(200, 403);
+            this.metroPanel8.TabIndex = 3;
+            this.metroPanel8.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel8.VerticalScrollbarBarColor = true;
+            this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel8.VerticalScrollbarSize = 10;
+            // 
+            // BotBtn
+            // 
+            this.BotBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BotBtn.Location = new System.Drawing.Point(0, 184);
+            this.BotBtn.Name = "BotBtn";
+            this.BotBtn.Size = new System.Drawing.Size(200, 23);
+            this.BotBtn.TabIndex = 10;
+            this.BotBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BotBtn.UseSelectable = true;
+            // 
+            // CreatedAtBtn
+            // 
+            this.CreatedAtBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CreatedAtBtn.Location = new System.Drawing.Point(0, 161);
+            this.CreatedAtBtn.Name = "CreatedAtBtn";
+            this.CreatedAtBtn.Size = new System.Drawing.Size(200, 23);
+            this.CreatedAtBtn.TabIndex = 9;
+            this.CreatedAtBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CreatedAtBtn.UseSelectable = true;
+            // 
+            // PermissionsBox
+            // 
+            this.PermissionsBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PermissionsBox.Location = new System.Drawing.Point(0, 138);
+            this.PermissionsBox.Name = "PermissionsBox";
+            this.PermissionsBox.Size = new System.Drawing.Size(200, 23);
+            this.PermissionsBox.TabIndex = 8;
+            this.PermissionsBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.PermissionsBox.UseSelectable = true;
+            // 
+            // avatarUrlBox
+            // 
+            this.avatarUrlBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.avatarUrlBox.Location = new System.Drawing.Point(0, 115);
+            this.avatarUrlBox.Name = "avatarUrlBox";
+            this.avatarUrlBox.Size = new System.Drawing.Size(200, 23);
+            this.avatarUrlBox.TabIndex = 7;
+            this.avatarUrlBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.avatarUrlBox.UseSelectable = true;
+            this.avatarUrlBox.Click += new System.EventHandler(this.avatarUrlBox_Click);
+            // 
+            // JoinBtn
+            // 
+            this.JoinBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.JoinBtn.Location = new System.Drawing.Point(0, 92);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(200, 23);
+            this.JoinBtn.TabIndex = 6;
+            this.JoinBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.JoinBtn.UseSelectable = true;
+            // 
+            // UserStatusBox
+            // 
+            this.UserStatusBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserStatusBox.Location = new System.Drawing.Point(0, 69);
+            this.UserStatusBox.Name = "UserStatusBox";
+            this.UserStatusBox.Size = new System.Drawing.Size(200, 23);
+            this.UserStatusBox.TabIndex = 5;
+            this.UserStatusBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.UserStatusBox.UseSelectable = true;
+            // 
+            // IDBox
+            // 
+            this.IDBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IDBox.Location = new System.Drawing.Point(0, 46);
+            this.IDBox.Name = "IDBox";
+            this.IDBox.Size = new System.Drawing.Size(200, 23);
+            this.IDBox.TabIndex = 4;
+            this.IDBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.IDBox.UseSelectable = true;
+            // 
+            // NickNameBox
+            // 
+            this.NickNameBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NickNameBox.Location = new System.Drawing.Point(0, 23);
+            this.NickNameBox.Name = "NickNameBox";
+            this.NickNameBox.Size = new System.Drawing.Size(200, 23);
+            this.NickNameBox.TabIndex = 3;
+            this.NickNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.NickNameBox.UseSelectable = true;
+            // 
+            // UserNameBox
+            // 
+            this.UserNameBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserNameBox.Location = new System.Drawing.Point(0, 0);
+            this.UserNameBox.Name = "UserNameBox";
+            this.UserNameBox.Size = new System.Drawing.Size(200, 23);
+            this.UserNameBox.TabIndex = 2;
+            this.UserNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.UserNameBox.UseSelectable = true;
+            // 
+            // metroPanel7
+            // 
+            this.metroPanel7.Controls.Add(this.metroButton17);
+            this.metroPanel7.Controls.Add(this.metroButton16);
+            this.metroPanel7.Controls.Add(this.metroButton15);
+            this.metroPanel7.Controls.Add(this.metroButton14);
+            this.metroPanel7.Controls.Add(this.metroButton13);
+            this.metroPanel7.Controls.Add(this.metroButton12);
+            this.metroPanel7.Controls.Add(this.metroButton11);
+            this.metroPanel7.Controls.Add(this.metroButton10);
+            this.metroPanel7.Controls.Add(this.metroButton7);
+            this.metroPanel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel7.HorizontalScrollbarBarColor = true;
+            this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.HorizontalScrollbarSize = 10;
+            this.metroPanel7.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel7.Name = "metroPanel7";
+            this.metroPanel7.Size = new System.Drawing.Size(200, 403);
+            this.metroPanel7.TabIndex = 2;
+            this.metroPanel7.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel7.VerticalScrollbarBarColor = true;
+            this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel7.VerticalScrollbarSize = 10;
+            // 
+            // metroButton17
+            // 
+            this.metroButton17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton17.Location = new System.Drawing.Point(0, 184);
+            this.metroButton17.Name = "metroButton17";
+            this.metroButton17.Size = new System.Drawing.Size(200, 23);
+            this.metroButton17.TabIndex = 10;
+            this.metroButton17.Text = "Bot";
+            this.metroButton17.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton17.UseSelectable = true;
+            // 
+            // metroButton16
+            // 
+            this.metroButton16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton16.Location = new System.Drawing.Point(0, 161);
+            this.metroButton16.Name = "metroButton16";
+            this.metroButton16.Size = new System.Drawing.Size(200, 23);
+            this.metroButton16.TabIndex = 9;
+            this.metroButton16.Text = "CreatedAt";
+            this.metroButton16.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton16.UseSelectable = true;
+            // 
+            // metroButton15
+            // 
+            this.metroButton15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton15.Location = new System.Drawing.Point(0, 138);
+            this.metroButton15.Name = "metroButton15";
+            this.metroButton15.Size = new System.Drawing.Size(200, 23);
+            this.metroButton15.TabIndex = 8;
+            this.metroButton15.Text = "Permissions";
+            this.metroButton15.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton15.UseSelectable = true;
+            // 
+            // metroButton14
+            // 
+            this.metroButton14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton14.Location = new System.Drawing.Point(0, 115);
+            this.metroButton14.Name = "metroButton14";
+            this.metroButton14.Size = new System.Drawing.Size(200, 23);
+            this.metroButton14.TabIndex = 7;
+            this.metroButton14.Text = "Avatar";
+            this.metroButton14.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton14.UseSelectable = true;
+            // 
+            // metroButton13
+            // 
+            this.metroButton13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton13.Location = new System.Drawing.Point(0, 92);
+            this.metroButton13.Name = "metroButton13";
+            this.metroButton13.Size = new System.Drawing.Size(200, 23);
+            this.metroButton13.TabIndex = 6;
+            this.metroButton13.Text = "Joined At";
+            this.metroButton13.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton13.UseSelectable = true;
+            // 
+            // metroButton12
+            // 
+            this.metroButton12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton12.Location = new System.Drawing.Point(0, 69);
+            this.metroButton12.Name = "metroButton12";
+            this.metroButton12.Size = new System.Drawing.Size(200, 23);
+            this.metroButton12.TabIndex = 5;
+            this.metroButton12.Text = "Status";
+            this.metroButton12.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton12.UseSelectable = true;
+            // 
+            // metroButton11
+            // 
+            this.metroButton11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton11.Location = new System.Drawing.Point(0, 46);
+            this.metroButton11.Name = "metroButton11";
+            this.metroButton11.Size = new System.Drawing.Size(200, 23);
+            this.metroButton11.TabIndex = 4;
+            this.metroButton11.Text = "ID";
+            this.metroButton11.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton11.UseSelectable = true;
+            // 
+            // metroButton10
+            // 
+            this.metroButton10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton10.Location = new System.Drawing.Point(0, 23);
+            this.metroButton10.Name = "metroButton10";
+            this.metroButton10.Size = new System.Drawing.Size(200, 23);
+            this.metroButton10.TabIndex = 3;
+            this.metroButton10.Text = "NickName";
+            this.metroButton10.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton10.UseSelectable = true;
+            // 
+            // metroButton7
+            // 
+            this.metroButton7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton7.Location = new System.Drawing.Point(0, 0);
+            this.metroButton7.Name = "metroButton7";
+            this.metroButton7.Size = new System.Drawing.Size(200, 23);
+            this.metroButton7.TabIndex = 2;
+            this.metroButton7.Text = "UserName:";
+            this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton7.UseSelectable = true;
             // 
             // Form1
             // 
@@ -1088,9 +1088,9 @@ namespace DiscordBot
             this.metroPanel5.ResumeLayout(false);
             this.metroPanel4.ResumeLayout(false);
             this.metroTabPage6.ResumeLayout(false);
-            this.metroPanel7.ResumeLayout(false);
-            this.metroPanel8.ResumeLayout(false);
             this.metroPanel6.ResumeLayout(false);
+            this.metroPanel8.ResumeLayout(false);
+            this.metroPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

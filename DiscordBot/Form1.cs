@@ -166,6 +166,7 @@ namespace DiscordBot
 
         Dictionary<string, ulong> Channel;
         Dictionary<string, ulong> Server;
+        Dictionary<string, ulong> Members;
         private async Task LoadGuilds()
         {
 
@@ -264,7 +265,7 @@ namespace DiscordBot
                 }
             }
         }
-        Dictionary<string, ulong> Members;
+        
         private void usersComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -419,11 +420,11 @@ namespace DiscordBot
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            string token = TokenTextBox.Text;
+           
             if(ShowToken.Checked)
             {
                 TokenTextBox.PasswordChar = '\0';
-                //TokenTextBox.Text = token;
+                
 
             }
             else if(!ShowToken.Checked)
