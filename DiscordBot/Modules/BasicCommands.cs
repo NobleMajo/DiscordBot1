@@ -34,7 +34,7 @@ namespace DiscordBot.Modules
         [Command("math")]
         public async Task Add(int numberOne, char operation, int numberTwo)
         {
-            switch(operation)
+            switch (operation)
             {
                 case '+':
                     {
@@ -43,7 +43,7 @@ namespace DiscordBot.Modules
                     }
                 case '-':
                     {
-                        await ReplyAsync($"{numberOne} - {numberTwo} = {(numberOne-numberTwo).ToString()}");
+                        await ReplyAsync($"{numberOne} - {numberTwo} = {(numberOne - numberTwo).ToString()}");
                         break;
                     }
                 case '/':
@@ -64,11 +64,9 @@ namespace DiscordBot.Modules
 
 
             }
-
-
-        
-        
         }
+
+
         [Command("flipcoin")]
         [Summary("Flips a coin which either it can be heads or tails (50/50)")]
         public async Task FlipCoin()
