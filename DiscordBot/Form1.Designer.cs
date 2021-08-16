@@ -31,7 +31,7 @@ namespace DiscordBot
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.MainTabs1 = new MetroFramework.Controls.MetroTabControl();
+            this.Prison = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -99,7 +99,12 @@ namespace DiscordBot
             this.metroButton11 = new MetroFramework.Controls.MetroButton();
             this.metroButton10 = new MetroFramework.Controls.MetroButton();
             this.metroButton7 = new MetroFramework.Controls.MetroButton();
-            this.MainTabs1.SuspendLayout();
+            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.BannedWords = new MetroFramework.Controls.MetroComboBox();
+            this.AddRemoveBox = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.Prison.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -118,24 +123,26 @@ namespace DiscordBot
             this.metroPanel6.SuspendLayout();
             this.metroPanel8.SuspendLayout();
             this.metroPanel7.SuspendLayout();
+            this.metroTabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MainTabs1
+            // Prison
             // 
-            this.MainTabs1.Controls.Add(this.metroTabPage1);
-            this.MainTabs1.Controls.Add(this.metroTabPage2);
-            this.MainTabs1.Controls.Add(this.metroTabPage5);
-            this.MainTabs1.Controls.Add(this.metroTabPage3);
-            this.MainTabs1.Controls.Add(this.metroTabPage4);
-            this.MainTabs1.Controls.Add(this.metroTabPage6);
-            this.MainTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTabs1.Location = new System.Drawing.Point(20, 60);
-            this.MainTabs1.Name = "MainTabs1";
-            this.MainTabs1.SelectedIndex = 1;
-            this.MainTabs1.Size = new System.Drawing.Size(1071, 445);
-            this.MainTabs1.TabIndex = 0;
-            this.MainTabs1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MainTabs1.UseSelectable = true;
+            this.Prison.Controls.Add(this.metroTabPage1);
+            this.Prison.Controls.Add(this.metroTabPage2);
+            this.Prison.Controls.Add(this.metroTabPage5);
+            this.Prison.Controls.Add(this.metroTabPage3);
+            this.Prison.Controls.Add(this.metroTabPage4);
+            this.Prison.Controls.Add(this.metroTabPage6);
+            this.Prison.Controls.Add(this.metroTabPage7);
+            this.Prison.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Prison.Location = new System.Drawing.Point(20, 60);
+            this.Prison.Name = "Prison";
+            this.Prison.SelectedIndex = 6;
+            this.Prison.Size = new System.Drawing.Size(1071, 445);
+            this.Prison.TabIndex = 0;
+            this.Prison.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Prison.UseSelectable = true;
             // 
             // metroTabPage1
             // 
@@ -1051,12 +1058,95 @@ namespace DiscordBot
             this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton7.UseSelectable = true;
             // 
+            // metroTabPage7
+            // 
+            this.metroTabPage7.Controls.Add(this.metroLabel2);
+            this.metroTabPage7.Controls.Add(this.AddRemoveBox);
+            this.metroTabPage7.Controls.Add(this.metroLabel1);
+            this.metroTabPage7.Controls.Add(this.BannedWords);
+            this.metroTabPage7.HorizontalScrollbarBarColor = true;
+            this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.HorizontalScrollbarSize = 10;
+            this.metroTabPage7.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage7.Name = "metroTabPage7";
+            this.metroTabPage7.Size = new System.Drawing.Size(1063, 403);
+            this.metroTabPage7.TabIndex = 6;
+            this.metroTabPage7.Text = "BannedWords";
+            this.metroTabPage7.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage7.VerticalScrollbarBarColor = true;
+            this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 78);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(98, 19);
+            this.metroLabel1.TabIndex = 8;
+            this.metroLabel1.Text = "BannedWords :";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // BannedWords
+            // 
+            this.BannedWords.FormattingEnabled = true;
+            this.BannedWords.ItemHeight = 23;
+            this.BannedWords.Location = new System.Drawing.Point(107, 78);
+            this.BannedWords.Name = "BannedWords";
+            this.BannedWords.Size = new System.Drawing.Size(178, 29);
+            this.BannedWords.TabIndex = 3;
+            this.BannedWords.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BannedWords.UseSelectable = true;
+            this.BannedWords.SelectedIndexChanged += new System.EventHandler(this.BannedWords_SelectedIndexChanged);
+            // 
+            // AddRemoveBox
+            // 
+            // 
+            // 
+            // 
+            this.AddRemoveBox.CustomButton.Image = null;
+            this.AddRemoveBox.CustomButton.Location = new System.Drawing.Point(156, 1);
+            this.AddRemoveBox.CustomButton.Name = "";
+            this.AddRemoveBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.AddRemoveBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AddRemoveBox.CustomButton.TabIndex = 1;
+            this.AddRemoveBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.AddRemoveBox.CustomButton.UseSelectable = true;
+            this.AddRemoveBox.CustomButton.Visible = false;
+            this.AddRemoveBox.Lines = new string[0];
+            this.AddRemoveBox.Location = new System.Drawing.Point(107, 25);
+            this.AddRemoveBox.MaxLength = 32767;
+            this.AddRemoveBox.Name = "AddRemoveBox";
+            this.AddRemoveBox.PasswordChar = '\0';
+            this.AddRemoveBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.AddRemoveBox.SelectedText = "";
+            this.AddRemoveBox.SelectionLength = 0;
+            this.AddRemoveBox.SelectionStart = 0;
+            this.AddRemoveBox.ShortcutsEnabled = true;
+            this.AddRemoveBox.Size = new System.Drawing.Size(178, 23);
+            this.AddRemoveBox.TabIndex = 9;
+            this.AddRemoveBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AddRemoveBox.UseSelectable = true;
+            this.AddRemoveBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.AddRemoveBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.AddRemoveBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AddRemoveBox_KeyUp);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(3, 25);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel2.TabIndex = 10;
+            this.metroLabel2.Text = "Add/Remove:";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 525);
-            this.Controls.Add(this.MainTabs1);
+            this.Controls.Add(this.Prison);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -1069,7 +1159,7 @@ namespace DiscordBot
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Leave += new System.EventHandler(this.Form1_Leave);
-            this.MainTabs1.ResumeLayout(false);
+            this.Prison.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel3.ResumeLayout(false);
@@ -1090,13 +1180,15 @@ namespace DiscordBot
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel8.ResumeLayout(false);
             this.metroPanel7.ResumeLayout(false);
+            this.metroTabPage7.ResumeLayout(false);
+            this.metroTabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroTabControl MainTabs1;
+        private MetroFramework.Controls.MetroTabControl Prison;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroLabel tokenLabel;
@@ -1164,6 +1256,11 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton metroButton10;
         private MetroFramework.Controls.MetroButton metroButton7;
         private MetroFramework.Controls.MetroCheckBox ShowToken;
+        private MetroFramework.Controls.MetroTabPage metroTabPage7;
+        public MetroFramework.Controls.MetroLabel metroLabel1;
+        public MetroFramework.Controls.MetroComboBox BannedWords;
+        public MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox AddRemoveBox;
     }
 }
 

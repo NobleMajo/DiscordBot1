@@ -64,7 +64,7 @@ namespace DiscordBot.Modules
             }
         }
         [Command("addrole")]
-        [Remarks("addrole [user]")]
+     
         [Summary("This allows admins to add specific roles to a user.")]
         [RequireUserPermission(GuildPermission.Administrator)]
         [RequireUserPermission(GuildPermission.ManageRoles)]
@@ -85,14 +85,13 @@ namespace DiscordBot.Modules
         }
 
         [Command("mute")]
-        [Remarks("mute [user]")]
         [Summary("This allows admins to mute users.")]
         [RequireUserPermission(GuildPermission.Administrator)]
-        [RequireUserPermission(GuildPermission.MuteMembers)]
         public async Task MuteUser(IGuildUser user)
-{
+        {
             var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
             await (user as IGuildUser).AddRoleAsync(role);
+            await ReplyAsync($"{user} was muted");
         }
 
         [Command("unmute")]

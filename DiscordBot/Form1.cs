@@ -16,10 +16,20 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.IO;
 
+
 namespace DiscordBot
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        
+
+        Dictionary<string, ulong> Channel;
+        Dictionary<string, ulong> Server;
+        Dictionary<string, ulong> Members;
+
+        Messages mess;
+        SafeThreading.SafeThreadingForm safe;
+
         private DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
@@ -30,6 +40,7 @@ namespace DiscordBot
             InitializeComponent();
             StatusLabel.Text = "Status: Offline";
             StatusLabel.BackColor = Color.Red;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,6 +77,7 @@ namespace DiscordBot
 
         private async Task RegisterCommandAsync()
         {
+            mess = new Messages();
             _client.Ready += LoadGuilds;
             _client.Ready += ReadyStatus;
             _client.Disconnected += OffStatus;
@@ -73,6 +85,7 @@ namespace DiscordBot
             _client.MessageReceived += AllChangesChange;
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += MessLog;
+            _client.MessageReceived += mess.FilterMess;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 
@@ -91,10 +104,10 @@ namespace DiscordBot
             await Task.Delay(1);
         }
 
-        SafeThreading.SafeThreadingForm safe;
+        
         private async Task MessLog(SocketMessage arg)
         {
-            safe = new SafeThreading.SafeThreadingForm();
+            
             safe.MessageLog(arg.Channel.Name + " >> " + arg.Author.Username + " : " + arg.Content + Environment.NewLine);
             await Task.Delay(1);
         }
@@ -162,11 +175,7 @@ namespace DiscordBot
             else
                 serverMessagesButton.Text = text;
         }
-        Messages mess;
-
-        Dictionary<string, ulong> Channel;
-        Dictionary<string, ulong> Server;
-        Dictionary<string, ulong> Members;
+        
         private async Task LoadGuilds()
         {
 
@@ -222,6 +231,7 @@ namespace DiscordBot
                 loadInfo();
                 LoadChannels();
                 loadMembers();
+                loadMessages();
             }
             catch
             {
@@ -394,7 +404,11 @@ namespace DiscordBot
 
         private void avatarUrlBox_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(avatarUrlBox.Text);
+            try
+            {
+                System.Diagnostics.Process.Start(avatarUrlBox.Text);
+            }
+            catch { }
         }
 
         private void UserIDTextBox_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -444,6 +458,46 @@ namespace DiscordBot
         {
             Properties.Settings.Default.Prefix = PrefixTextBox.Text;
             Properties.Settings.Default.Token = TokenTextBox.Text;
+        }
+        static Managers.BannedWords bannedWords;
+        private void AddRemoveBox_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if(e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                bannedWords = new Managers.BannedWords();
+                safe = new SafeThreadingForm();
+                if(BannedWords.Items.Contains(AddRemoveBox.Text))
+                {
+                   bannedWords.RemoveWord(AddRemoveBox.Text);
+                    safe.ClearComboBox(BannedWords);
+                    bannedWords.getMessages();
+                }
+                else
+                {
+                    bannedWords.AddWord(AddRemoveBox.Text);
+                    safe.ClearComboBox(BannedWords);
+                    bannedWords.getMessages();
+                }
+                
+            }
+        }
+        private void loadMessages()
+        {
+            try
+            {
+                bannedWords = new Managers.BannedWords();
+                bannedWords.getMessages();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void BannedWords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            safe = new SafeThreadingForm();
+            safe.SafeTextBox(AddRemoveBox, BannedWords.Text);
         }
     }
 }
