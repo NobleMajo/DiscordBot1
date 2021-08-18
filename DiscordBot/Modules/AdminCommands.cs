@@ -12,12 +12,15 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Runtime.Remoting.Contexts;
 using System.Threading;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace DiscordBot.Modules
 {
     public class AdminCommands : ModuleBase<SocketCommandContext>
     {
         private readonly AdminCommands m_Service;
+        private readonly string PATH = $"{Environment.CurrentDirectory}/warns.txt";
 
         [Command("kick")]
         public async Task Kick(IGuildUser userAccount, string reason = null)
@@ -42,7 +45,7 @@ namespace DiscordBot.Modules
             }
         }
         [Command("ban")]
-        public async Task Ban(IGuildUser userAccount, int daysBanned, string reason = null)
+        public async Task Ban(IGuildUser userAccount,string reason = null)
         {
             var user = Context.User as SocketGuildUser;
 
@@ -50,7 +53,7 @@ namespace DiscordBot.Modules
             {
                 if (user.GuildPermissions.BanMembers)
                 {
-                    await userAccount.BanAsync(daysBanned, reason);
+                    await userAccount.BanAsync();
                     await Context.Channel.SendMessageAsync($"The user `{userAccount}` has been banned, for {reason}");
                 }
                 else
@@ -116,8 +119,44 @@ namespace DiscordBot.Modules
         [Remarks("warn [user]")]
         [Summary("This allows admins to warn users.")]
         [RequireUserPermission(GuildPermission.ManageRoles)]
-        public async Task WarnUser(IGuildUser user) {
-            await ReplyAsync($"{user} was warned");
+        public async Task WarnUser(IGuildUser user, [Remainder]string reason)
+        {
+            await ReplyAsync($"{user} was warned reason: {reason}");
+            string text;
+            if(!File.Exists(PATH))
+            {
+                var file = File.Create(PATH);
+                file.Close();
+            }
+            //using (StreamReader read = File.OpenText(PATH))
+            //{
+            //    text = read.ReadToEnd();
+            //}
+            using(StreamWriter write = File.AppendText(PATH))
+            {
+                write.WriteLine($"!{user.Username} , {reason}!");
+                //write.WriteLine(text);
+            }
+
         }
+        [Command("warns")]
+        public async Task Warns(IGuildUser user)
+        {
+            var builder = new EmbedBuilder();
+            builder.WithTitle($"warns {user.Username}");
+            string text;
+            string reasons = "";
+            using(StreamReader read = File.OpenText(PATH))
+            {
+                text = read.ReadToEnd();
+            }
+            foreach (var item in Regex.Matches(text, $"!{user.Username} , (.*)"))
+            {
+                reasons += "\n" + item;
+            }
+            builder.WithDescription(reasons.Replace("!" , "").Replace(user.Username, "").Replace(",",""));
+            await ReplyAsync("",false, builder.Build());
+        }
+
     }
 }
