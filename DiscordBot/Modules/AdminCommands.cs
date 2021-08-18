@@ -111,5 +111,13 @@ namespace DiscordBot.Modules
             var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
             await (user as IGuildUser).RemoveRoleAsync(role);
         }
+
+        [Command("warn")]
+        [Remarks("warn [user]")]
+        [Summary("This allows admins to warn users.")]
+        [RequireUserPermission(GuildPermission.ManageRoles)]
+        public async Task WarnUser(IGuildUser user) {
+            await ReplyAsync($"{user} was warned");
+        }
     }
 }
