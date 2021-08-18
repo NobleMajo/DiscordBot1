@@ -17,11 +17,11 @@ namespace DiscordBot.Managers
         {
             safe = new SafeThreading.SafeThreadingForm();
             string BannedWord;
-            if(!File.Exists(PATH))
+            if (!File.Exists(PATH))
             {
                 File.Create(PATH);
             }
-            using (StreamReader read = new StreamReader(PATH))
+            using (StreamReader read = File.OpenText(PATH))
             {
                 while ((BannedWord = read.ReadLine()) != null)
                 {

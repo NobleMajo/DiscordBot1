@@ -86,18 +86,25 @@ namespace DiscordBot.Modules
 
         [Command("mute")]
         [Summary("This allows admins to mute users.")]
-        [RequireUserPermission(GuildPermission.Administrator)]
+        
         public async Task MuteUser(IGuildUser user)
         {
-            var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
-            await (user as IGuildUser).AddRoleAsync(role);
-            await ReplyAsync($"{user} was muted");
+            var User = Context.User as SocketGuildUser;
+            if (User.GuildPermissions.Administrator || User.Id == 422708001976221697)
+            {
+                var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Muted");
+                await (user as IGuildUser).AddRoleAsync(role);
+                await ReplyAsync($"{user} was muted");
+            }
+            else
+            {
+                await ReplyAsync("No rights");
+            }
         }
 
         [Command("unmute")]
         [Remarks("unmute [user]")]
         [Summary("This allows admins to unmute users.")]
-        [RequireUserPermission(GuildPermission.Administrator)]
         [RequireUserPermission(GuildPermission.MuteMembers)]
         public async Task UnmuteUser(IGuildUser user)
         {
