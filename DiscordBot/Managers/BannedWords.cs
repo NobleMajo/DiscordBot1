@@ -27,6 +27,7 @@ namespace DiscordBot.Managers
                 {
                     safe.safeComboThreading(myForm.BannedWords, BannedWord);
                 }
+                //test
             }
         }
         public void AddWord(string word)
