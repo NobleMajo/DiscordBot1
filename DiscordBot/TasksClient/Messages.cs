@@ -16,7 +16,6 @@ namespace DiscordBot.TasksClient
     {
         private readonly string PATH = $@"{Environment.CurrentDirectory}/bannedWords.txt";
         public static List<string> bannedWords;
-        Form1 myForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
         public async Task FilterMess(SocketMessage arg)
         {
             bannedWords = new List<string>();
