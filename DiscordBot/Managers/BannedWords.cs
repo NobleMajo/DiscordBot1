@@ -16,6 +16,7 @@ namespace DiscordBot.Managers
         public void getMessages()
         {
             safe = new SafeThreading.SafeThreadingForm();
+            safe.ClearComboBox(myForm.BannedWords);
             string BannedWord;
             if (!File.Exists(PATH))
             {

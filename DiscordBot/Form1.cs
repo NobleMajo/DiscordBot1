@@ -26,6 +26,7 @@ namespace DiscordBot
         Dictionary<string, ulong> Channel;
         Dictionary<string, ulong> Server;
         Dictionary<string, ulong> Members;
+        Dictionary<string, ulong> Roles;
 
         Messages mess;
         SafeThreading.SafeThreadingForm safe;
@@ -232,6 +233,7 @@ namespace DiscordBot
                 LoadChannels();
                 loadMembers();
                 loadMessages();
+                LoadRoles();
             }
             catch
             {
@@ -498,6 +500,45 @@ namespace DiscordBot
         {
             safe = new SafeThreadingForm();
             safe.SafeTextBox(AddRemoveBox, BannedWords.Text);
+        }
+        private void LoadRoles()
+        {
+            safe = new SafeThreadingForm();
+            Roles = new Dictionary<string, ulong>();
+            Roles.Clear();
+            safe.ClearComboBox(RolesComboBox);
+            var roles = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles;
+            foreach(var role in roles)
+            {
+                Roles.Add(role.Name, role.Id);
+                safe.safeComboThreading(RolesComboBox, role.Name);
+                
+            }
+        }
+
+        private async void AddRoleBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myword = Roles.FirstOrDefault(x => x.Key == RolesComboBox.Text).Value;
+                await _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(ulong.Parse(UserIDTextBox.Text)).AddRoleAsync(myword);
+            }catch
+            {
+
+            }
+        }
+
+        private async void RemoveRoleBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myword = Roles.FirstOrDefault(x => x.Key == RolesComboBox.Text).Value;
+                await _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(ulong.Parse(UserIDTextBox.Text)).RemoveRoleAsync(myword);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

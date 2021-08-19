@@ -125,6 +125,10 @@
     <Compile Include="Managers\BannedWords.cs" />
     <Compile Include="Modules\AdminCommands.cs" />
     <Compile Include="Modules\BasicCommands.cs" />
+    <Compile Include="Modules\embed.cs" />
+    <Compile Include="Modules\FunCommands.cs" />
+    <Compile Include="Modules\langs.cs" />
+    <Compile Include="Modules\meme.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
