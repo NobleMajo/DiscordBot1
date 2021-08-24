@@ -1279,7 +1279,7 @@ namespace DiscordBot
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroComboBox ChannelsTExtBox;
+        public MetroFramework.Controls.MetroComboBox ChannelsTExtBox;
         private MetroFramework.Controls.MetroTextBox ServerIdTextBox;
         private MetroFramework.Controls.MetroLabel label1;
         public MetroFramework.Controls.MetroComboBox GuildsComboBox;

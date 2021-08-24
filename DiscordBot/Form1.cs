@@ -23,7 +23,7 @@ namespace DiscordBot
     {
         
 
-        Dictionary<string, ulong> Channel;
+        public static Dictionary<string, ulong> Channel;
         Dictionary<string, ulong> Server;
         Dictionary<string, ulong> Members;
         Dictionary<string, ulong> Roles;
@@ -31,7 +31,7 @@ namespace DiscordBot
         Messages mess;
         SafeThreading.SafeThreadingForm safe;
 
-        private DiscordSocketClient _client;
+        DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
 
@@ -87,6 +87,7 @@ namespace DiscordBot
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += MessLog;
             _client.MessageReceived += mess.FilterMess;
+            //_client.UserJoined += mess.Userj;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
         }
 

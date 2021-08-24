@@ -28,7 +28,7 @@ namespace DiscordBot.Modules
             var user = Context.User as SocketGuildUser;
 
             if (!userAccount.GuildPermissions.Administrator)
-            {
+            { 
                 if (user.GuildPermissions.KickMembers)
                 {
                     await userAccount.KickAsync(reason);
@@ -278,8 +278,9 @@ namespace DiscordBot.Modules
         public async Task JailRole(IUser user, int days, [Remainder] string reason)
         {
             IRole role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Issue");
+            IChannel channel = Context.Guild.Channels.FirstOrDefault(x => x.Name == "mental-hospital");
             await (user as IGuildUser).AddRoleAsync(role);
-            await Context.Guild.GetTextChannel(864472636816621608).SendMessageAsync($"{user} is in jail for {days} D because [ {reason} ]");
+            await Context.Guild.GetTextChannel(channel.Id).SendMessageAsync($"{user} is in jail for {days} D because [ {reason} ]");
             await ReplyAsync("done");
 
 
@@ -360,7 +361,7 @@ namespace DiscordBot.Modules
         [RequireUserPermission(GuildPermission.KickMembers, ErrorMessage = "You don't have rights for this command!")]
         public async Task ServerInsigs()
         {
-            if(Context.Guild.Id != 759424063130304592)
+            if (Context.Guild.Id != 759424063130304592)
             {
                 await ReplyAsync($"Data for {Context.Guild.Name} are not avaible");
                 return;
@@ -370,12 +371,12 @@ namespace DiscordBot.Modules
             var messages = $@"{PAth}/messages.png";
             var joining = $@"{PAth}/joining.png";
             var leaves = $@"{PAth}/leaves.png";
-            
+
             var msg = $@"{PAth}/msg.png";
             var speaking = $@"{PAth}/speaking.png";
             var from = $@"{PAth}/from.png";
             var devices = $@"{PAth}/devices.png";
-            
+
             await Context.Channel.SendFileAsync(keymetrics);
             await Context.Channel.SendFileAsync(messages);
             await Context.Channel.SendFileAsync(joining);
@@ -384,6 +385,7 @@ namespace DiscordBot.Modules
             await Context.Channel.SendFileAsync(speaking);
             await Context.Channel.SendFileAsync(from);
             await Context.Channel.SendFileAsync(devices);
+            
 
         }
 
