@@ -125,6 +125,7 @@
     <Compile Include="Managers\BannedWords.cs" />
     <Compile Include="Modules\AdminCommands.cs" />
     <Compile Include="Modules\BasicCommands.cs" />
+    <Compile Include="Modules\customCommands.cs" />
     <Compile Include="Modules\embed.cs" />
     <Compile Include="Modules\FunCommands.cs" />
     <Compile Include="Modules\langs.cs" />

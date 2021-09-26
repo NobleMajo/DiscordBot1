@@ -77,6 +77,10 @@ namespace DiscordBot
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.RemoveRoleBtn = new MetroFramework.Controls.MetroButton();
+            this.RolesComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.AddRoleBtn = new MetroFramework.Controls.MetroButton();
             this.UserIDTextBox = new MetroFramework.Controls.MetroTextBox();
             this.usersComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
@@ -104,10 +108,7 @@ namespace DiscordBot
             this.AddRemoveBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.BannedWords = new MetroFramework.Controls.MetroComboBox();
-            this.AddRoleBtn = new MetroFramework.Controls.MetroButton();
-            this.RolesComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.RemoveRoleBtn = new MetroFramework.Controls.MetroButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.optionBox = new MetroFramework.Controls.MetroComboBox();
             this.Prison.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -142,7 +143,7 @@ namespace DiscordBot
             this.Prison.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Prison.Location = new System.Drawing.Point(20, 60);
             this.Prison.Name = "Prison";
-            this.Prison.SelectedIndex = 5;
+            this.Prison.SelectedIndex = 2;
             this.Prison.Size = new System.Drawing.Size(1071, 445);
             this.Prison.TabIndex = 0;
             this.Prison.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -631,6 +632,7 @@ namespace DiscordBot
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.optionBox);
             this.panel1.Controls.Add(this.ChannelsTExtBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -783,6 +785,49 @@ namespace DiscordBot
             this.metroPanel6.VerticalScrollbarBarColor = true;
             this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel6.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(736, 133);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel3.TabIndex = 14;
+            this.metroLabel3.Text = "Roles Settings";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // RemoveRoleBtn
+            // 
+            this.RemoveRoleBtn.Location = new System.Drawing.Point(806, 199);
+            this.RemoveRoleBtn.Name = "RemoveRoleBtn";
+            this.RemoveRoleBtn.Size = new System.Drawing.Size(64, 31);
+            this.RemoveRoleBtn.TabIndex = 13;
+            this.RemoveRoleBtn.Text = "Remove";
+            this.RemoveRoleBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RemoveRoleBtn.UseSelectable = true;
+            this.RemoveRoleBtn.Click += new System.EventHandler(this.RemoveRoleBtn_Click);
+            // 
+            // RolesComboBox
+            // 
+            this.RolesComboBox.FormattingEnabled = true;
+            this.RolesComboBox.ItemHeight = 23;
+            this.RolesComboBox.Location = new System.Drawing.Point(692, 155);
+            this.RolesComboBox.Name = "RolesComboBox";
+            this.RolesComboBox.Size = new System.Drawing.Size(178, 29);
+            this.RolesComboBox.TabIndex = 12;
+            this.RolesComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RolesComboBox.UseSelectable = true;
+            // 
+            // AddRoleBtn
+            // 
+            this.AddRoleBtn.Location = new System.Drawing.Point(692, 199);
+            this.AddRoleBtn.Name = "AddRoleBtn";
+            this.AddRoleBtn.Size = new System.Drawing.Size(64, 31);
+            this.AddRoleBtn.TabIndex = 11;
+            this.AddRoleBtn.Text = "Add";
+            this.AddRoleBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AddRoleBtn.UseSelectable = true;
+            this.AddRoleBtn.Click += new System.EventHandler(this.AddRoleBtn_Click);
             // 
             // UserIDTextBox
             // 
@@ -1149,48 +1194,19 @@ namespace DiscordBot
             this.BannedWords.UseSelectable = true;
             this.BannedWords.SelectedIndexChanged += new System.EventHandler(this.BannedWords_SelectedIndexChanged);
             // 
-            // AddRoleBtn
+            // optionBox
             // 
-            this.AddRoleBtn.Location = new System.Drawing.Point(692, 199);
-            this.AddRoleBtn.Name = "AddRoleBtn";
-            this.AddRoleBtn.Size = new System.Drawing.Size(64, 31);
-            this.AddRoleBtn.TabIndex = 11;
-            this.AddRoleBtn.Text = "Add";
-            this.AddRoleBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.AddRoleBtn.UseSelectable = true;
-            this.AddRoleBtn.Click += new System.EventHandler(this.AddRoleBtn_Click);
-            // 
-            // RolesComboBox
-            // 
-            this.RolesComboBox.FormattingEnabled = true;
-            this.RolesComboBox.ItemHeight = 23;
-            this.RolesComboBox.Location = new System.Drawing.Point(692, 155);
-            this.RolesComboBox.Name = "RolesComboBox";
-            this.RolesComboBox.Size = new System.Drawing.Size(178, 29);
-            this.RolesComboBox.TabIndex = 12;
-            this.RolesComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RolesComboBox.UseSelectable = true;
-            // 
-            // RemoveRoleBtn
-            // 
-            this.RemoveRoleBtn.Location = new System.Drawing.Point(806, 199);
-            this.RemoveRoleBtn.Name = "RemoveRoleBtn";
-            this.RemoveRoleBtn.Size = new System.Drawing.Size(64, 31);
-            this.RemoveRoleBtn.TabIndex = 13;
-            this.RemoveRoleBtn.Text = "Remove";
-            this.RemoveRoleBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RemoveRoleBtn.UseSelectable = true;
-            this.RemoveRoleBtn.Click += new System.EventHandler(this.RemoveRoleBtn_Click);
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(736, 133);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel3.TabIndex = 14;
-            this.metroLabel3.Text = "Roles Settings";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.optionBox.FormattingEnabled = true;
+            this.optionBox.ItemHeight = 23;
+            this.optionBox.Items.AddRange(new object[] {
+            "User",
+            "Channel"});
+            this.optionBox.Location = new System.Drawing.Point(205, 9);
+            this.optionBox.Name = "optionBox";
+            this.optionBox.Size = new System.Drawing.Size(178, 29);
+            this.optionBox.TabIndex = 3;
+            this.optionBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.optionBox.UseSelectable = true;
             // 
             // Form1
             // 
@@ -1317,6 +1333,7 @@ namespace DiscordBot
         private MetroFramework.Controls.MetroButton RemoveRoleBtn;
         private MetroFramework.Controls.MetroComboBox RolesComboBox;
         private MetroFramework.Controls.MetroButton AddRoleBtn;
+        public MetroFramework.Controls.MetroComboBox optionBox;
     }
 }
 

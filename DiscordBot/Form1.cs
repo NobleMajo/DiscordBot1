@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.IO;
+using DiscordBot.Modules;
 
 
 namespace DiscordBot
@@ -31,6 +32,8 @@ namespace DiscordBot
         Messages mess;
         SafeThreading.SafeThreadingForm safe;
 
+        customCommands coms;
+        
         DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
@@ -79,6 +82,7 @@ namespace DiscordBot
         private async Task RegisterCommandAsync()
         {
             mess = new Messages();
+            coms = new customCommands();
             _client.Ready += LoadGuilds;
             _client.Ready += ReadyStatus;
             _client.Disconnected += OffStatus;
@@ -87,8 +91,18 @@ namespace DiscordBot
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += MessLog;
             _client.MessageReceived += mess.FilterMess;
+            _client.MessageReceived += coms.Read;
             //_client.UserJoined += mess.Userj;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
+        }
+
+        private async Task JsiKokot(SocketMessage arg)
+        {
+            if(arg.Content.Contains("everyone"))
+            {
+                await arg.DeleteAsync();
+               await arg.Channel.SendMessageAsync($"{arg.Author.Mention} Tak jsi kokot?");
+            }
         }
 
         private async Task OffStatus(Exception arg)
@@ -197,8 +211,18 @@ namespace DiscordBot
         {
             try
             {
-                var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
-                _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                if (optionBox.Text == "User")
+                {
+                    _client.GetUser(ulong.Parse(UserIDTextBox.Text)).SendMessageAsync(MessageBox.Text);
+
+
+                }
+                else
+                {
+                    var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                    _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                }
+                MessageBox.Text = "";
             } catch
             {
 
@@ -268,8 +292,18 @@ namespace DiscordBot
             {
                 try
                 {
-                    var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
-                    _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                    if (optionBox.Text == "User")
+                    {
+                        _client.GetUser(ulong.Parse(UserIDTextBox.Text)).SendMessageAsync(MessageBox.Text);
+
+
+                    }
+                    else
+                    {
+                        var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                        _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                       
+                    } 
                     MessageBox.Text = "";
                 }
                 catch
