@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.IO;
+using DiscordBot.Modules;
 
 
 namespace DiscordBot
@@ -23,14 +24,17 @@ namespace DiscordBot
     {
         
 
-        Dictionary<string, ulong> Channel;
+        public static Dictionary<string, ulong> Channel;
         Dictionary<string, ulong> Server;
         Dictionary<string, ulong> Members;
+        Dictionary<string, ulong> Roles;
 
         Messages mess;
         SafeThreading.SafeThreadingForm safe;
 
-        private DiscordSocketClient _client;
+        customCommands coms;
+        
+        DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
 
@@ -78,6 +82,7 @@ namespace DiscordBot
         private async Task RegisterCommandAsync()
         {
             mess = new Messages();
+            coms = new customCommands();
             _client.Ready += LoadGuilds;
             _client.Ready += ReadyStatus;
             _client.Disconnected += OffStatus;
@@ -86,7 +91,18 @@ namespace DiscordBot
             _client.MessageReceived += MsgCouter;
             _client.MessageReceived += MessLog;
             _client.MessageReceived += mess.FilterMess;
+            _client.MessageReceived += coms.Read;
+            //_client.UserJoined += mess.Userj;
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
+        }
+
+        private async Task JsiKokot(SocketMessage arg)
+        {
+            if(arg.Content.Contains("everyone"))
+            {
+                await arg.DeleteAsync();
+               await arg.Channel.SendMessageAsync($"{arg.Author.Mention} Tak jsi kokot?");
+            }
         }
 
         private async Task OffStatus(Exception arg)
@@ -195,8 +211,18 @@ namespace DiscordBot
         {
             try
             {
-                var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
-                _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                if (optionBox.Text == "User")
+                {
+                    _client.GetUser(ulong.Parse(UserIDTextBox.Text)).SendMessageAsync(MessageBox.Text);
+
+
+                }
+                else
+                {
+                    var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                    _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                }
+                MessageBox.Text = "";
             } catch
             {
 
@@ -232,6 +258,7 @@ namespace DiscordBot
                 LoadChannels();
                 loadMembers();
                 loadMessages();
+                LoadRoles();
             }
             catch
             {
@@ -265,8 +292,18 @@ namespace DiscordBot
             {
                 try
                 {
-                    var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
-                    _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                    if (optionBox.Text == "User")
+                    {
+                        _client.GetUser(ulong.Parse(UserIDTextBox.Text)).SendMessageAsync(MessageBox.Text);
+
+
+                    }
+                    else
+                    {
+                        var myKey = Channel.FirstOrDefault(x => x.Key == ChannelsTExtBox.Text).Value;
+                        _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetTextChannel(myKey).SendMessageAsync(MessageBox.Text);
+                       
+                    } 
                     MessageBox.Text = "";
                 }
                 catch
@@ -498,6 +535,45 @@ namespace DiscordBot
         {
             safe = new SafeThreadingForm();
             safe.SafeTextBox(AddRemoveBox, BannedWords.Text);
+        }
+        private void LoadRoles()
+        {
+            safe = new SafeThreadingForm();
+            Roles = new Dictionary<string, ulong>();
+            Roles.Clear();
+            safe.ClearComboBox(RolesComboBox);
+            var roles = _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).Roles;
+            foreach(var role in roles)
+            {
+                Roles.Add(role.Name, role.Id);
+                safe.safeComboThreading(RolesComboBox, role.Name);
+                
+            }
+        }
+
+        private async void AddRoleBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myword = Roles.FirstOrDefault(x => x.Key == RolesComboBox.Text).Value;
+                await _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(ulong.Parse(UserIDTextBox.Text)).AddRoleAsync(myword);
+            }catch
+            {
+
+            }
+        }
+
+        private async void RemoveRoleBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var myword = Roles.FirstOrDefault(x => x.Key == RolesComboBox.Text).Value;
+                await _client.GetGuild(ulong.Parse(ServerIdTextBox.Text)).GetUser(ulong.Parse(UserIDTextBox.Text)).RemoveRoleAsync(myword);
+            }
+            catch
+            {
+
+            }
         }
     }
 }
